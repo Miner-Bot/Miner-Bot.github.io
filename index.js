@@ -17,6 +17,7 @@ client.voiceChannelIDs = new Map();
 // 	connection.play(await ytdldiscord(url), { type: 'opus' });
 // }
 
+
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	// getting the command name, to run that command:
@@ -145,11 +146,18 @@ client.on('guildCreate', guild => {
 //		message.channel.send(`<@${userMention}> I just sent you a DM with your number.`);
 //	}
 // });
-
+var input = $_get(minerbot.xyz/output.php, results); /* ??? */
 client.once('ready', () => {
 	console.log('Ready!');
 	console.log(client.uptime);
 	client.user.setActivity('my new games!');
+	Map<String, Object> data = new HashMap<String, Object>();
+    data.put( "userid", input );
+    data.put( "age", 32 );
+    data.put( "city", "NY" );
+    JSONObject json = new JSONObject();
+    json.putAll( data );
+    System.out.printf( "JSON: %s", json.toString(2) );
 });
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
 client.login(token);

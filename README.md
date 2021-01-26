@@ -1,5 +1,5 @@
 # MinerBot
-|   Connection  |     &nbsp; Access Point &nbsp;     |  Status  |
+|   Connection  |     &nbsp;&nbsp; Access Point &nbsp;&nbsp;     |  Status  |
 | :------------ | :-------------------- | :------- |
 | Website       |    URL: minerbot.xyz   | ⚠ Under Construction / Maintenance |
 | Bot <sub>[Main Files]</sub> | Discord | ✅ Online |

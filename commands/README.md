@@ -27,4 +27,4 @@
         =help
         =usage
 ```
-![Commands](/commands/)
+[← Go Back](/commands/)

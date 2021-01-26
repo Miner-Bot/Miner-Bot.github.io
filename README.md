@@ -14,7 +14,7 @@ To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=7
 
 
 #### Contact the creator / Credits
-*Join Jakey/MinerBot's Support Server: [Click](https://discord.gg/fDM9ykmTwN)*
+*Join MinerBot's Support Server: [Click](https://discord.gg/fDM9ykmTwN)*
 Discord username: **IcicleSavage#0381**
 Universal nickname: **IcicleSavage**
 

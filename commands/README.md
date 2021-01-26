@@ -1,15 +1,16 @@
-Commands for bot info:
+# Commands
+## Info
 ```
         =about
         =credits
 ```
-# Entertainment:
-## Games:
+## Entertainment:
+### Games:
 ```
         =drive
         =ready
 ```
-## Music
+### Music
 ```
         =join
         =disconnect
@@ -18,7 +19,7 @@ Commands for bot info:
         =radio
           =radio [disable]
 ```
-# Utility:
+## Utility:
 ```
         =ping
         =invite

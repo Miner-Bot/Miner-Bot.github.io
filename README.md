@@ -1,10 +1,10 @@
 ## **About MinerBot**
 
-A Discord bot that was based off of Jakey, who was his predecessor. Miner's features are, somewhat, similar to Jakey's, but much more. **MinerBot is centered around having fun, and entertaining his users, within Discord.** Whether you're waiting for a friend to ready up, or simply want to pass time, he's got you covered! [Invite MinerBot here.](#minerbot) is another bot, who will replace Jakey, in the future.
+A Discord bot that was based off of Jakey, who was his predecessor. Miner's features are, somewhat, similar to Jakey's, but much more. **MinerBot is centered around having fun, and entertaining his users, within Discord.** Whether you're waiting for a friend to ready up, or simply want to pass time, he's got you covered! [Invite MinerBot here.](#invite-minerbot) is another bot, who will replace Jakey, in the future.
 
 ## Invite MinerBot
 
-To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=767055142544605194&scope=bot&permissions=1543892056). to invite him to one of your<sup>2</sup> servers!
+To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=767055142544605194&scope=bot&permissions=1543892056). to invite him<sup>2</sup> to a server!
 
 <sup>2</sup> - You must own the server, or have the `Manage Server` permission in the desired server you want to add him to.
 
@@ -16,7 +16,7 @@ To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=7
 #### Contact the creator / Credits
 *Join MinerBot's Support Server: [Click](https://discord.gg/fDM9ykmTwN)*
 Discord username: **IcicleSavage#0381**
-Universal nickname: **IcicleSavage**
+Preferred name: **IcicleSavage**
 
 
 ### MinerBot Status'

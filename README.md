@@ -19,7 +19,7 @@ Discord username: **IcicleSavage#0381**<br />
 Preferred name: **IcicleSavage**<br />
 
 
-### MinerBot Status'
+### Status
 |   Connection  |     &nbsp;&nbsp; Access Point &nbsp;&nbsp;     |  Status  |
 | :------------ | :-------------------- | :------- |
 | Website       |  URL:&nbsp;`minerbot.xyz`    | ⚠ Under Construction / Maintenance |

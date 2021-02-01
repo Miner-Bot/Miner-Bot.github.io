@@ -5,9 +5,9 @@
 
 ## Invite MinerBot
 
-&nbsp;&nbsp;&nbsp;To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=767055142544605194&scope=bot&permissions=1543892056). to invite him<sup>2</sup> to a server!
+&nbsp;&nbsp;&nbsp;To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=767055142544605194&scope=bot&permissions=1543892056). to invite him<sup>1</sup> to a server!
 
-<sup>2</sup> - You must own the server, or have the `Manage Server` permission in the desired server you want to add him to.
+<sup>1</sup> - You must own the server, or have the `Manage Server` permission in the desired server you want to add him to.
 
 
 

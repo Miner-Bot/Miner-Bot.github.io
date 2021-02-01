@@ -3,6 +3,12 @@
 &nbsp;&nbsp;&nbsp;A Discord bot who is the successor of Jakey, another bot that ~~has~~had similar features, was based originally off of Jakey's features. But, later on in his development, the developer decided to make him serve much broader purposes. MinerBot can now do more than Jakey could ever dream to do. 
 <br />&nbsp;&nbsp;&nbsp;**MinerBot is centered around having fun, and entertaining his users, within Discord.** Whether you're waiting for a friend to ready up, or simply want to pass time, he's got you covered! [Invite MinerBot here.](#invite-minerbot) is another bot, who will replace Jakey, in the future.
 
+## Donate
+
+<script src="https://liberapay.com/MinerBot/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/MinerBot/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
+
 ## Invite MinerBot
 
 &nbsp;&nbsp;&nbsp;To invite MinerBot [click here](https://discord.com/oauth2/authorize?client_id=767055142544605194&scope=bot&permissions=1543892056). to invite him<sup>1</sup> to a server!

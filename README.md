@@ -4,8 +4,6 @@
 <br />&nbsp;&nbsp;&nbsp;**MinerBot is centered around having fun, and entertaining his users, within Discord.** Whether you're waiting for a friend to ready up, or simply want to pass time, he's got you covered! [Invite MinerBot here.](#invite-minerbot) is another bot, who will replace Jakey, in the future.
 
 ## Donate
-
-<script src="https://liberapay.com/MinerBot/widgets/button.js"></script>
 <noscript><a href="https://liberapay.com/MinerBot/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
 

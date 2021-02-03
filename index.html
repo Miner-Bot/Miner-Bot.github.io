@@ -111,7 +111,7 @@
         </section>
         <!-- Commands -->
         <section class="page-section" id="commands" onload="LoadCommandDetails()">
-            <script>
+             <script>
                 function LoadCommandDetails() {
                     const fs = require('fs');
                     var mainContainer = document.getElementById("commands-info");
@@ -148,7 +148,8 @@
                                 p.innerHTML = 'Find out who made this!<br>Usage:<pre><code>=credits</code></pre>';
 
                 }
-            </script>
+                LoadCommandDetails();
+           </script>
             <div class="container-fluid p-0">
                 <div class="container">
                     <h2 class="text-center h2">Commands</h2>

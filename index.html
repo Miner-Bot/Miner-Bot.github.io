@@ -112,7 +112,7 @@
         <!-- Commands -->
         <section class="page-section" id="commands">
             <div class="container-fluid p-0">
-                <div class="container">
+                <div class="container" id="table-in-here">
                     <h2 class="text-center h2">Commands</h2>
                     <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Sech for a command" autocomplete="off">
                     <!-- list of them: credits ; disconnect ; drive ; help ; invite ; join ; move ; play ; ping ; ready ; reload ; restart ; stats ; welcome ; </table>-->
@@ -168,7 +168,8 @@
                     <a class="btn btn-primary btn-xl" onclick="LoadCommandDetails()">View</a>
                     <script>
                         function LoadCommandDetails() {
-                            var mainContainer = document.getElementById("commands-info");
+                            var mainContainer = document.getElementById("table-in-here");
+                            var table = document.createElement("table");
                             var tr = document.createElement("tr");
                             var td = document.createElement("td");
                             var hr = document.createElement("hr");
@@ -185,20 +186,25 @@
                             att.value = 'credits';
                             att2.value = 'text-box bungee-body-text bungee-centered';
                             att3.value = 'divider my-2';
-                            att4.value = 'bungee-small-body-text bungee-centered'
+                            att4.value = 'bungee-small-body-text bungee-centered';
+                            att5.value = 'align-items-center';
 
-                            mainContainer.appendChild(tr);
+
+                            mainContainer.appendChild(table);
+                            table.setAttributeNode(att5);
+                            
+                            table.appendChild(tr);
                             tr.setAttributeNode(att);
-
+// —————————————————————————————————————————————————————————————————
                             tr.appendChild(td);
                             td.setAttributeNode(att2);
-
+// —————————————————————————————————————————————————————————————————
                             td.appendChild(hr);
                             hr.setAttributeNode(att3);
-
-                            hr.appendChild(p);
+// —————————————————————————————————————————————————————————————————
+                            td.appendChild(p);
                             p.setAttributeNode(att4);
-
+// —————————————————————————————————————————————————————————————————
                             p.innerHTML = 'Find out who made this!<br>Usage:<pre><code>=credits</code></pre>';
 
                         }

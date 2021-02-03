@@ -168,8 +168,8 @@
                     <a class="btn btn-primary btn-xl" onclick="LoadCommandDetails()">View</a>
                     <script>
                         function LoadCommandDetails() {
-                            var mainContainer = document.getElementById("table-in-here");
-                            var table = document.createElement("table");
+                            var mainContainer = document.getElementById("commands-info");
+//                            var table = document.createElement("table");
                             var tr = document.createElement("tr");
                             var td = document.createElement("td");
                             var hr = document.createElement("hr");
@@ -192,11 +192,11 @@
                             att6.value = 'commands-info';
 
 
-                            mainContainer.appendChild(table);
-                            table.setAttributeNode(att5);
-                            table.setAttributeNode(att6);
+                            mainContainer.appendChild(tr);
+//                            table.setAttributeNode(att5);
+//                            table.setAttributeNode(att6);
                             
-                            table.appendChild(tr);
+//                            table.appendChild(tr);
                             tr.setAttributeNode(att);
 // —————————————————————————————————————————————————————————————————
                             tr.appendChild(td);

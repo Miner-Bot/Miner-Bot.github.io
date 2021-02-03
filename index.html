@@ -204,6 +204,44 @@
                             </td>
                         </tr>
                     </table>
+                                 <script>
+                function LoadCommandDetails() {
+                    const fs = require('fs');
+                    var mainContainer = document.getElementById("commands-info");
+                                var tr = document.createElement("tr");
+                                var td = document.createElement("td");
+                                var hr = document.createElement("hr");
+                                var p = document.createElement("p");
+                                
+                                var att = document.createAttribute("id");
+                                var att2 = document.createAttribute("class");
+                                var att3 = document.createAttribute("class");
+                                var att4 = document.createAttribute("class");
+                                var att5 = document.createAttribute("class");
+
+                                td.innerHTML = 'Credits';
+                                
+                                att.value = 'credits';
+                                att2.value = 'text-box bungee-body-text bungee-centered';
+                                att3.value = 'divider my-2';
+                                att4.value = 'bungee-small-body-text bungee-centered'
+                                
+                                mainContainer.appendChild(tr);
+                                tr.setAttributeNode(att);
+                                
+                                tr.appendChild(td);
+                                td.setAttributeNode(att2);
+                                
+                                td.appendChild(hr);
+                                hr.setAttributeNode(att3);
+                                
+                                hr.appendChild(p);
+                                p.setAttributeNode(att4);
+                                
+                                p.innerHTML = 'Find out who made this!<br>Usage:<pre><code>=credits</code></pre>';
+
+                }
+           </script>
                     <script>
                         function myFunction() {
                             var input, filter, table, tr, td, i, txtValue;

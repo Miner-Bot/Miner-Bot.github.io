@@ -116,8 +116,8 @@
                     <h2 class="text-center h2">Commands</h2>
                     <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Sech for a command" autocomplete="off">
                     <!-- list of them: credits ; disconnect ; drive ; help ; invite ; join ; move ; play ; ping ; ready ; reload ; restart ; stats ; welcome ; </table>-->
-                    <table class="align-items-center" id="commands-info">
-                    <!-- <tr id="disconnect">
+                    <!-- <table class="align-items-center" id="commands-info">
+                    <tr id="disconnect">
                             <td class="text-box bungee-body-text bungee-centered">
                                 Disconnect
                                 <hr class="divider my-2">
@@ -163,13 +163,13 @@
                                     Find out who made this!<br>Usage:
                                     <pre><code>=join</code></pre>
                             </td>
-                        </tr> -->
-                    </table>
-                    <a class="btn btn-primary btn-xl" onclick="LoadCommandDetails()">View</a>
+                        </tr>
+                    </table> -->
+                        <a class="btn btn-primary btn-xl" onclick="LoadCommandDetails()">View</a>
                     <script>
                         function LoadCommandDetails() {
                             var mainContainer = document.getElementById("commands-info");
-//                            var table = document.createElement("table");
+                            var table = document.createElement("table");
                             var tr = document.createElement("tr");
                             var td = document.createElement("td");
                             var hr = document.createElement("hr");
@@ -193,10 +193,10 @@
 
 
                             mainContainer.appendChild(tr);
-//                            table.setAttributeNode(att5);
-//                            table.setAttributeNode(att6);
+                            table.setAttributeNode(att5);
+                            table.setAttributeNode(att6);
                             
-//                            table.appendChild(tr);
+                            table.appendChild(tr);
                             tr.setAttributeNode(att);
 // —————————————————————————————————————————————————————————————————
                             tr.appendChild(td);

@@ -50,7 +50,7 @@ const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function() {
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
-  document.input.classList.toggle("dark-theme");
+  $("#SearchQuery").classList.toggle("dark-theme");
   if ($("#mainNav").classList.includes("navbar-dark")) {
      $("mainNav").removeClass("navbar-dark").addClass("navbar-light");
   } else {

@@ -54,8 +54,7 @@ btn.addEventListener('click', function() {
      $("mainNav").removeClass("navbar-dark").addClass("navbar-light");
   } else {
      $("mainNav").removeClass("navbar-light").addClass("navbar-dark");
-  }
-  $("#mainNav").removeClass("navbar-light");
+  };
 })
   // Magnific popup calls
   $('#portfolio').magnificPopup({

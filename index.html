@@ -167,6 +167,29 @@
                     </table> -->
                         <a class="btn btn-primary btn-xl" onclick="LoadCommandDetails()">View</a>
                     <script>
+                        fetch('commands.json')
+                            .then(function (response) {
+                            return response.json();
+                        })
+                            .then(function (data) {
+                            appendData(data);
+                        })
+                            .catch(function (err) {
+                            console.log(err);
+                        });
+                        function appendData(data) {
+                            var mainContainer = document.getElementById("selected");
+                                var table = document.getElementById("commands-info");
+                                var att = document.createAttribute("value");
+                                var att2 = document.createAttribute("label");
+                                table.innerHTML = data[i].number;
+                                att.value = data[i].name;
+                                att2.value = 'Description: ' + data[i].description;
+                                mainContainer.appendChild(table);
+                                table.setAttributeNode(att);
+                                table.setAttributeNode(att2);
+                        }
+                        
                         function LoadCommandDetails() {
                             var mainContainer = document.getElementById("table-in-here");
                             var table = document.createElement("table");

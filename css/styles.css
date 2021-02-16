@@ -68,7 +68,16 @@ body {
   text-align: left;
   background-color: #fff;
 }
-
+body.dark-theme {
+  color: #eee;
+  background: #121212;
+}
+body.dark-theme a {
+  color: #809fff;
+}
+a.dark-theme {
+  color:#809fff;
+}
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }

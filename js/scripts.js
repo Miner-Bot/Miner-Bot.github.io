@@ -50,8 +50,12 @@ const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function() {
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
-  document.nav.addClass("navbar-dark");
-  document.nav.removeClass("navbar-light");
+  if ($("#mainNav").classList.includes("navbar-dark")) {
+     $("mainNav").removeClass("navbar-dark").addClass("navbar-light");
+  } else {
+     $("mainNav").removeClass("navbar-light").addClass("navbar-dark");
+  }
+  $("#mainNav").removeClass("navbar-light");
 })
   // Magnific popup calls
   $('#portfolio').magnificPopup({

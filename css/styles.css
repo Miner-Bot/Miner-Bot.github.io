@@ -1713,7 +1713,7 @@ pre code {
   width: 100%;
   background-color: #fff;
 }
-#SearchQuery input.dark-theme {
+input[type=text].dark-theme {
   width: 100%;
   background-color: #3d3d3d;
 }
@@ -10088,9 +10088,7 @@ hr.light {
   transition: background-color 0.2s ease;
 }
 #mainNav.dark-theme {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #262626;
-  transition: background-color 0.2s ease;
 }
 #mainNav .navbar-brand {
   font-family: "Bungee Shade", cursive, "Coda Caption", "Merriweather Sans", sans-serif;
@@ -10120,7 +10118,6 @@ hr.light {
     background-color: transparent;
   }
   #mainNav.dark-theme {
-    box-shadow: none;
     background-color: #eee;
   }
 

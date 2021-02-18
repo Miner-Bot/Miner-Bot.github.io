@@ -2519,6 +2519,10 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-toggle {
+  pointer-events: auto;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #f4623ad2;

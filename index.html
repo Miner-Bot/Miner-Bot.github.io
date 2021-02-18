@@ -235,7 +235,13 @@
                     </script>
                 </div>
                 <script>
-                    fetch('commands.json')
+                    function titleCase(str) {
+ 			            return str
+ 				        .split(' ')
+ 				        .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+ 				        .join(' ');
+ 		            }
+		    fetch('commands.json')
                         .then(function (response) {
                         return response.json();
                     })
@@ -261,7 +267,7 @@
                         var att5 = document.createAttribute("class");
                         var att6 = document.createAttribute("id");
 
-                        td.innerHTML = data[i].name;
+                        td.innerHTML = titleCase(data[i].name);
 
                         att.value = data[i].value;
                         att2.value = 'text-box bungee-body-text bungee-centered';
@@ -284,11 +290,6 @@
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
                         p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + data[i].usage;
-			    if (data[i].usage = undefined) {
-                                p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + 'NA'
-                            } else {
-				return;
-			    }
                         }
                     }
                     </script>

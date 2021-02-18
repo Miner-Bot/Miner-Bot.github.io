@@ -406,7 +406,8 @@ h6, .h6 {
 }
 
 hr.divider-page-width-mod {
-  width: 80%;
+  max-width: 80%;
+  width: 60%;
   border-width: 1rem;
   border-color: #f4623a;
 }

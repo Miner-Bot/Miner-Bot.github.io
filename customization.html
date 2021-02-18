@@ -67,6 +67,7 @@
                     <!-- 1( <button class="btn btn-light btn-xl" id="generate" onclick="eeee(10); Numbers();">VIEW</button> -->
                     <!--<button class="btn btn-light btn-xl" id="generate" onclick="eeee();">VIEW</button>-->
                     <!-- 1( <div class="text-center" id="myData">[_]</div> -->
+                    <!-- PHP Code:
                     <?php
                     $useridErr = $selected = "";
                     $userid = $selected = "";
@@ -86,7 +87,9 @@
                       return $data;
                     }
                     ?>
-                    <form method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'>
+                    -->
+                    <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
+                    <form method="post" action=''>
                         <select name="selected" id="selected">
                         </select>
                         <br>Discord User ID: <input type="text" name="userid"><span class="error">* <?php echo $usernameErr;?></span><br>

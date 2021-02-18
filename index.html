@@ -236,9 +236,11 @@
                         const prefix = '=';
 			var mainContainer = document.getElementById("table-in-here");
                         for (var i = 0; i < data.length; i++) {
-			var str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;
+			var str;
 			if (data[i].usage) {
-				str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
+				let str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
+			} else if (!data[i].usage) {
+				let str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;
 			}
                         var table = document.createElement("table");
                         var tr = document.createElement("tr");

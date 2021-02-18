@@ -2523,14 +2523,14 @@ fieldset:disabled a.btn {
   pointer-events: auto;
   border: 2px solid white;
   outline: 1px solid rgba(255,255,255,.7);
-  transition: all .7s;
+  transition: all .7s !important;
 }
 
 .btn-toggle:hover {
-  text-shadow: 0 0 20px rgba(255,255,255,1);
-  box-shadow: inset 0 0 20px rgba(255,255,255,.2), 0 0 20px rgba(255,255,255,0.3);
-  outline-color: rgba(255,255,255,0);
-  outline-offset: 15px;
+  text-shadow: 0 0 20px rgba(255,255,255,1) !important;
+  box-shadow: inset 0 0 20px rgba(255,255,255,.2), 0 0 20px rgba(255,255,255,0.3) !important;
+  outline-color: rgba(255,255,255,0) !important;
+  outline-offset: 15px !important;
 }
 
 .btn-primary {

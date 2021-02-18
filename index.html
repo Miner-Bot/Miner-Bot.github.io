@@ -290,10 +290,10 @@
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
                         p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + data[i].usage;
-if (typeof data[i].usage.value === 'undefined') {
+                        }
+			    if (typeof data[i].usage.value === 'undefined') {
 p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + 'N/A';
 }
-                        }
                     }
                     </script>
                 <div class="container">

@@ -275,6 +275,12 @@
                     }
                     </script>
 		    <script>
+			    function UnTitleCase(str) {
+ 			            return str
+ 				        .split(' ')
+ 				        .map((word) => word[0].toLowerCase() + word.slice(1).toUpperCase())
+ 				        .join(' ');
+ 		            }
                         function myFunction() {
                             var input, filter, table, tr, td, i, txtValue;
                             input = document.getElementById("SearchQuery");
@@ -284,7 +290,7 @@
                             for (i = 0; i < tr.length; i++) {
                                 td = tr[i].getElementsByTagName("td")[0];
                                 if (td) {
-                                    txtValue = td.textContent || td.innerText;
+                                    txtValue = td.textContent || UnTitleCase(td.innerText);
                                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                         tr[i].style.display = "";
                                     } else {

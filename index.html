@@ -235,12 +235,6 @@
                     </script>
                 </div>
                 <script>
-                    function titleCase(str) {
-			            return str
-				        .split(' ')
-				        .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
-				        .join(' ');
-		            }
                     fetch('commands.json')
                         .then(function (response) {
                         return response.json();
@@ -267,7 +261,7 @@
                         var att5 = document.createAttribute("class");
                         var att6 = document.createAttribute("id");
 
-                        td.innerHTML = titleCase(data[i].name);
+                        td.innerHTML = data[i].name;
 
                         att.value = data[i].value;
                         att2.value = 'text-box bungee-body-text bungee-centered';

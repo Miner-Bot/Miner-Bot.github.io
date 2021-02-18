@@ -405,6 +405,12 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+hr.divider-page-width-mod {
+  max-width: 80%;
+  border-width: 0.2rem;
+  border-color: #f4623a;
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;

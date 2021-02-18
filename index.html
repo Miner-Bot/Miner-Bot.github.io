@@ -166,63 +166,7 @@
                             </td>
                         </tr>
                     </table> -->
-                    <script>
-                        fetch('./Miner-Bot.github.io/MinerBot/commands.json')
-                            .then(function (response) {
-                            return response.json();
-                        })
-                            .then(function (data) {
-                            appendCommandDetails(data);
-                        })
-                            .catch(function (err) {
-                            console.log(err);
-                        });
-                        function appendCommandDetails(data) {
-                            for (var i = 0; i < data.length; i++) {
-                            var mainContainer = document.getElementById("table-in-here");
-                            var table = document.createElement("table");
-                            var tr = document.createElement("tr");
-                            var td = document.createElement("td");
-                            var hr = document.createElement("hr");
-                            var p = document.createElement("p");
-
-                            var att = document.createAttribute("id");
-                            var att2 = document.createAttribute("class");
-                            var att3 = document.createAttribute("class");
-                            var att4 = document.createAttribute("class");
-                            var att5 = document.createAttribute("class");
-                            var att6 = document.createAttribute("id");
-
-                            td.innerHTML = data[i].name;
-
-                            att.value = data[i].value;
-                            att2.value = 'text-box bungee-body-text bungee-centered';
-                            att3.value = 'divider my-2';
-                            att4.value = 'bungee-small-body-text bungee-centered';
-                            att5.value = 'align-items-center';
-                            att6.value = 'commands-info';
-
-
-                            mainContainer.appendChild(table);
-                            table.setAttributeNode(att5);
-                            table.setAttributeNode(att6);
-                            
-                            table.appendChild(tr);
-                            tr.setAttributeNode(att);
-// —————————————————————————————————————————————————————————————————
-                            tr.appendChild(td);
-                            td.setAttributeNode(att2);
-// —————————————————————————————————————————————————————————————————
-                            td.appendChild(hr);
-                            hr.setAttributeNode(att3);
-// —————————————————————————————————————————————————————————————————
-                            td.appendChild(p);
-                            p.setAttributeNode(att4);
-// —————————————————————————————————————————————————————————————————
-                            p.innerHTML = data[i].description + '<br>' + 'Usage:' + data[i].usage;
-                            }
-                        }
-                        </script>
+                    
                         <script>
                         function LoadCommandDetails() {
                             var mainContainer = document.getElementById("table-in-here");
@@ -290,6 +234,63 @@
                         }
                     </script>
                 </div>
+                <script>
+                    fetch('./Miner-Bot.github.io/MinerBot/commands.json')
+                        .then(function (response) {
+                        return response.json();
+                    })
+                        .then(function (data) {
+                        appendCommandDetails(data);
+                    })
+                        .catch(function (err) {
+                        console.log(err);
+                    });
+                    function appendCommandDetails(data) {
+                        for (var i = 0; i < data.length; i++) {
+                        var mainContainer = document.getElementById("table-in-here");
+                        var table = document.createElement("table");
+                        var tr = document.createElement("tr");
+                        var td = document.createElement("td");
+                        var hr = document.createElement("hr");
+                        var p = document.createElement("p");
+
+                        var att = document.createAttribute("id");
+                        var att2 = document.createAttribute("class");
+                        var att3 = document.createAttribute("class");
+                        var att4 = document.createAttribute("class");
+                        var att5 = document.createAttribute("class");
+                        var att6 = document.createAttribute("id");
+
+                        td.innerHTML = data[i].name;
+
+                        att.value = data[i].value;
+                        att2.value = 'text-box bungee-body-text bungee-centered';
+                        att3.value = 'divider my-2';
+                        att4.value = 'bungee-small-body-text bungee-centered';
+                        att5.value = 'align-items-center';
+                        att6.value = 'commands-info';
+
+
+                        mainContainer.appendChild(table);
+                        table.setAttributeNode(att5);
+                        table.setAttributeNode(att6);
+                        
+                        table.appendChild(tr);
+                        tr.setAttributeNode(att);
+// —————————————————————————————————————————————————————————————————
+                        tr.appendChild(td);
+                        td.setAttributeNode(att2);
+// —————————————————————————————————————————————————————————————————
+                        td.appendChild(hr);
+                        hr.setAttributeNode(att3);
+// —————————————————————————————————————————————————————————————————
+                        td.appendChild(p);
+                        p.setAttributeNode(att4);
+// —————————————————————————————————————————————————————————————————
+                        p.innerHTML = data[i].description + '<br>' + 'Usage:' + data[i].usage;
+                        }
+                    }
+                    </script>
                 <div class="container">
                     <pre><code>Access a more up-to-date list of all of MinerBot's commands by using =help (in Discord).</code></pre>
                 </div>

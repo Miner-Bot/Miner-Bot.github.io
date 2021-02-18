@@ -49,10 +49,11 @@ const btn = document.querySelector('.btn-toggle');
 // Listen for a click on the button
 btn.addEventListener('click', function() {
   var element = document.getElementById("SearchQuery");
+  var element2 = document.getElementById("mainNav");
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
   element.classList.toggle("dark-theme");
-  $("#mainNav").classList.toggle('dark-theme');
+  element2.classList.toggle('dark-theme');
 //  if ($("#mainNav").classList.includes("navbar-dark")) {
 //     $("mainNav").removeClass("navbar-dark").addClass("navbar-light");
 //  } else {

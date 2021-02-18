@@ -231,9 +231,15 @@
                         .catch(function (err) {
                         console.log(err);
                     });
+			
                     function appendData(data) {
-                        var mainContainer = document.getElementById("table-in-here");
+                        const prefix = '=';
+			var mainContainer = document.getElementById("table-in-here");
                         for (var i = 0; i < data.length; i++) {
+			var str = data[i].description + '<br>' + 'Usage:' + ' ' + data[i].usage;
+			if (data[i].usage) {
+				str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + data[i].usage;
+			}
                         var table = document.createElement("table");
                         var tr = document.createElement("tr");
                         var td = document.createElement("td");
@@ -270,7 +276,7 @@
                         td.appendChild(p);
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
-                        p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + data[i].usage;
+                        p.innerHTML = str;
                         }
                     }
                     </script>

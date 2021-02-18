@@ -10065,7 +10065,7 @@ hr.divider {
 }
 
 hr.divider-large {
-  max-width: 4rem;
+  max-width: 150px;
   border-width: 0.2rem;
   border-color: #f4623a;
 }

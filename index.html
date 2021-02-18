@@ -241,8 +241,7 @@
 					let str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + data[i].aliases;
 			} else if (data[i].usage && !data[i].aliases) {
 					let str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
-			} 
-			if (!data[i].usage && data[i].aliases) {
+			} else if (!data[i].usage && data[i].aliases) {
 					let str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + '<br>' + 'Aliases:' + ' ' + data[i].aliases;
 			} else if (!data[i].usage && !data[i].aliases) {
 					let str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;

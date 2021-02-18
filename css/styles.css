@@ -1709,7 +1709,7 @@ pre code {
 #commands-info tr {
   border-bottom: 1px solid #ddd;
 }
-#commands-info p {
+#commands-info tr td p {
   text-align: left !important;
 }
 #SearchQuery {

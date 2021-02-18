@@ -10064,6 +10064,12 @@ hr.divider {
   border-color: #f4623a;
 }
 
+hr.divider-large {
+  max-width: 4rem;
+  border-width: 0.2rem;
+  border-color: #f4623a;
+}
+
 hr.light {
   border-color: #fff;
 }

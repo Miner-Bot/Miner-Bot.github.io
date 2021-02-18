@@ -510,7 +510,7 @@ mark,
   font-size: 18px !important;
 }
 
-#mainNav.navbar-scrolled, .dark-theme {
+#mainNav.navbar-scrolled .dark-theme {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #262626;
 }

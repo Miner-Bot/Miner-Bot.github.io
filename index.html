@@ -289,7 +289,12 @@
                         td.appendChild(p);
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
-                        p.innerHTML = data[i].description + '<br>' + 'Usage:' + data[i].usage;
+                            if (data[i].usage.length = undefined) {
+                                p.innerHTML = data[i].description + '<br>' + 'Usage: ' + 'NA'
+                            }
+                            else if (data[i].usage.length = 1) {
+                            p.innerHTML = data[i].description + '<br>' + 'Usage: ' + data[i].usage;
+                            }
                         }
                     }
                     </script>

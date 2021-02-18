@@ -213,26 +213,6 @@
 
                         }
                     </script>
-                    <script>
-                        function myFunction() {
-                            var input, filter, table, tr, td, i, txtValue;
-                            input = document.getElementById("SearchQuery");
-                            filter = input.value.toUpperCase();
-                            table = document.getElementById("commands-info");
-                            tr = table.getElementsByTagName("tr");
-                            for (i = 0; i < tr.length; i++) {
-                                td = tr[i].getElementsByTagName("td")[0];
-                                if (td) {
-                                    txtValue = td.textContent || td.innerText;
-                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                        tr[i].style.display = "";
-                                    } else {
-                                        tr[i].style.display = "none";
-                                    }
-                                }
-                            }
-                        }
-                    </script>
                 </div>
                 <script>
                     function titleCase(str) {
@@ -267,7 +247,7 @@
                         var att5 = document.createAttribute("class");
                         var att6 = document.createAttribute("id");
 
-                        td.innerHTML = titleCase(data[i].name);
+                        
 
                         att.value = data[i].value;
                         att2.value = 'text-box bungee-body-text bungee-centered';
@@ -285,6 +265,7 @@
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
+			td.innerHTML = titleCase(data[i].name);
                         td.appendChild(hr);
                         td.appendChild(p);
                         hr.setAttributeNode(att3);
@@ -292,6 +273,26 @@
                         p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + data[i].usage;
                         }
                     }
+                    </script>
+		    <script>
+                        function myFunction() {
+                            var input, filter, table, tr, td, i, txtValue;
+                            input = document.getElementById("SearchQuery");
+                            filter = input.value.toUpperCase();
+                            table = document.getElementById("commands-info");
+                            tr = table.getElementsByTagName("tr");
+                            for (i = 0; i < tr.length; i++) {
+                                td = tr[i].getElementsByTagName("td")[0];
+                                if (td) {
+                                    txtValue = td.textContent || td.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].style.display = "";
+                                    } else {
+                                        tr[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        }
                     </script>
                 <div class="container">
                     <pre><code>Access a more up-to-date list of all of MinerBot's commands by using =help (in Discord).</code></pre>

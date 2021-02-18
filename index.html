@@ -238,11 +238,11 @@
 			    for (var i = 0; i < data.length; i++) {
 				    var str;
 				    if (data[i].usage && data[i].aliases) {
-					    str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + data[i].aliases;
+					    str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
 				    } else if (data[i].usage && !data[i].aliases) {
 					    str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
 				    } else if (!data[i].usage && data[i].aliases) {
-					    str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + '<br>' + 'Aliases:' + ' ' + data[i].aliases;
+					    str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
 				    } else if (!data[i].usage && !data[i].aliases) {
 					    str = data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;
 				    }

@@ -240,12 +240,12 @@
                         return response.json();
                     })
                         .then(function (data) {
-                        appendCommandDetails(data);
+                        appendData(data);
                     })
                         .catch(function (err) {
                         console.log(err);
                     });
-                    function appendCommandDetails(data) {
+                    function appendData(data) {
                         var mainContainer = document.getElementById("table-in-here");
                         for (var i = 0; i < data.length; i++) {
                         var table = document.createElement("table");
@@ -277,16 +277,12 @@
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);
-// —————————————————————————————————————————————————————————————————
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
-// —————————————————————————————————————————————————————————————————
                         td.appendChild(hr);
-                        hr.setAttributeNode(att3);
-// —————————————————————————————————————————————————————————————————
                         td.appendChild(p);
+                        hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
-// —————————————————————————————————————————————————————————————————
                         p.innerHTML = data[i].description + '<br>' + 'Usage:' + data[i].usage;
                         }
                     }

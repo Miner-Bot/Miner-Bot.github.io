@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -166,7 +166,6 @@
                             </td>
                         </tr>
                     </table> -->
-                        <a class="btn btn-primary btn-xl" onclick="LoadCommandDetails()">View</a>
                     <script>
                         fetch('./Miner-Bot.github.io/MinerBot/commands.json')
                             .then(function (response) {
@@ -178,18 +177,6 @@
                             .catch(function (err) {
                             console.log(err);
                         });
-                        function appendData(data) {
-                            var mainContainer = document.getElementById("selected");
-                                var table = document.getElementById("commands-info");
-                                var att = document.createAttribute("value");
-                                var att2 = document.createAttribute("label");
-                                table.innerHTML = data[i].number;
-                                att.value = data[i].name;
-                                att2.value = 'Description: ' + data[i].description;
-                                mainContainer.appendChild(table);
-                                table.setAttributeNode(att);
-                                table.setAttributeNode(att2);
-                        }
                         function appendCommandDetails(data) {
                             for (var i = 0; i < data.length; i++) {
                             var mainContainer = document.getElementById("table-in-here");
@@ -235,7 +222,8 @@
                             p.innerHTML = data[i].description + '<br>' + 'Usage:' + data[i].usage;
                             }
                         }
-                        
+                        </script>
+                        <script>
                         function LoadCommandDetails() {
                             var mainContainer = document.getElementById("table-in-here");
                             var table = document.createElement("table");

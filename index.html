@@ -292,7 +292,9 @@
                         p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + data[i].usage;
 			    if (data[i].usage = undefined) {
                                 p.innerHTML = data[i].description + '<br>' + 'Usage:' + ' ' + 'NA'
-                            }
+                            } else {
+				return;
+			    }
                         }
                     }
                     </script>

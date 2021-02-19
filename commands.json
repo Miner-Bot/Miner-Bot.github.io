@@ -12,7 +12,7 @@
     },
     {
         "name": "disconnect",
-        "description": "Find out what my ping is at.",
+        "description": "Ask me, nicely, to leave your voice channel.",
         "aliases": [
             "leave"
         ],
@@ -41,7 +41,7 @@
     },
     {
         "name": "join",
-        "description": "Find out what my ping is at.",
+        "description": "Ask me to join your voice channel (that you are currently in).",
         "cooldown": 5
     },
     {
@@ -89,7 +89,7 @@
     },
     {
         "name": "testing",
-        "description": "Get the stats."
+        "description": "TESTING 123"
     },
     {
         "name": "usage",

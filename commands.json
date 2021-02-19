@@ -1,5 +1,9 @@
 [
     {
+        "name": "announcement",
+        "description": "Used when I need to announce something!"
+    },
+    {
         "name": "credits",
         "description": "You might be wondering, \"Who made this...?\" Well, here's your answer.",
         "aliases": [

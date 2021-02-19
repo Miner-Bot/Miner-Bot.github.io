@@ -2520,15 +2520,16 @@ fieldset:disabled a.btn {
 }
 
 .btn-toggle {
+  border-radius: 0.1rem;
   pointer-events: auto;
-  border: 2px solid white !important;
-  outline: 1px solid rgba(255,255,255,.9) !important;
+  border: 2px solid rgba(33,37,41,.7) !important;
+  outline: .5px solid rgba(89,92,99,.4) !important;
   transition: all .7s !important;
 }
 
 .btn-toggle:hover {
   text-shadow: 0 0 20px rgba(255,255,255,1) !important;
-  box-shadow: inset 0 0 20px rgba(255,255,255,.7), 0 0 20px rgba(255,255,255,0.8) !important;
+  box-shadow: inset 0 0 20px rgba(255,255,255,.2), 0 0 20px rgba(255,255,255,.3) !important;
   outline-color: rgba(255,255,255,0) !important;
   outline-offset: 15px !important;
 }

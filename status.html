@@ -41,7 +41,8 @@
                 </div>
             </div>
         </nav>
-	<section class="page-section bg-primary" id="status">
+	<!-- Status -->
+	    <section class="page-section bg-primary" id="status">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center" id="bot-status">
@@ -49,6 +50,64 @@
                     </div>
                 </div>
             </div>
+		    <script>
+			    fetch('status.json')
+				    .then(function (response) {
+				    return response.json();
+			    })
+				    .then(function (data) {
+				    appendData(data);
+			    })
+				    .catch(function (err) {
+				    console.log(err);
+			    });
+			    function appendData(data) {
+			    for (var i = 0; i < data.length; i++) {
+				    var mainContainer = document.getElementById("bot-status");
+				    var table = document.createElement("table");
+				    var tr = document.createElement("tr");
+				    var td = document.createElement("td");
+				    var td2 = document.createElement("td");
+				    var td3 = document.createElement("td");
+
+				    var att = document.createAttribute("id");
+				    var att1 = document.createAttribute("class")
+				    var att2 = document.createAttribute("class");
+				    var att3 = document.createAttribute("class");
+				    var att5 = document.createAttribute("class");
+				    var att6 = document.createAttribute("id");
+				    var att7 = document.createAttribute("class");
+
+
+				    att.value = 'status-table';
+				    att2.value = 'text-box bungee-body-text';
+				    att1.value = 'row-cols-3';
+				    att3.value = 'bungee-body-text';
+				    att5.value = 'align-items-center';
+				    att6.value = 'status';
+				    att7.value = 'bungee-body-text
+
+				    mainContainer.appendChild(table);
+				    table.setAttributeNode(att5);
+				    table.setAttributeNode(att6);
+                        
+				    table.appendChild(tr);
+				    tr.setAttributeNode(att);
+				    tr.setAttributeNode(att1);
+				    tr.appendChild(td);
+				    tr.appendChild(td2);
+				    tr.appendChild(td3);
+				    td.setAttributeNode(att2);
+				    td2.setAttributeNode(att3);
+				    td3.setAttributeNode(att7);
+
+
+				    td.innerHTML = data[i].timestamp;
+				    td2.innerHTML = data[i].status;
+				    td3.innerhtml = data[i].uptime;
+                        }
+			    }
+		    </script>
         </section>
 	    <footer class="bg-light py-5">
             <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2021  IcicleSavage</div></div>

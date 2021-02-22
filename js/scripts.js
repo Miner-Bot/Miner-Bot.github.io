@@ -55,6 +55,7 @@ btn.addEventListener('click', function() {
   document.body.classList.toggle('dark-theme');
   element.classList.toggle("dark-theme");
   element2.classList.toggle("dark-nav-theme");
+  
 //  if ($("#mainNav").classList.includes("navbar-dark")) {
 //     $("mainNav").removeClass("navbar-dark").addClass("navbar-light");
 //  } else {

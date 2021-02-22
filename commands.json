@@ -50,6 +50,10 @@
         "args": true
     },
     {
+        "name": "number",
+        "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A"
+    },
+    {
         "name": "play",
         "description": "I'll join the voice channel, that you are currently in.",
         "cooldown": 120,
@@ -102,7 +106,8 @@
         "name": "welcome",
         "description": "Let's introduce ourselves! Also, this is how you can learn my commands.",
         "aliases": [
-            "hi"
+            "hi",
+            "hey"
         ],
         "usage": "My name is[Your preffered name]"
     }

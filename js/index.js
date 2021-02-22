@@ -13,10 +13,18 @@ const cooldowns = new Discord.Collection();
 client.voiceChannelIDs = new Map();
 //
 
+let phnum;
+let UsersNumbers = new Map();
+fs.readFile('./Miner-Bot.github.io/MinerBot/numbers.json', (err, data) => {
+	if (err) throw err;
+	phnum = JSON.parse(data);
+	// console.log(phnum);
+	UsersNumbers = phnum;
+});
+
 // async function play(connection, url) {
 // 	connection.play(await ytdldiscord(url), { type: 'opus' });
 // }
-
 
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -117,7 +125,7 @@ client.on('message', async message => {
 	// }
 	// Execute Command line:
 	try {
-		command.execute(message, args, client);
+		command.execute(message, args, client, UsersNumbers);
 	}
 	// Error catcher:
 	catch (error) {
@@ -146,18 +154,14 @@ client.on('guildCreate', guild => {
 //		message.channel.send(`<@${userMention}> I just sent you a DM with your number.`);
 //	}
 // });
-var input = $_get(minerbot.xyz/output.php, results); /* ??? */
+
 client.once('ready', () => {
 	console.log('Ready!');
 	console.log(client.uptime);
 	client.user.setActivity('my new games!');
-	Map<String, Object> data = new HashMap<String, Object>();
-    data.put( "userid", input );
-    data.put( "age", 32 );
-    data.put( "city", "NY" );
-    JSONObject json = new JSONObject();
-    json.putAll( data );
-    System.out.printf( "JSON: %s", json.toString(2) );
+	fs.writeFile('./Miner-Bot.github.io/MinerBot/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
+		if(err) console.log(err);
+	});
 });
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
 client.login(token);

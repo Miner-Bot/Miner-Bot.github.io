@@ -73,11 +73,11 @@
 			    function appendData(data) {
 			    for (var i = 0; i < data.length; i++) {
 				    var mainContainer = document.getElementById("bot-status");
-				    var table = document.createElement("table");
-				    var tr = document.createElement("tr");
-				    var td = document.createElement("td");
-				    var td2 = document.createElement("td");
-				    var td3 = document.createElement("td");
+				    var table = document.createElement("div");
+				    var tr = document.createElement("div");
+				    var td = document.createElement("div");
+				    var td2 = document.createElement("div");
+				    var td3 = document.createElement("div");
 
 				    var att = document.createAttribute("id");
 				    var att1 = document.createAttribute("class")
@@ -92,7 +92,7 @@
 				    att2.value = 'col-4 text-box bungee-body-text';
 				    att1.value = 'row';
 				    att3.value = 'col-4 bungee-body-text';
-				    att5.value = 'align-items-center';
+				    att5.value = 'row';
 				    att6.value = 'status';
 				    att7.value = 'col-4 bungee-body-text';
 

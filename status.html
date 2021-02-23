@@ -118,8 +118,6 @@
                         }
 			    }
 			    function readStatus() {
-				    location.reload();
-				    //return false;
 				    let status;
 				    status = {
 					    "timestamp": "2/1/2000",
@@ -135,6 +133,8 @@
 				    } else if (status.status = false) {
 					    mainContainer.innerHTML = 'offline' + status.timestamp + '<br>' + status.uptime;
 				    }
+				    location.reload();
+				    //return false;
 			    }
 		    </script>
         </section>

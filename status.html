@@ -50,10 +50,11 @@
                     </div>
                 </div>
             </div>
-	    </header>n
+	    </header>
 	    <section class="page-section" id="status">
             <div class="container">
                 <div class="row justify-content-center">
+			<button onclick="readStatus()"> Status </button>
                     <div class="text-center" id="bot-status">
                         
                     </div>
@@ -115,6 +116,25 @@
 				    td2.innerHTML = data[i].status;
 				    td3.innerhtml = data[i].uptime;
                         }
+			    }
+			    function readStatus() {
+				    let status;
+				    status = {
+					    "timestamp": "2/1/2000",
+					    "status": "Offline",
+					    "uptime": 50
+				    };
+				    // status = JSON.parse(fs.readFileSync("./warns.json", "utf8"))
+				    status.timestamp = "2/23/2021 at 3:20 AM";
+				    status.status = false;
+				    var mainContainer = document.getElementById("bot-status");
+				    if (status.status = true) {
+				    mainContainer.innerHTML = 'online' + status.timestamp + '<br>' + status.uptime + '<br>' + status.status;
+				    } else if (status.status = false) {
+					    mainContainer.innerHTML = 'offline' + status.timestamp + '<br>' + status.uptime;
+				    }
+				    location.reload();
+				    return false;
 			    }
 		    </script>
         </section>

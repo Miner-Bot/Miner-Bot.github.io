@@ -126,11 +126,11 @@
 				    var mainContainer = document.getElementById("bot-status");
 				    let online;
 				    online = status.status;
-				    if (online.value = '1') {
-				    mainContainer.innerHTML = 'online' + status;
+				    if (online = 1) {
+				    mainContainer.innerHTML = 'online' + status.timestamp + '<br>' + status.uptime;
 				    }
-				    else if (online.value = '0') {
-					    mainContainer.innerHTML = 'offline' + status;
+				    else if (online = 0) {
+					    mainContainer.innerHTML = 'offline' + status.timestamp + '<br>' + status.uptime;
 				    }
 			    }
 		    </script>

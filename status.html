@@ -119,7 +119,11 @@
 			    }
 			    function readStatus() {
 				    let status;
-				    status = { "timestamp":"2/1/2000", "status":"Offline", "uptime":50 };
+				    status = {
+					    "timestamp": "2/1/2000",
+					    "status": "Offline",
+					    "uptime": 50
+				    };
 				    // status = JSON.parse(fs.readFileSync("./warns.json", "utf8"))
 				    status.timestamp = "2/23/2021 at 3:20 AM";
 				    status.status = 0;

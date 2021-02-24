@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const logo = require('C:/Users/mjsey/OneDrive/Jakey/logo.js');
 module.exports = {
 	name: 'credits',
 	description: 'You might be wondering, "Who made this...?" Well, here\'s your answer.',

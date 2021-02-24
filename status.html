@@ -75,6 +75,18 @@
 				    console.log(err);
 			    });
 			    function appendData(data) {
+var mainContainer = document.getElementById("statustable");
+				    for (var i = 0; i < data.length; i++) {
+					    mainContainer.innerHTML = data[i].timestamp;
+					    var tr = document.createElement("tr");
+					    var td = document.createElement("td");
+					    mainContainer.appendChild(tr);
+					    tr.appendChild(td);
+					    td.innerHTML = data[i].timestamp + ' ' + data[i].status;
+				    }
+			    }
+			    }
+			    function readStatus() {
 			    let status;
 				    status = data;
 				    var mainContainer = document.getElementById("bot-status");
@@ -117,28 +129,9 @@
 				    td2.innerHTML = data[i].status;
                         }
 			    }
-			    function readStatus() {
-				    			    fetch('status.json')
-				    .then(function (response) {
-				    return response.json();
-			    })
-				    .then(function (data) {
-				    appendData2(data);
-			    })
-				    .catch(function (err) {
-				    console.log(err);
-			    });
+			    
 			    function appendData2(data) {
-				    var mainContainer = document.getElementById("statustable");
-				    for (var i = 0; i < data.length; i++) {
-					    mainContainer.innerHTML = data[i].timestamp;
-					    var tr = document.createElement("tr");
-					    var td = document.createElement("td");
-					    mainContainer.appendChild(tr);
-					    tr.appendChild(td);
-					    td.innerHTML = data[i].timestamp + ' ' + data[i].status;
-				    }
-			    }
+				    
 			    }
 		    </script>
         </section>

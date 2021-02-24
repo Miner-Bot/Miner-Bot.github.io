@@ -1,5 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const { Octokit } = require("@octokit/core");
+// or: import { Octokit } from "@octokit/core";
 const { prefix, token } = octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
   owner: 'Miner-Bot',
   repo: 'MinerBot',

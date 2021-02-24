@@ -19,9 +19,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
+      env:
+        token: ${{ secrets.CONFIG }}
+        prefix: ${{ secrets.CONFIG_PREFIX }}
       with:
         node-version: '14.x'
     - run: npm install discord.js
     - run: node index.js
+    
     - run: npm run build --if-present
     - run: npm test

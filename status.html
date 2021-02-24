@@ -115,18 +115,23 @@
                         }
 			    }
 			    function readStatus() {
-				    let status, obj;
-				    status = {
-					    "timestamp": "2/1/2000",
-					    "status": "Offline",
-					    "uptime": 50
-				    };
-					fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
-						if (err) throw err;
-				    	
-					});
-				    /* location.reload();
-				    return false; */
+				    			    fetch('status.json')
+				    .then(function (response) {
+				    return response.json();
+			    })
+				    .then(function (data) {
+				    appendData2(data);
+			    })
+				    .catch(function (err) {
+				    console.log(err);
+			    });
+			    function appendData2(data) {
+				    var mainContainer = document.getElementById("bot-status");
+				    for (var i = 0; i < data.length; i++) {
+					    mainContainer.innerHTML = data[i].timestamp;
+
+				    }
+			    }
 			    }
 		    </script>
         </section>

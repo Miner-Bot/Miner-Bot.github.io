@@ -56,6 +56,9 @@
                 <div class="row justify-content-center">
 			<button onclick="readStatus()"> Status </button>
                     <div class="text-center" id="bot-status">
+			    <table id="statustable">
+
+			    </table>
                         
                     </div>
                 </div>
@@ -77,7 +80,7 @@
 				    var mainContainer = document.getElementById("bot-status");
 				    mainContainer.innerHTML = status.timestamp;
 				    for (var i = 0; i < data.length; i++) {
-				    var table = document.createElement("div");
+				    var table = document.createElement("table");
 				    var tr = document.createElement("tr");
 				    var td = document.createElement("td");
 				    var td2 = document.createElement("td");
@@ -126,10 +129,14 @@
 				    console.log(err);
 			    });
 			    function appendData2(data) {
-				    var mainContainer = document.getElementById("bot-status");
+				    var mainContainer = document.getElementById("statustable");
 				    for (var i = 0; i < data.length; i++) {
 					    mainContainer.innerHTML = data[i].timestamp;
-
+					    var tr = document.createElement("tr");
+					    var td = document.createElement("td");
+					    mainContainer.appendChild(tr);
+					    tr.appendChild(td);
+					    td.innerHTML = data[i].timestamp + ' ' + data[i].status;
 				    }
 			    }
 			    }

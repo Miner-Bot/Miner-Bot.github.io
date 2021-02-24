@@ -72,8 +72,11 @@
 				    console.log(err);
 			    });
 			    function appendData(data) {
-			    for (var i = 0; i < data.length; i++) {
+			    let status;
+				    status = JSON.parse(data);
 				    var mainContainer = document.getElementById("bot-status");
+				    mainContainer.innerHTML = status.timestamp;
+				    for (var i = 0; i < data.length; i++) {
 				    var table = document.createElement("div");
 				    var tr = document.createElement("tr");
 				    var td = document.createElement("td");
@@ -122,10 +125,7 @@
 				    };
 					fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
 						if (err) throw err;
-				    	status = JSON.parse(data);
-						obj = JSON.stringify(status);
-				    	var mainContainer = document.getElementById("bot-status");
-				    	mainContainer.innerHTML = status.timestamp;
+				    	
 					});
 				    /* location.reload();
 				    return false; */

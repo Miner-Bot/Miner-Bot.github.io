@@ -73,7 +73,7 @@
 			    });
 			    function appendData(data) {
 			    let status;
-				    status = JSON.parse(data);
+				    status = data;
 				    var mainContainer = document.getElementById("bot-status");
 				    mainContainer.innerHTML = status.timestamp;
 				    for (var i = 0; i < data.length; i++) {
@@ -96,7 +96,6 @@
 				    att3.value = 'col-4 bungee-body-text';
 				    att5.value = 'row';
 				    att6.value = 'status';
-				    att7.value = 'col-4 bungee-body-text';
 
 				    mainContainer.appendChild(table);
 				    table.setAttributeNode(att5);
@@ -107,7 +106,6 @@
 				    tr.setAttributeNode(att1);
 				    tr.appendChild(td);
 				    tr.appendChild(td2);
-				    tr.appendChild(td3);
 				    td.setAttributeNode(att2);
 				    td2.setAttributeNode(att3);
 

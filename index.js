@@ -1,9 +1,12 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const Octokit = require("@octokit/core");
-const octokit = new Octokit({ auth: `3e5725c6f8436e78e2db44f43d302e41f7436663` });
+import { Octokit } from "@octokit/core";
 
-const response = octokit.request("GET /repos/{owner}/{repo}/actions/secrets/{secret_name}", {
+const octokit = new Octokit({
+  auth: "3e5725c6f8436e78e2db44f43d302e41f7436663",
+});
+
+const { response } = octokit.request("GET /repos/{owner}/{repo}/actions/secrets/{secret_name}", {
   owner: 'Miner-Bot',
   repo: 'MinerBot',
   secret_name: 'CONFIG'

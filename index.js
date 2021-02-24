@@ -10,7 +10,8 @@ const { response } = octokit.request("GET /repos/{owner}/{repo}/actions/secrets/
   repo: 'MinerBot',
   secret_name: 'CONFIG'
 });// or: import { Octokit } from "@octokit/core";
-const { prefix, token } = response;
+const token = response;
+const prefix = '=';
 // const ytdl = require('ytdl-core');
 // const ytdldiscord = require('ytdl-core-discord');
 

@@ -75,10 +75,9 @@
 			    for (var i = 0; i < data.length; i++) {
 				    var mainContainer = document.getElementById("bot-status");
 				    var table = document.createElement("div");
-				    var tr = document.createElement("div");
-				    var td = document.createElement("div");
-				    var td2 = document.createElement("div");
-				    var td3 = document.createElement("div");
+				    var tr = document.createElement("tr");
+				    var td = document.createElement("td");
+				    var td2 = document.createElement("td");
 
 				    var att = document.createAttribute("id");
 				    var att1 = document.createAttribute("class")
@@ -86,7 +85,6 @@
 				    var att3 = document.createAttribute("class");
 				    var att5 = document.createAttribute("class");
 				    var att6 = document.createAttribute("id");
-				    var att7 = document.createAttribute("class");
 
 
 				    att.value = 'status-table';
@@ -109,12 +107,10 @@
 				    tr.appendChild(td3);
 				    td.setAttributeNode(att2);
 				    td2.setAttributeNode(att3);
-				    td3.setAttributeNode(att7);
 
 
 				    td.innerHTML = data[i].timestamp;
 				    td2.innerHTML = data[i].status;
-				    td3.innerhtml = data[i].uptime;
                         }
 			    }
 			    function readStatus() {
@@ -124,9 +120,7 @@
 					    "status": "Offline",
 					    "uptime": 50
 				    };
-				    // status = JSON.parse(fs.readFileSync("./warns.json", "utf8"))
-				    status.timestamp = "2/23/2021 at 3:20 AM";
-				    status.status = false;
+				    status = JSON.parse(fs.readFileSync("./status.json", "utf8"))
 				    var mainContainer = document.getElementById("bot-status");
 				    if (status.status = true) {
 				    mainContainer.innerHTML = 'online' + status.timestamp + '<br>' + status.uptime + '<br>' + status.status;

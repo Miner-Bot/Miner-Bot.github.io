@@ -1,6 +1,10 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = require('.//config.json');
+const { prefix, token } = await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+  owner: 'Miner-Bot',
+  repo: 'MinerBot',
+  secret_name: 'CONFIG'
+});
 // const ytdl = require('ytdl-core');
 // const ytdldiscord = require('ytdl-core-discord');
 

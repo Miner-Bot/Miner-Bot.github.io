@@ -1,12 +1,14 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const Octokit = require("@octokit/core");
-// or: import { Octokit } from "@octokit/core";
-const { prefix, token } = Octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+const octokit = require("@octokit/core");
+const octokit = new Octokit({ auth: `3e5725c6f8436e78e2db44f43d302e41f7436663` });
+
+const response = await octokit.request("GET /repos/{owner}/{repo}/actions/secrets/{secret_name}", {
   owner: 'Miner-Bot',
   repo: 'MinerBot',
   secret_name: 'CONFIG'
-});
+});// or: import { Octokit } from "@octokit/core";
+const { prefix, token } = response;
 // const ytdl = require('ytdl-core');
 // const ytdldiscord = require('ytdl-core-discord');
 

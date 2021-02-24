@@ -4,6 +4,5 @@ module.exports = {
 	description: '||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A',
 	execute(message) {
 	 message.channel.send('Err');
-		}
 	},
 };

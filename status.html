@@ -120,9 +120,13 @@
 					    "status": "Offline",
 					    "uptime": 50
 				    };
-				    status = JSON.parse(fs.readFileSync("./status.json", "utf8"));
-				    var mainContainer = document.getElementById("bot-status");
-				    mainContainer.innerHTML = 'online' + status.timestamp + '<br>' + '<br>' + status.status;
+					fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
+						if (err) throw err;
+				    	status = JSON.parse(data);
+						obj = JSON.stringify(status);
+				    	var mainContainer = document.getElementById("bot-status");
+				    	mainContainer.innerHTML = obj.timestamp;
+					});
 				    /* location.reload();
 				    return false; */
 			    }

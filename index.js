@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+const { prefix, token } = octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
   owner: 'Miner-Bot',
   repo: 'MinerBot',
   secret_name: 'CONFIG'

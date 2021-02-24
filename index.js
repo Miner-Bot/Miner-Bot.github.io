@@ -165,17 +165,18 @@ client.once('ready', () => {
 	fs.writeFile('./Miner-Bot.github.io/MinerBot/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
 		if(err) console.log(err);
 	});
+	const timestampData = client.readyAt;
+	const statusjson = { 'timestamp': timestampData, 'status': client.user.presence.status };
 	fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
 		if (err) throw err;
 		let obj = JSON.parse(data);
-		obj = [obj, statusjson];
+		obj = obj + statusjson;
 		const jsonEdited = JSON.stringify(obj);
 		fs.writeFile('./Miner-Bot.github.io/MinerBot/status.json', jsonEdited, '', err => {
 			if(err) console.log(err);
 		});
 	});
-	const timestampData = client.readyAt;
-	const statusjson = { 'timestamp': timestampData, 'status': client.user.presence.status };
+
 });
 
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));

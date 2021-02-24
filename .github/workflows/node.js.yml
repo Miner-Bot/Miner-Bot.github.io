@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: '14.x'
     - run: npm install discord.js
+    - run: npm install @octokit/core
     - run: node index.js
     
     - run: npm run build --if-present

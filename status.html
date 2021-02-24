@@ -120,13 +120,9 @@
 					    "status": "Offline",
 					    "uptime": 50
 				    };
-				    status = JSON.parse(fs.readFileSync("./status.json", "utf8"))
+				    status = JSON.parse(fs.readFileSync("./status.json", "utf8"));
 				    var mainContainer = document.getElementById("bot-status");
-				    if (status.status = true) {
-				    mainContainer.innerHTML = 'online' + status.timestamp + '<br>' + status.uptime + '<br>' + status.status;
-				    } else if (status.status = false) {
-					    mainContainer.innerHTML = 'offline' + status.timestamp + '<br>' + status.uptime;
-				    }
+				    mainContainer.innerHTML = 'online' + status.timestamp + '<br>' + '<br>' + status.status;
 				    /* location.reload();
 				    return false; */
 			    }

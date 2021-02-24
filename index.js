@@ -147,7 +147,7 @@ client.on('message', async message => {
 		message.reply('There was an error trying to execute that command!');
 	}
 });
-const commandFiles = fs.readdirSync('MinerBot/MinerBot/commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const command = require(`D:/a/MinerBot/MinerBot/commands/${file}`);

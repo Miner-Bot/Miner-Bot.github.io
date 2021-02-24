@@ -77,14 +77,13 @@
 			    function appendData(data) {
 				    var mainContainer = document.getElementById("statustable");
 				    for (var i = 0; i < data.length; i++) {
-					    mainContainer.innerHTML = data[i].timestamp;
+					    var mainContainer = document.getElementById("statustable");
 					    var tr = document.createElement("tr");
 					    var td = document.createElement("td");
 					    mainContainer.appendChild(tr);
 					    tr.appendChild(td);
 					    td.innerHTML = data[i].timestamp + ' ' + data[i].status;
 				    }
-			    }
 			    }
 			    function readStatus() {
 			    let status;

@@ -2,7 +2,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({
-  auth: "3e5725c6f8436e78e2db44f43d302e41f7436663",
+  auth: "a19ad6254875f32661ff9207b74d84cec0197755",
 });
 
 const { response } = octokit.request("GET /orgs/{org}/actions/secrets/{secret_name}", {

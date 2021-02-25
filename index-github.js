@@ -5,10 +5,11 @@ const octokit = new Octokit({
   auth: "a19ad6254875f32661ff9207b74d84cec0197755",
 });
 
-const { response } = octokit.request("GET /orgs/{org}/actions/secrets/{secret_name}", {
+const { response } = octokit.request('GET /orgs/{org}/actions/secrets/{secret_name}', {
   org: 'Miner-Bot',
   secret_name: 'CONFIG'
-});// or: import { Octokit } from "@octokit/core";
+});
+// or: import { Octokit } from "@octokit/core";
 const token = octokit.response;
 const prefix = '=';
 // const ytdl = require('ytdl-core');

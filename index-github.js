@@ -5,9 +5,8 @@ const octokit = new Octokit({
   auth: "3e5725c6f8436e78e2db44f43d302e41f7436663",
 });
 
-const { response } = octokit.request("GET /organizations/{orgs}/repos/{repo}/codespaces/secrets/{secret_name}", {
+const { response } = octokit.request("GET /orgs/{org}/actions/secrets/{secret_name}", {
   orgs: 'Miner-Bot',
-  repo: 'MinerBot',
   secret_name: 'CONFIG'
 });// or: import { Octokit } from "@octokit/core";
 const token = octokit.response;

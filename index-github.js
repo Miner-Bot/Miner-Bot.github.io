@@ -29,7 +29,7 @@ client.voiceChannelIDs = new Map();
 
 let phnum;
 let UsersNumbers = new Map();
-fs.readFile('./Miner-Bot.github.io/MinerBot/numbers.json', (err, data) => {
+fs.readFile('/numbers.json', (err, data) => {
 	if (err) throw err;
 	phnum = JSON.parse(data);
 	// console.log(phnum);

@@ -6,7 +6,7 @@ const octokit = new Octokit({
 });
 
 const { response } = octokit.request("GET /orgs/{org}/actions/secrets/{secret_name}", {
-  orgs: 'Miner-Bot',
+  org: 'Miner-Bot',
   secret_name: 'CONFIG'
 });// or: import { Octokit } from "@octokit/core";
 const token = octokit.response;

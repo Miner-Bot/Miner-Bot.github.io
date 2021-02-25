@@ -27,15 +27,15 @@ const cooldowns = new Discord.Collection();
 client.voiceChannelIDs = new Map();
 //
 
-let phnum;
-let UsersNumbers = new Map();
-fs.readFile('./numbers.json', (err, data) => {
+// let phnum;
+// let UsersNumbers = new Map();
+/* fs.readFile('./numbers.json', (err, data) => {
 	if (err) throw err;
 	phnum = JSON.parse(data);
 	// console.log(phnum);
 	UsersNumbers = phnum;
 });
-
+*/
 // async function play(connection, url) {
 // 	connection.play(await ytdldiscord(url), { type: 'opus' });
 // }

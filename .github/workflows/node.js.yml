@@ -19,14 +19,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
-      env:
-        access_token: ${{ secrets.CONFIG }}
-        prefix: ${{ secrets.CONFIG_PREFIX }}
       with:
         node-version: '14.x'
     - run: npm install discord.js
-    - run: npm install @octokit/core
-    - run: TOKEN=NzY3MDU1MTQyNTQ0NjA1MTk0.X4sVxQ.-hZFYX-cd2Qu0-T3lwxuwqWUtLM node index-github.js
+    - run: node index-github.js
+
     
     - run: npm run build --if-present
     - run: npm test

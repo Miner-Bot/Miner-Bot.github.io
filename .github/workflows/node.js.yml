@@ -22,6 +22,7 @@ jobs:
       with:
         node-version: '14.x'
     - run: npm install discord.js
+    - run: npm install dotenv
     - run: node index-github.js
 
     

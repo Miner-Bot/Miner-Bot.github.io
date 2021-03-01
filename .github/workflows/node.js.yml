@@ -25,6 +25,3 @@ jobs:
     - run: node index-github.js
     - name: The job has succeeded
     if: ${{ success() }}
-    
-    - run: npm run build --if-present
-    - run: npm test

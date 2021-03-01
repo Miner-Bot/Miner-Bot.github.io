@@ -23,5 +23,5 @@ jobs:
         node-version: '14.x'
     - run: npm install discord.js
     - name: MinerBot
+      if: ${{ success() }}
     - run: node index-github.js
-    if: ${{ success() }}

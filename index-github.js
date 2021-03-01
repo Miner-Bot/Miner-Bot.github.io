@@ -162,17 +162,17 @@ client.once('ready', () => {
 	console.log('Ready!');
 	console.log(client.uptime);
 	client.user.setActivity('my new games!');
-	fs.writeFile('D:/a/MinerBot/Miner-Bot.github.io/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
+	fs.writeFile('https://github.com/Miner-Bot/MinerBot/blob/Miner-Bot.github.io/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
 		if(err) console.log(err);
 	});
 	const timestampData = client.readyAt;
 	const statusjson = { 'timestamp': timestampData, 'status': client.user.presence.status };
-	fs.readFile('D:/a/MinerBot/Miner-Bot.github.io/status.json', (err, data) => {
+	fs.readFile('https://github.com/Miner-Bot/MinerBot/blob/Miner-Bot.github.io/status.json', (err, data) => {
 		if (err) throw err;
 		let obj = JSON.parse(data);
 		obj = obj + statusjson;
 		const jsonEdited = JSON.stringify(obj);
-		fs.writeFile('D:/a/MinerBot/Miner-Bot.github.io/status.json', jsonEdited, '', err => {
+		fs.writeFile('https://github.com/Miner-Bot/MinerBot/blob/Miner-Bot.github.io/status.json', jsonEdited, '', err => {
 			if(err) console.log(err);
 		});
 	});

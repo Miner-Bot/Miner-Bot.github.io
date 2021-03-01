@@ -128,7 +128,7 @@ client.on('message', async message => {
 	// }
 	// Execute Command line:
 	try {
-		command.execute(message, args, client, UsersNumbers);
+		command.execute(message, args, client);
 	}
 	// Error catcher:
 	catch (error) {

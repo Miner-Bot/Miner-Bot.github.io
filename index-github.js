@@ -180,4 +180,4 @@ client.once('ready', () => {
 });
 
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
-client.login(process.env.TOKEN);
+client.login(token);

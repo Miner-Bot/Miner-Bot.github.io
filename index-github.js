@@ -1,9 +1,10 @@
+const core = require('@actions/core');
+const github = require('@actions/github');
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('D:/a/MinerBot/MinerBot/config.json');
 // const ytdl = require('ytdl-core');
 // const ytdldiscord = require('ytdl-core-discord');
-
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -133,6 +134,7 @@ client.on('message', async message => {
 	// Error catcher:
 	catch (error) {
 		console.error(error);
+		core.setFailed(`Action failed with error ${error}`);
 		message.reply('There was an error trying to execute that command!');
 	}
 });
@@ -162,6 +164,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 	console.log(client.uptime);
 	client.user.setActivity('my new games!');
+	core.saveState("Up", 1);
 	fs.writeFile('commands.json', JSON.stringify(client.commands, null, 4), '', err => {
 		if(err) console.log(err);
 	});

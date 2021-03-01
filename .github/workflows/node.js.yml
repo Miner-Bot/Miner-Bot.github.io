@@ -20,9 +20,8 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
+        node-version: '14.x'        
     - run: npm install discord.js
-    - run: npm install dotenv
     - run: node index-github.js
 
     

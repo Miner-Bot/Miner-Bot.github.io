@@ -5,4 +5,13 @@ workflows:
   node-tests:
     jobs:
       - node/test
-      context: Token
+      - build:
+          context: Token
+
+jobs:
+  build:
+    steps:
+      - run:
+          name: "token"
+          command: |
+            echo $CONFIG

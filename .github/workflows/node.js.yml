@@ -8,7 +8,7 @@ on:
     # Sequence of patterns matched against refs/heads
     branches-ignore:
       # Push events to branches matching refs/heads/mona/octocat
-      - 'MinerBot'
+      - 'Miner-Bot/MinerBot'
       - 'Miner-Bot/Miner-bot.github.io'
 
 jobs:

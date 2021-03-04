@@ -49,21 +49,16 @@ const btn = document.querySelector('.btn-toggle');
 // Listen for a click on the button
 btn.addEventListener('click', function() {
   var element = document.getElementById("SearchQuery");
+   element.classList.toggle("dark-theme");
    var element2 = document.getElementById("MainNav");
    var footer = document.getElementById("footer");
-
-  // Then toggle (add/remove) the .dark-theme class to the body
-  document.body.classList.toggle('dark-theme');
-  element.classList.toggle("dark-theme");
-  element2.classList.toggle("dark-nav-theme");
    footer.classList.remove('bg-light');
    footer.classList.add('bg-dark');
 
-//  if ($("#mainNav").classList.includes("navbar-dark")) {
-//     $("mainNav").removeClass("navbar-dark").addClass("navbar-light");
-//  } else {
-//     $("mainNav").removeClass("navbar-light").addClass("navbar-dark");
-//  };
+  // Then toggle (add/remove) the .dark-theme class to the body
+  document.body.classList.toggle('dark-theme');
+  element2.classList.toggle("dark-nav-theme");
+
 })
   // Magnific popup calls
   $('#portfolio').magnificPopup({

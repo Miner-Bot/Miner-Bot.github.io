@@ -52,8 +52,7 @@ btn.addEventListener('click', function() {
    element.classList.toggle("dark-theme");
    var element2 = document.getElementById("MainNav");
    var footer = document.getElementById("footer");
-   footer.classList.remove('bg-light');
-   footer.classList.add('bg-dark');
+   footer.classList.toggle('dark-theme');
 
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');

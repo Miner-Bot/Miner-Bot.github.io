@@ -57,7 +57,7 @@ btn.addEventListener('click', function() {
   element.classList.toggle("dark-theme");
   element2.classList.toggle("dark-nav-theme");
    element3.classList.remove("bg-light");
-   element3.classList.add("bg-dark");
+   document.getElementById("footer").classList.add("bg-dark");
 
 //  if ($("#mainNav").classList.includes("navbar-dark")) {
 //     $("mainNav").removeClass("navbar-dark").addClass("navbar-light");

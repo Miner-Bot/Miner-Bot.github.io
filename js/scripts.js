@@ -50,7 +50,7 @@ const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function() {
   var element = document.getElementById("SearchQuery");
    var element2 = document.getElementById("MainNav");
-   var footer = document.getElementsByTagName("footer")[0];
+   var footer = document.getElementById("footer");
 
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');

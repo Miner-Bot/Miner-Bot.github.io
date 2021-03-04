@@ -18,4 +18,4 @@ Otherwise, make an issue and title it "Miner Error, on [the command that he erro
 
 
 ##### Check out this Easter egg !IN PROGRESS!
-[!][???](https://minerbot.xyz/TRAPPED)
+[???](https://minerbot.xyz/TRAPPED)

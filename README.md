@@ -11,3 +11,11 @@ Otherwise, make an issue and title it "Miner Error, on [the command that he erro
 
 #### Check out the source code
 ![Here](https://github.com/IcicleSavage/MinerBot/)
+
+
+
+
+
+
+####### Check out this Easter egg !IN PROGRESS!
+[!][???](https://minerbot.xyz/TRAPPED)

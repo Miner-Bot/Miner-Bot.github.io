@@ -353,10 +353,17 @@
         <!-- Footer-->
         <footer id="footer">
             <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2021  IcicleSavage</div></div>
+		<div id="timeOfLastEdit" onload="Timestampe"></div>
             <div class="container"><div class="small text-center text-muted">Donate to me using the button below: </div>
 <script src="https://liberapay.com/MinerBot/widgets/button.js"></script>
 <noscript><a href="https://liberapay.com/MinerBot/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 </div>
+		<script>
+			function Timestampe() {
+			var timestamp = document.getElementById("timeOfLastEdit");
+			timestamp.innerhtml = document.lastModified;
+			}
+			</script>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

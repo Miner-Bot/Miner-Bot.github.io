@@ -93,6 +93,31 @@ footer.dark-theme {
   outline: 0 !important;
 }
 
+nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  color: rgba(214, 86, 51, 0.9);
+}
+
+nav.dark-nav-theme {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  color: rgba(214, 86, 51, 0.9);
+  background-color: #262626;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;

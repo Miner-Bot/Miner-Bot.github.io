@@ -78,6 +78,17 @@ body.dark-theme a {
 a.dark-theme {
   color:#809fff;
 }
+
+footer {
+  background-color: #f8f9fa;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+footer.dark-theme {
+  background-color: #343a40 !important;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }

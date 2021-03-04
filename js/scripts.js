@@ -64,7 +64,7 @@ btn.addEventListener('click', function() {
 //  } else {
 //     $("mainNav").removeClass("navbar-light").addClass("navbar-dark");
 //  };
-})
+});
   // Magnific popup calls
   $('#portfolio').magnificPopup({
     delegate: 'a',

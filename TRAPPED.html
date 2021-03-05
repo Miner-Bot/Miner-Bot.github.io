@@ -51,6 +51,11 @@
               var text;
               var passcode = prompt("PASSCODE:", "Passcode");
               switch(passcode) {
+                  case "hi":
+                      var dateobj = new Date();
+                      var date = dateobj.toDateString();
+                      text = "Hello, and welcome. Today is" + " " + date;
+                      break;
                   case /[A-z]/:
                       text = "Nice try, but it will take more than that, to get past this.";
                       break;

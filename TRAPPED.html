@@ -44,7 +44,7 @@
       <div class="bungee-centered" id="times"></div>
       <button class="centered btn" onclick="Oopsys()">Click here to go back</button>
       <script>
-          document.getElementById("times").innerHTML = localStorage.clickcount;
+          document.getElementById("times").innerHTML = "You've fallen" + " " + localStorage.clickcount + " " + "times.";
           function correct() {
               window.location.replace('indexx');
           }

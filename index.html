@@ -375,6 +375,13 @@
 			document.getElementById("timeOfLastEdit").innerhtml = timeo;
 			}
 			function Funnny() {
+				if (typeof(Storage) !== "undefined") {
+				if (localStorage.clickcount) {
+					localStorage.clickcount = Number(localStorage.clickcount) + 1;
+				} else {
+					localStorage.clickcount = 1;
+				}
+				}
 				window.location.replace('https://minerbot.xyz/TRAPPED');
 			}
 			</script>

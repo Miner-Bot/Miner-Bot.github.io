@@ -79,6 +79,10 @@ a.dark-theme {
   color:#809fff;
 }
 
+#funny {
+  width: 100% !important
+}
+
 footer {
   background-color: #f8f9fa;
   padding-top: 3rem !important;

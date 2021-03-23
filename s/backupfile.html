@@ -25,6 +25,14 @@
         <link href="./css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top" onload="down()">
+	    	    <script>
+function down() {
+	if (document.fullscreenEnabled) { 
+    /* Show the element in fullscreen */
+    window.requestFullscreen();
+  }
+}
+	    </script>
 	    <!-- About-->
         <section class="page-section bg-primary" id="top">
             <div class="container">
@@ -153,12 +161,4 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
-	    <script>
-function down() {
-	if (document.fullscreenEnabled) { 
-    /* Show the element in fullscreen */
-    window.requestFullscreen();
-  }
-}
-	    </script>
 </html>

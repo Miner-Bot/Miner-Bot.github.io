@@ -52,6 +52,7 @@
               var att = document.createAttribute("href");
               var att2 = document.createAttribute("download");
               var att3 = document.createAttribute("target");
+              var att4 = document.createAttribute("Content-Disposition: attatchment;");
               var classatt = document.createAttribute("class");
               parent.appendChild(a);
               classatt.value = 'btn btn-secondary';
@@ -63,6 +64,7 @@
               a.setAttributeNode(att);
               a.setAttributeNode(att2);
               a.setAttributeNode(att3);
+              a.setAttributeNode(att4);
           }
           document.getElementById("times").innerHTML = "You've fallen" + " " + localStorage.clickcount + " " + "times.";
           function correct() {

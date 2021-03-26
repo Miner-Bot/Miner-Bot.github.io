@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="IcicleSavage" />
+        <title>MinerBot's Official Site</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/tabpic.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee:wght@300&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DG2FJ05YPK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DG2FJ05YPK');
+</script>
+    </head>
+    <body id="page-top">
+        <!-- Commands -->
+        <section class="page-section" id="commands">
+            <div class="container-fluid p-0">
+                <div class="container" id="table-in-here" onload="myFunction()">
+                    <h2 class="text-center h2">Commands</h2>
+                    <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Search for a command" autocomplete="off">
+      <script>
+                    function titleCase(str) {
+ 			            return str
+ 				        .split(' ')
+ 				        .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+ 				        .join(' ');
+ 		            }
+		    fetch('commands.json')
+                        .then(function (response) {
+                        return response.json();
+                    })
+                        .then(function (data) {
+                        appendData(data);
+                    })
+                        .catch(function (err) {
+                        console.log(err);
+                    });
+			
+                    function appendData(data) {
+			    const prefix = '=';
+			    var mainContainer = document.getElementById("table-in-here");
+			    for (var i = 0; i < data.length; i++) {
+				    var str;
+				    if (data[i].usage && data[i].aliases) {
+					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
+				    } else if (data[i].usage && !data[i].aliases) {
+					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
+				    } else if (!data[i].usage && data[i].aliases) {
+					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
+				    } else if (!data[i].usage && !data[i].aliases) {
+					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;
+				    }
+                        var table = document.createElement("table");
+                        var tr = document.createElement("tr");
+                        var td = document.createElement("td");
+                        var hr = document.createElement("hr");
+                        var p = document.createElement("p");
+
+                        var att = document.createAttribute("id");
+                        var att2 = document.createAttribute("class");
+                        var att3 = document.createAttribute("class");
+                        var att4 = document.createAttribute("class");
+                        var att5 = document.createAttribute("class");
+                        var att6 = document.createAttribute("id");
+
+                        
+
+                        att.value = data[i].name;
+                        att2.value = 'text-box bungee-body-text';
+                        att3.value = 'divider-page-width-mod my-2';
+                        att4.value = 'bungee-small-body-text';
+                        att5.value = 'align-items-center';
+                        att6.value = 'commands-info';
+
+
+                        mainContainer.appendChild(table);
+                        table.setAttributeNode(att5);
+                        table.setAttributeNode(att6);
+                        
+                        table.appendChild(tr);
+                        tr.setAttributeNode(att);
+                        tr.appendChild(td);
+                        td.setAttributeNode(att2);
+			td.innerHTML = titleCase(data[i].name);
+                        td.appendChild(hr);
+                        td.appendChild(p);
+                        hr.setAttributeNode(att3);
+                        p.setAttributeNode(att4);
+                        p.innerHTML = str;
+                        }
+                    }
+                    </script>
+		    <script>
+                        function myFunction() {
+                            var input, filter, table, tr, td, i, txtValue;
+                            input = document.getElementById("SearchQuery");
+                            filter = input.value.toUpperCase();
+                            table = document.getElementById("commands-info");
+                            tr = table.getElementsByTagName("tr");
+                            for (i = 0; i < tr.length; i++) {
+                                td = tr[i].getElementsByTagName("td")[0];
+                                if (td) {
+                                    txtValue = td.textContent || td.innerText;
+                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].style.display = "";
+                                    } else {
+                                        tr[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+  </body>
+</html>

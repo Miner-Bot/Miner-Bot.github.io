@@ -61,16 +61,16 @@
                     function appendData(data) {
 			    const prefix = '=';
 			    var mainContainer = document.getElementById("table-in-here");
-			    for (var i = 0; i < data.length; i++) {
+			    for (var o = 0; o < data.length; o++) {
 				    var str;
-				    if (data[i].usage && data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
-				    } else if (data[i].usage && !data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
-				    } else if (!data[i].usage && data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
-				    } else if (!data[i].usage && !data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;
+				    if (data[o].usage && data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+				    } else if (data[o].usage && !data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage;
+				    } else if (!data[o].usage && data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+				    } else if (!data[o].usage && !data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
 				    }
                         var table = document.createElement("table");
                         var tr = document.createElement("tr");
@@ -87,7 +87,7 @@
 
                         
 
-                        att.value = data[i].name;
+                        att.value = data[o].name;
                         att2.value = 'text-box bungee-body-text';
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
@@ -103,7 +103,7 @@
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
-			td.innerHTML = titleCase(data[i].name);
+			td.innerHTML = titleCase(data[o].name);
                         td.appendChild(hr);
                         td.appendChild(p);
                         hr.setAttributeNode(att3);
@@ -111,19 +111,17 @@
                         p.innerHTML = str;
                         }
                     }
-                    </script>
-		    <script>
-                        function myFunction() {
-                            var input, filter, table, tr, td, p, i, txtValue;
+	                              function myFunction(data) {
+                            var input, filter, table, tr, td, i, txtValue;
                             input = document.getElementById("SearchQuery");
                             filter = input.value.toUpperCase();
                             table = document.getElementById("commands-info");
                             tr = table.getElementsByTagName("tr");
+			    for (var o = 0; o < data.length; o++);
                             for (i = 0; i < tr.length; i++) {
                                 td = tr[i].getElementsByTagName("td")[0];
-				    p = td[i].getElementsByTagName("p");
-                                if (p) {
-                                    txtValue = p.textContent || p.innerText;
+                                if (td) {
+                                    txtValue = data[o].name;
                                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                         tr[i].style.display = "";
                                     } else {

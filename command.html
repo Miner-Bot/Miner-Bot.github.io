@@ -56,6 +56,8 @@
               <div class="container" id="commands-in-here">
                     <h2 class="text-center h2">Commands</h2>
               </div>
+		  <div id="testurlreturn">
+		  </div>
 		  <script>
 			  function titleCase(str) {
  			            return str
@@ -104,6 +106,11 @@
 					  
 					  p.appendChild(desc);
 					  desc.innerHTML = str;
+				  }
+				  function urlsort() {
+					  var urlpath = window.location.pathname;
+					  var croppedpath = urlpath.split('command/');
+					  document.getElementById('testurlreturn');
 				  }
 			  }
 		  </script>

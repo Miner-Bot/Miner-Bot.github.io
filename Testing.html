@@ -39,7 +39,7 @@
             <div class="container-fluid p-0">
                 <div class="container" id="table-in-here">
                     <h2 class="text-center h2">Commands</h2>
-                    <input type="text" id="SearchQuery" name="q" placeholder="Search for a command" title="Search for a command" autocomplete="off">
+                    <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Search for a command" autocomplete="off">
 			<table class="align-items-center" id="commands-info">
 			</table>
 		    </div>
@@ -57,7 +57,6 @@
                     })
                         .then(function (data) {
                         appendData(data);
-			    myFunction(data);
                     })
                         .catch(function (err) {
                         console.log(err);
@@ -87,8 +86,6 @@
                         var att2 = document.createAttribute("class");
                         var att3 = document.createAttribute("class");
                         var att4 = document.createAttribute("class");
-                        var att5 = document.createAttribute("class");
-                        var att6 = document.createAttribute("id");
 
                         
 
@@ -96,13 +93,7 @@
                         att2.value = 'text-box bungee-body-text';
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
-                        att5.value = 'align-items-center';
-                        att6.value = 'commands-info';
 
-
-                        mainContainer.appendChild(table);
-                        table.setAttributeNode(att5);
-                        table.setAttributeNode(att6);
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);
@@ -116,8 +107,9 @@
                         p.innerHTML = str;
                         }
                     }
-	                              function myFunction(data) {
-                            var input, filter, table, tr, td, i, txtValue;
+	                              function myFunction() {
+                            var input, filter, table, tr, td, i, txtValue, data;
+					      data = document.getElementById('commands-info')
                             input = document.getElementById("SearchQuery");
                             filter = input.value.toUpperCase();
                             table = document.getElementById("commands-info");

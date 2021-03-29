@@ -76,6 +76,7 @@
 				    } else if (!data[o].usage && !data[o].aliases) {
 					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
 				    }
+			    }
                         var table = document.getElementById("commands-info");
                         var tr = document.createElement("tr");
                         var td = document.createElement("td");
@@ -105,9 +106,10 @@
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
                         p.innerHTML = str;
-                        }
                     }
-	                              function myFunction() {
+		</script>
+		<script>
+			function myFunction() {
                             var input, filter, table, tr, td, i, txtValue, data;
 					      data = document.getElementById('commands-info')
                             input = document.getElementById("SearchQuery");

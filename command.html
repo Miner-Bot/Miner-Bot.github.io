@@ -57,6 +57,12 @@
                     <h2 class="text-center h2">Commands</h2>
               </div>
 		  <script>
+			  function titleCase(str) {
+ 			            return str
+ 				        .split(' ')
+ 				        .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+ 				        .join(' ');
+			  }
 			  fetch('commands.json')
 				  .then(function (response) {
 				  return response.json();
@@ -85,12 +91,12 @@
 					  var desc = document.createElement("p");
 
 					  var att = document.createAttribute("id");
-					  att.value = data[o].name;
+					  att.value = titleCase(data[o].name);
 					  p.setAttributeNode(att);
 					  parent.appendChild(p);
 					  p.innerHTML = data[o].name;
 					  
-					  desc.innerHTML = data[o].description;
+					  desc.innerHTML = str;
 				  }
 			  }
 		  </script>

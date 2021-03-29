@@ -96,7 +96,7 @@
 					  var att = document.createAttribute("id");
 					  var att2 = document.createAttribute("id");
 					  att.value = data[o].name;
-					  att2.value = data[o].name;
+					  att2.value = "command";
 					  commanddividers.setAttributeNode(att2);
 					  parent.appendChild(commanddividers);
 					  commanddividers.hidden = true;
@@ -108,12 +108,36 @@
 					  desc.innerHTML = str;
 				  }
 			  }
-			  function urlsort() {
-				  if (input.value.includes())
-				  var urlpath = window.location.pathname;
-				  var croppedpath = urlpath.replace('command#','');
-				  document.getElementById('testurlreturn').innerHTML = croppedpath;
-			  }
+		  </script>
+		  <script>
+			  fetch('commands.json')
+				  .then(function (response) {
+				  return response.json();
+			  })
+				  .then(function (data) {
+				  urlsort(data);
+			  })
+				  .catch(function (err) {
+				  console.log(err);
+			  });
+			  function urlsort(data) {
+				  const prefix = '=';
+				  for (var o = 0; o < data.length; o++) {
+					  var urlpath = window.location.pathname;
+					  var croppedpath = urlpath.replace('/command','');
+
+					  var input = croppedpath;
+					  var filter = input.value.toUpperCase();
+					  var s = document.getElementsById("command");
+					  var p = s.getElementsById(input);
+					  var txtValue = p.textContent || p.innerHTML;
+					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						  p[o].hidden = false;
+					  } else {
+						  p[o].hidden = true;
+					  }
+					  document.getElementById('testurlreturn').innerHTML = croppedpath;
+				  }
 		  </script>
           </div>
       </section>

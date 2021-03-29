@@ -53,9 +53,46 @@
         <!-- Commands -->
         <section class="page-section" id="command">
           <div class="container-fluid p-0">
-              <div class="container" id="table-in-here" onload="myFunction()">
+              <div class="container" id="commands-in-here">
                     <h2 class="text-center h2">Commands</h2>
               </div>
+		  <script>
+			  fetch('commands.json')
+				  .then(function (response) {
+				  return response.json();
+			  })
+				  .then(function (data) {
+				  generateCommandDetails(data);
+			  })
+				  .catch(function (err) {
+				  console.log(err);
+			  });
+			  function generateCommandDetails(data) {
+				  const prefix = '=';
+				  for (var o = 0; o < data.length; o++) {
+				    var str;
+				    if (data[o].usage && data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+				    } else if (data[o].usage && !data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage;
+				    } else if (!data[o].usage && data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+				    } else if (!data[o].usage && !data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
+				    }
+					  var parent = document.getElementById("commands-in-here");
+					  var p = document.createElement("p");
+					  var desc = document.createElement("p");
+
+					  var att = document.createAttribute("id");
+					  att.value = data[o].name;
+					  p.setAttributeNode(att);
+					  parent.appendChild(p);
+					  p.innerHTML = data[o].name;
+					  
+					  desc.innerHTML = data[o].description;
+			  }
+		  </script>
           </div>
       </section>
 

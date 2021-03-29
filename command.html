@@ -95,6 +95,7 @@
 					  p.setAttributeNode(att);
 					  parent.appendChild(p);
 					  p.innerHTML = titleCase(data[o].name);
+					  p.hidden = true;
 					  
 					  p.appendChild(desc);
 					  desc.innerHTML = str;

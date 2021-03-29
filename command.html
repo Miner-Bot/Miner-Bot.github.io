@@ -123,13 +123,10 @@
 			  function urlsort(data) {
 				  const prefix = '=';
 				  for (var o = 0; o < data.length; o++) {
-					  var urlpath = window.location.pathname;
-					  var croppedpath = urlpath.replace('/command','');
-
-					  var input = croppedpath;
-					  var filter = input.value.toUpperCase();
+					  var urlpath = window.location.hash;
+					  var filter = urlpath.slice(1);
 					  var s = document.getElementsById("command");
-					  var p = s.getElementsById(input);
+					  var p = s.getElementsById(filter);
 					  var txtValue = p.textContent || p.innerHTML;
 					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
 						  p[o].hidden = false;

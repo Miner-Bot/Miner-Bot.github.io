@@ -125,6 +125,8 @@
                 <div class="container" id="table-in-here" onload="myFunction()">
                     <h2 class="text-center h2">Commands</h2>
                     <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Search for a command" autocomplete="off">
+		    <table class="align-items-center" id="commands-info">
+		    </table>
                     <!-- list of them: credits ; disconnect ; drive ; help ; invite ; join ; move ; play ; ping ; ready ; reload ; restart ; stats ; welcome ; </table>-->
                     <!-- <table class="align-items-center" id="commands-info">
                     <tr id="disconnect">
@@ -175,55 +177,8 @@
                             </td>
                         </tr>
                     </table> -->
-                    
-                        <script>
-                        function LoadCommandDetails() {
-                            var mainContainer = document.getElementById("table-in-here");
-                            var table = document.createElement("table");
-                            var tr = document.createElement("tr");
-                            var td = document.createElement("td");
-                            var hr = document.createElement("hr");
-                            var p = document.createElement("p");
-
-                            var att = document.createAttribute("id");
-                            var att2 = document.createAttribute("class");
-                            var att3 = document.createAttribute("class");
-                            var att4 = document.createAttribute("class");
-                            var att5 = document.createAttribute("class");
-                            var att6 = document.createAttribute("id");
-
-                            td.innerHTML = 'Credits';
-
-                            att.value = 'credits';
-                            att2.value = 'text-box bungee-body-text bungee-centered';
-                            att3.value = 'divider my-2';
-                            att4.value = 'bungee-small-body-text bungee-centered';
-                            att5.value = 'align-items-center';
-                            att6.value = 'commands-info';
-
-
-                            mainContainer.appendChild(table);
-                            table.setAttributeNode(att5);
-                            table.setAttributeNode(att6);
-                            
-                            table.appendChild(tr);
-                            tr.setAttributeNode(att);
-// —————————————————————————————————————————————————————————————————
-                            tr.appendChild(td);
-                            td.setAttributeNode(att2);
-// —————————————————————————————————————————————————————————————————
-                            td.appendChild(hr);
-                            hr.setAttributeNode(att3);
-// —————————————————————————————————————————————————————————————————
-                            td.appendChild(p);
-                            p.setAttributeNode(att4);
-// —————————————————————————————————————————————————————————————————
-                            p.innerHTML = 'Find out who made this!<br>Usage:<pre><code>=credits</code></pre>';
-
-                        }
-                    </script>
                 </div>
-                <script>
+		    <script>
                     function titleCase(str) {
  			            return str
  				        .split(' ')
@@ -243,19 +198,18 @@
 			
                     function appendData(data) {
 			    const prefix = '=';
-			    var mainContainer = document.getElementById("table-in-here");
-			    for (var i = 0; i < data.length; i++) {
+			    for (var o = 0; o < data.length; o++) {
 				    var str;
-				    if (data[i].usage && data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
-				    } else if (data[i].usage && !data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage;
-				    } else if (!data[i].usage && data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + '<br>' + 'Aliases:' + ' ' + prefix + data[i].aliases;
-				    } else if (!data[i].usage && !data[i].aliases) {
-					    str = 'Description:' + ' ' + data[i].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name;
+				    if (data[o].usage && data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+				    } else if (data[o].usage && !data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage;
+				    } else if (!data[o].usage && data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+				    } else if (!data[o].usage && !data[o].aliases) {
+					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
 				    }
-                        var table = document.createElement("table");
+                        var table = document.getElementById("commands-info");
                         var tr = document.createElement("tr");
                         var td = document.createElement("td");
                         var hr = document.createElement("hr");
@@ -265,47 +219,43 @@
                         var att2 = document.createAttribute("class");
                         var att3 = document.createAttribute("class");
                         var att4 = document.createAttribute("class");
-                        var att5 = document.createAttribute("class");
-                        var att6 = document.createAttribute("id");
 
                         
 
-                        att.value = data[i].name;
+                        att.value = data[o].name;
                         att2.value = 'text-box bungee-body-text';
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
-                        att5.value = 'align-items-center';
-                        att6.value = 'commands-info';
 
-
-                        mainContainer.appendChild(table);
-                        table.setAttributeNode(att5);
-                        table.setAttributeNode(att6);
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
-			td.innerHTML = titleCase(data[i].name);
+			td.innerHTML = titleCase(data[o].name);
                         td.appendChild(hr);
                         td.appendChild(p);
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
                         p.innerHTML = str;
-                        }
-                    }
-                    </script>
-		    <script>
-                        function myFunction() {
-                            var input, filter, table, tr, td, i, txtValue;
+			    }
+		    }
+		</script>
+		<script>
+			function myFunction() {
+                            var input, filter, table, tr, td, i, txtValue, data;
+					      data = document.getElementById('commands-info')
                             input = document.getElementById("SearchQuery");
                             filter = input.value.toUpperCase();
                             table = document.getElementById("commands-info");
                             tr = table.getElementsByTagName("tr");
+			    for (var o = 0; o < data.length; o++) {
+				    var name = data[o].name;
+			    }
                             for (i = 0; i < tr.length; i++) {
                                 td = tr[i].getElementsByTagName("td")[0];
                                 if (td) {
-                                    txtValue = td.textContent || td.innerText;
+                                    txtValue = td.textContent || td.innerHTML;
                                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                         tr[i].style.display = "";
                                     } else {

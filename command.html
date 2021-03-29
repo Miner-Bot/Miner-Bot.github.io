@@ -97,13 +97,12 @@
 					  var att2 = document.createAttribute("id");
 					  att.value = data[o].name;
 					  att2.value = "command";
-					  commanddividers.setAttributeNode(att2);
 					  parent.appendChild(commanddividers);
+					  commanddividers.setAttributeNode(att2);
 					  commanddividers.hidden = true;
-					  p.setAttributeNode(att);
 					  commanddividers.appendChild(p);
 					  p.innerHTML = titleCase(data[o].name);
-					  
+					  p.setAttributeNode(att);
 					  p.appendChild(desc);
 					  desc.innerHTML = str;
 				  }
@@ -126,12 +125,13 @@
 					  var urlpath = window.location.hash;
 					  var filter = urlpath.slice(1);
 					  var s = document.getElementsById("command");
-					  var p = s.getElementsById(filter);
+					  var p1 = s.getElementsById(filter);
+					  var p = document.getElementById(data[o].name;
 					  var txtValue = p.textContent || p.innerHTML;
 					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-						  p[o].hidden = false;
+						  p1[o].hidden = false;
 					  } else {
-						  p[o].hidden = true;
+						  p1[o].hidden = true;
 					  }
 					  document.getElementById('testurlreturn').innerHTML = croppedpath;
 				  }

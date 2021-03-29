@@ -122,7 +122,7 @@
                             for (i = 0; i < tr.length; i++) {
                                 td = tr[i].getElementsByTagName("td")[0];
                                 if (td) {
-                                    txtValue = name;
+                                    txtValue = td.textContent || td.innerHTML;
                                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                         tr[i].style.display = "";
                                     } else {

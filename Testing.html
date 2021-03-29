@@ -39,9 +39,9 @@
             <div class="container-fluid p-0">
                 <div class="container" id="table-in-here">
                     <h2 class="text-center h2">Commands</h2>
-                    <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Search for a command" autocomplete="off">
-			<table class="align-items-center" id="commands-info">
-			</table>
+                    <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Search for a command" autocomplete="off"></input>
+		    <table class="align-items-center" id="commands-info">
+		    </table>
 		    </div>
 		</div>
 			<script>
@@ -64,7 +64,6 @@
 			
                     function appendData(data) {
 			    const prefix = '=';
-			    var mainContainer = document.getElementById("table-in-here");
 			    for (var o = 0; o < data.length; o++) {
 				    var str;
 				    if (data[o].usage && data[o].aliases) {
@@ -76,7 +75,6 @@
 				    } else if (!data[o].usage && !data[o].aliases) {
 					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
 				    }
-			    }
                         var table = document.getElementById("commands-info");
                         var tr = document.createElement("tr");
                         var td = document.createElement("td");
@@ -106,7 +104,8 @@
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
                         p.innerHTML = str;
-                    }
+			    }
+		    }
 		</script>
 		<script>
 			function myFunction() {

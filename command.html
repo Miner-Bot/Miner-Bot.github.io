@@ -87,15 +87,20 @@
 					    str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
 				    }
 					  var parent = document.getElementById("commands-in-here");
+					  var commanddividers = document.createElement("section");
 					  var p = document.createElement("p");
 					  var desc = document.createElement("p");
 
 					  var att = document.createAttribute("id");
+					  var att2 = document.createAttribute("id");
 					  att.value = data[o].name;
+					  att2.value = data[o].name;
+					  commanddividers.setAttributeNode(att2);
+					  parent.appendChild(commanddividers);
+					  commanddividers.hidden = true;
 					  p.setAttributeNode(att);
-					  parent.appendChild(p);
+					  commanddividers.appendChild(p);
 					  p.innerHTML = titleCase(data[o].name);
-					  p.hidden = true;
 					  
 					  p.appendChild(desc);
 					  desc.innerHTML = str;

@@ -42,9 +42,11 @@
                     <input type="text" id="SearchQuery" name="q" onkeyup="myFunction()" placeholder="Search for a command" title="Search for a command" autocomplete="off"></input>
 		    <table class="align-items-center" id="commands-info">
 		    </table>
+		    <div id="hi"></div>
 		    </div>
 		</div>
 			<script>
+				document.getElementById("hi").innerHTML = window.location.pathname;
                     function titleCase(str) {
  			            return str
  				        .split(' ')

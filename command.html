@@ -110,7 +110,7 @@
 			  }
 			  function urlsort() {
 				  var urlpath = window.location.pathname;
-				  var croppedpath = urlpath.split('command#');
+				  var croppedpath = urlpath.replace('command#','');
 				  document.getElementById('testurlreturn').innerHTML = croppedpath;
 			  }
 		  </script>

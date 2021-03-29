@@ -91,11 +91,12 @@
 					  var desc = document.createElement("p");
 
 					  var att = document.createAttribute("id");
-					  att.value = titleCase(data[o].name);
+					  att.value = data[o].name;
 					  p.setAttributeNode(att);
 					  parent.appendChild(p);
-					  p.innerHTML = data[o].name;
+					  p.innerHTML = titleCase(data[o].name);
 					  
+					  p.appendChild(desc);
 					  desc.innerHTML = str;
 				  }
 			  }

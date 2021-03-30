@@ -129,11 +129,10 @@
 					  var filter = urlpath.slice(1);
 					  var s = document.getElementsById("command");
 					  var p1 = s.getElementsById(filter);
-					  var p = document.getElementById(data[o].name);
-					  var txtValue = p1.innerHTML || p.innerHTML;
+					  var p = s[o].getElementsByTagName("p")[0];
+					  var txtValue = p.innerHTML;
 					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
 						  p[o].hidden = false;
-						  p1[o].hidden = false;
 					  } else {
 						  p[o].hidden = true;
 					  }

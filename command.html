@@ -58,6 +58,9 @@
               </div>
 		  <div id="testurlreturn">
 		  </div>
+		  <div class="container justify-content-center">
+			  Test out some of his features!<br>
+			  <iframe src="https://titanembeds.com/embed/751570387979993110?defaultchannel=779815386266337301&theme=FireWyvern&username=Mine Tester" height="600" width="800" frameborder="0"></iframe>		  </div>
 		  <script>
 			  function titleCase(str) {
  			            return str
@@ -109,7 +112,7 @@
 			  }
 		  </script>
 		  <script>
-			  fetch('commands.json')
+			  fetch('./commands.json')
 				  .then(function (response) {
 				  return response.json();
 			  })
@@ -126,14 +129,15 @@
 					  var filter = urlpath.slice(1);
 					  var s = document.getElementsById("command");
 					  var p1 = s.getElementsById(filter);
-					  var p = document.getElementById(data[o].name;
-					  var txtValue = p.textContent || p.innerHTML;
+					  var p = document.getElementById(data[o].name);
+					  var txtValue = p1.innerHTML || p.innerHTML;
 					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						  p[o].hidden = false;
 						  p1[o].hidden = false;
 					  } else {
-						  p1[o].hidden = true;
+						  p[o].hidden = true;
 					  }
-					  document.getElementById('testurlreturn').innerHTML = croppedpath;
+					  document.getElementById('testurlreturn').innerHTML = urlpath;
 				  }
 }
 		  </script>

@@ -14,3 +14,9 @@ a.addEventListener('click', function() {
 }
 });
 }
+function testo() {
+  var h2 = document.getElementByTagName("h2");
+  h2.hidden = false;
+  
+  
+}

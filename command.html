@@ -131,7 +131,7 @@
 					  var filter = urlpath.slice(1);
 					  var s = document.getElementsById("commands-in-here");
 					  var p1 = s.getElementsById(filter);
-					  var p = s[o].getElementsByTagName("p")[0];
+					  var p = s.getElementsByTagName("p")[0];
 					  var txtValue = p.innerHTML;
 					  if (txtValue.toUpperCase().indexOf(filter) > -1) {
 						  p[o].hidden = false;

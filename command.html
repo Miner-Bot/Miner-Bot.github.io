@@ -184,6 +184,7 @@ function titleCase(str) {
                         var att2 = document.createAttribute("class");
 			var att3 = document.createAttribute("id");
                         var att4 = document.createAttribute("class");
+			var att5 = document.createAttribute("class");
 
 
 
@@ -191,11 +192,13 @@ function titleCase(str) {
                         att2.value = 'text-box bungee-body-text';
                         att4.value = 'bungee-small-body-text';
 			att3.value = 'command-summary';
+			att5.value = 'command-details'
 
                         
                         parent.appendChild(det);
                         det.setAttributeNode(att);
                         det.appendChild(sum);
+			det.setAttributeNode(att5);
 			sum.setAttributeNode(att3);
                         sum.setAttributeNode(att2);
 			sum.innerHTML = titleCase(data[o].name);

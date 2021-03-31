@@ -90,8 +90,9 @@ footer {
 }
 summary#command-summary {
   border: 2px;
-  background-color: #9e9e9e;
-  color: #ffffff
+  border-color: #000000a8;
+  background-color: #c4c1c0;
+  color: #fff;
 }
 
 footer.dark-theme {

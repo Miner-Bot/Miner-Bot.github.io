@@ -95,7 +95,11 @@ summary#command-summary {
   color: #fff;
   align-text: center !important;
 }
-
+details.command-details {
+  width: 100%;
+  
+  
+}
 footer.dark-theme {
   background-color: #343a40 !important;
   padding-top: 3rem !important;

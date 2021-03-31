@@ -93,7 +93,7 @@
 				    }
 					  var parent = document.getElementById("commands-in-here");
 					  var commanddividers = document.createElement("section");
-					  var p = document.createElement("p");
+					  var p = document.createElement("h2");
 					  var desc = document.createElement("p");
 
 					  var att = document.createAttribute("id");
@@ -127,7 +127,8 @@
 			  function urlsort(data) {
 				  const prefix = '=';
 				  for (var o = 0; o < data.length; o++) {
-					  var urlpath = window.location.hash;
+					  var path = location.pathname.slice(0,8);
+					  var urlpath = location.hash;
 					  var filter = urlpath.slice(1);
 					  var s = document.getElementsById("commands-in-here");
 					  var p1 = s.getElementsById(filter);

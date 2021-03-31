@@ -96,6 +96,12 @@ summary#command-summary {
   align-text: center;
   width: 100%;
 }
+summary#command-summary::marker {
+  display: none;
+}
+details > summary#command-summary::marker {
+  display: none;
+}
 details.command-details {
   width: 100%;
   text-align: center !important;

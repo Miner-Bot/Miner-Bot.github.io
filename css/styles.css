@@ -94,6 +94,7 @@ summary#command-summary {
   background-color: #c4c1c0;
   color: #fff;
   align-text: center !important;
+  width: 100%;
 }
 details.command-details {
   width: 100%;

@@ -89,10 +89,11 @@ footer {
   padding-bottom: 3rem !important;
 }
 summary#command-summary {
-  border: 2px;
-  border-color: #000000a8;
+  border: .6px;
+  border-color: #000000;
   background-color: #c4c1c0;
   color: #fff;
+  align-text: center !important;
 }
 
 footer.dark-theme {

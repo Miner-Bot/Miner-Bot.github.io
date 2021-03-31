@@ -97,8 +97,7 @@ summary#command-summary {
 }
 details.command-details {
   width: 100%;
-  
-  
+  text-align: center !important;
 }
 footer.dark-theme {
   background-color: #343a40 !important;
@@ -279,7 +278,7 @@ samp {
 }
 
 pre {
-  margin-top: 0;
+  margin-top: 0;.
   margin-bottom: 1rem;
   overflow: auto;
   -ms-overflow-style: scrollbar;

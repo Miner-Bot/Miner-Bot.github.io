@@ -93,7 +93,7 @@ summary#command-summary {
   border-color: #000000;
   background-color: #c4c1c0;
   color: #fff;
-  align-text: center !important;
+  align-text: center;
   width: 100%;
 }
 details.command-details {

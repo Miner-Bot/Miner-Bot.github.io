@@ -196,7 +196,7 @@ function titleCase(str) {
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
 			td.innerHTML = titleCase(data[o].name);
-                        td.appendChild(p);
+                        tr.appendChild(p);
                         p.setAttributeNode(att4);
                         p.innerHTML = str;
 			    }

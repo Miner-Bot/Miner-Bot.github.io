@@ -232,7 +232,7 @@
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
-			td.innerHTML = titleCase(data[o].name);
+			td.innerHTML = '<a class="js-scroll-trigger" href="/command#' + data[o].name + '">' + titleCase(data[o].name) + '</a>';
                         td.appendChild(hr);
                         td.appendChild(p);
                         hr.setAttributeNode(att3);

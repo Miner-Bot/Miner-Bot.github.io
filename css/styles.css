@@ -88,6 +88,12 @@ footer {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
+summary#command-summary {
+  border: 2px;
+  background-color: #9e9e9e;
+  color: #ffffff
+}
+
 footer.dark-theme {
   background-color: #343a40 !important;
   padding-top: 3rem !important;

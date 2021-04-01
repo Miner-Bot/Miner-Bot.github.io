@@ -49,7 +49,7 @@ fetch('commands.json')
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
-                        td.innerHTML = '<a class="js-scroll-trigger" href="/command#' + data[o].name + '">' + titleCase(data[o].name) + '</a>';
+                        td.innerHTML = '<a class="js-scroll-trigger" href="/command#' + data[o].name + '" onclick=localStorage.setItem("clickedon", data[o].name)>' + titleCase(data[o].name) + '</a>';
                         td.appendChild(hr);
                         td.appendChild(p);
                         hr.setAttributeNode(att3);

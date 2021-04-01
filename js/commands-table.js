@@ -49,12 +49,14 @@ fetch('commands.json')
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
                         onclick.value = 'localStorage.setItem("clickedon", data[o].name)';
+                        href.value = '/command#' + localStorage.getItem("clickedon");
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
                         a.setAttributeNode(onclick);
+                        a.setAttributeNode(href);
                         a.innerHTML = titleCase(data[o].name);
                         td.appendChild(a);
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';

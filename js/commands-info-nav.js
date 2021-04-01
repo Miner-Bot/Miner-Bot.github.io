@@ -1,4 +1,4 @@
-function clickCommand() {
+/* function clickCommand() {
 var command = document.getElementById("commands-info");
 var clicked = command.getElementByTagName("tr")[0];
 var td = clicked.getElementByTagName("td")[0];
@@ -21,3 +21,4 @@ function testo() {
   
 }
 
+*/

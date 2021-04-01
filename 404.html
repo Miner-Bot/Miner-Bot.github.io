@@ -307,37 +307,22 @@
         <!-- <h1 id="title">404 Page not found</h1> -->
         <!-- <button id="newBtn" class="btn" disabled>&#8594; &nbsp;Back to Home</button> -->
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-            <div class="container">
-
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">MinerBot</a>
-                <button class="btn btn-toggle" title="Toggle Night Mode"><i class="fa fa-moon"></i></button>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    </ul>
-                </div>
-            </div>
-		<script>
-			function back() {
-        window.location.replace('https://minerbot.xyz/');
-			}
-		</script>
-        </nav>
         <!-- Error -->
         <section class="page-section" id="error">
           <div class="container-fluid p-0">
               <div class="container">
                 <h2 class="text-center h2">Error</h2>
                 <a onclick="back()" class="btn"><i class="fa fa-angle-left"></i></a>
-                <h3 class="text-center h3">404<h3>
+		      <script>
+			function back() {
+				window.location.replace('https://minerbot.xyz/');
+			}
+		      </script>
+                <h3 class="text-center h3">404</h3>
                   <p>Could not find that page. It either doesn't exist, or you tried the incorrect path.</p>
                   <pre><code id="triedpath"></code></pre>
               </div>
                   <script src="/js/triedpath.js"></script>
-		  <div id="testurlreturn">
-		  </div>
-		  <div class="container justify-content-center">
         </div>
       </section>
 

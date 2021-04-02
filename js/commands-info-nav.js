@@ -8,21 +8,21 @@
                         .catch(function (err) {
                         console.log(err);
                     });
-			
-document.getElementById("commands-info").getElementByTagName("tr")[o].getElementByTagName("td")[o].getElementByTagName("a")[o].onclick = store();
-var command = document.getElementById("commands-info");
-var clicked = command.getElementByTagName("tr")[o];
-var td = clicked.getElementByTagName("td")[o];
-var a = td.getElementByTagName("a")[o];
-a.onclick = store(data);
 function store(data) {
+var a = document.getElementById("commands-info");
 	for (var o = 0; o < data.length; o++) {
-	if (typeof(Storage) !== "undefined") {
+var event = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getElementByTagName("a");
+		var commandname = data[o].name
+	}
+}
+event.onclick = setData();
+function setData() {
+if (typeof(Storage) !== "undefined") {
   // Store
-    localStorage.setItem("clickedon", data[o].name);
+    localStorage.setItem("clickedon", commandname);
   // Retrieve
   location.hash = localStorage.getItem("clickedon");
 } else {
   location.hash = '';
-}}
-};
+}
+}

@@ -81,6 +81,15 @@
               </div>
 		  <div id="testurlreturn">
 		  </div>
+		  <h1 id="command">[Command.name]</h1>
+		  <script>
+document.getElementById("command").innerHTML = location.hash.slice(1);
+			  var header = document.getElementById("command");
+			  var div1 = document.createElement("div");
+			  
+			  div1.innerHTML = str;
+			  header.appendChild(div1);
+		  </script>
 		  <script src="/js/command-page.js"></script>
 		  <script>
 			  document.getElementById("commands-in-here").innerHTML = location.hash + '<br>' + localStorage.getItem("clickedon");

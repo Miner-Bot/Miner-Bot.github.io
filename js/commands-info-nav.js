@@ -12,7 +12,7 @@ function store(data) {
 var a = document.getElementById("commands-info");
 	for (var o = 0; o < data.length; o++) {
 var event = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getElementByTagName("a");
-		var commandname = data[o].name;
+		var commandname = event.innerHTML;
 		event.onclick = setData();
 		localStorage.setItem("clickedon", commandname);
 

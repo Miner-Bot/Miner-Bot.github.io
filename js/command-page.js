@@ -46,7 +46,7 @@ function titleCase(str) {
                         att2.value = 'text-box bungee-body-text';
                         att4.value = 'bungee-small-body-text';
 			att3.value = 'command-summary';
-			att5.value = 'command-details'
+			att5.value = 'command-details';
 
                         
                         parent.appendChild(det);

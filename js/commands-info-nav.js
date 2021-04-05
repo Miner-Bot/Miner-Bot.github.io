@@ -24,11 +24,11 @@ document.addEventListener('click', function(e) {
     var target = e.target || element,
         text = target.textContent || target.innerHTML;
 }, false);
-
+*/
 if (typeof(Storage) !== "undefined") {
   // Store
   // Retrieve
-  // location.hash = localStorage.getItem("clickedon");
+  location.hash = localStorage.clickedon;
 } else {
   location.hash = '';
-} */
+}

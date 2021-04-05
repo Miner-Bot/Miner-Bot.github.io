@@ -65,7 +65,7 @@ function titleCase(str) {
 if (typeof(Storage) !== "undefined") {
   // Store
        // localStorage.setItem("command", location.hash);
-	document.title = localStorage.getItem("clickedon");
+	document.title = localStorage.clickedon;
   // Retrieve
 
 } else {

@@ -68,7 +68,7 @@ function dothinkboutit() {
       <div id="e"></div>
 <script>
 if (typeof(Storage) !== "undefined") {
-  if (localStorage.dont) {
+  if (localStorage.dont === 1) {
     localStorage.dont = Number(localStorage.dont) + 1;
   } else {
     localStorage.dont = 'no. sToP... ×' + 1;

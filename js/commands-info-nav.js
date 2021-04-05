@@ -28,7 +28,7 @@ var element = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getEle
 if (typeof(Storage) !== "undefined") {
   // Store
   // Retrieve
-  location.hash = localStorage.getItem("clickedon");
+  // location.hash = localStorage.getItem("clickedon");
 } else {
   location.hash = '';
 }

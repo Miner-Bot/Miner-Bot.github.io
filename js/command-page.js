@@ -64,7 +64,7 @@ function titleCase(str) {
   // Check browser support
 if (typeof(Storage) !== "undefined") {
   // Store
-  // localStorage.setItem("command", location.hash);
+       localStorage.setItem("command", location.hash);
 	document.title = localStorage.getItem("clickedon");
   // Retrieve
 

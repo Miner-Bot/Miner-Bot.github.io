@@ -1,4 +1,4 @@
-		    fetch('commands.json')
+/*		    fetch('commands.json')
                         .then(function (response) {
                         return response.json();
                     })
@@ -19,11 +19,11 @@ var element = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getEle
 	});
 }
 
-/*document.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {
     e = e || window.event;
     var target = e.target || element,
         text = target.textContent || target.innerHTML;
-}, false);*/
+}, false);
 
 if (typeof(Storage) !== "undefined") {
   // Store
@@ -31,4 +31,4 @@ if (typeof(Storage) !== "undefined") {
   // location.hash = localStorage.getItem("clickedon");
 } else {
   location.hash = '';
-}
+} */

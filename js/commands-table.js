@@ -52,7 +52,7 @@ fetch('commands.json')
                         a.innerHTML = titleCase(data[o].name);
                         
                         onclick.value = 'localStorage.clickedon = ' + data[o].name;
-                        href.value = '/command#' + data[o].name;
+                        href.value = '/command#';
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);

@@ -48,6 +48,9 @@ fetch('commands.json')
                         att2.value = 'text-box bungee-body-text';
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
+                        
+                        a.innerHTML = titleCase(data[o].name);
+                        
                         onclick.value = 'localStorage.setItem("clickedon", ' + this.innerHTML + ');';
                         href.value = '/command#' + this.innerHTML;
                         
@@ -55,7 +58,6 @@ fetch('commands.json')
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
-                        a.innerHTML = titleCase(data[o].name);
 
                         a.setAttributeNode(onclick);
                         a.setAttributeNode(href);

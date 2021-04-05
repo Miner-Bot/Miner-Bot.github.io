@@ -1,0 +1,17 @@
+<script>
+if (typeof(Storage) !== "undefined") {
+  if (localStorage.dont) {
+    localStorage.dont = Number(localStorage.dont) + 1;
+  } else {
+    localStorage.dont = 'no. sToP... ×' + 1;
+  }
+}
+  function dontdoit() {
+    document.getElementById("e").innerHTML = localStorage.dont;
+    
+  }
+  
+  
+  
+  
+</script>

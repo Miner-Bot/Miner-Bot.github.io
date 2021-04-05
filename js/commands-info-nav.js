@@ -11,28 +11,24 @@
 function store(data) {
 var a = document.getElementById("commands-info");
 	for (var o = 0; o < data.length; o++) {
-var event = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getElementByTagName("a");
+var element = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getElementByTagName("a");
 		var commandname = this.event.innerHTML;
-		event.onclick = setData();
 		// localStorage.setItem("clickedon", commandname);
 
 
 	});
 }
 
-document.addEventListener('click', function(e) {
+/*document.addEventListener('click', function(e) {
     e = e || window.event;
-    var target = e.target || event,
+    var target = e.target || element,
         text = target.textContent || target.innerHTML;
-	localStorage.setItem("clickedon", text);
-}, false);
+}, false);*/
 
-function setData() {
 if (typeof(Storage) !== "undefined") {
   // Store
   // Retrieve
   location.hash = localStorage.getItem("clickedon");
 } else {
   location.hash = '';
-}
 }

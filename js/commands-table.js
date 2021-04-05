@@ -51,8 +51,8 @@ fetch('commands.json')
                         
                         a.innerHTML = titleCase(data[o].name);
                         
-                        onclick.value = 'localStorage.setItem("clickedon", ' + this.innerHTML + ');';
-                        href.value = '/command#' + this.innerHTML;
+                        onclick.value = 'localStorage.setItem("clickedon", ' + data[o].name + ');';
+                        href.value = '/command#' + localStorage.getItem("clickedon");
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);

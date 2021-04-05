@@ -13,13 +13,22 @@ var a = document.getElementById("commands-info");
 	for (var o = 0; o < data.length; o++) {
 var event = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getElementByTagName("a");
 		var commandname = data[o].name;
-	}
+		event.onclick = setData();
+		localStorage.setItem("clickedon", commandname);
+
+
+	});
 }
-event.onclick = setData();
+
+/* document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement,
+        text = target.textContent || target.innerHTML;   
+}, false);*/
+
 function setData() {
 if (typeof(Storage) !== "undefined") {
   // Store
-    localStorage.setItem("clickedon", commandname);
   // Retrieve
   location.hash = localStorage.getItem("clickedon");
 } else {

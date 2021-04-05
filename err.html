@@ -48,7 +48,7 @@
     </head>
     <body id="page-top">
 	    
-<input type="text" oncopy="myFunction()" value="Don't copy or edit this text! 😡" id="i">
+<input type="text" oncopy="myFunction()" value="Don't copy or edit this text! 😡" onselect="dothinkboutit()" id="i">
 
 <p id="demo"></p>
 
@@ -56,6 +56,9 @@
 function myFunction() {
   document.getElementById("demo").innerHTML = "You copied this text!" + '<br>' + document.getElementById("i").value;
   document.getElementById("i").value = 'Nice!';
+}
+function dothinkboutit() {
+  document.getElementById("i").value = "Don't even think about it...";
 }
 </script>
       <div id="e"></div>

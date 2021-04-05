@@ -48,7 +48,7 @@
     </head>
     <body id="page-top">
 	    
-<input type="text" oncopy="myFunction()" value="Don't copy or edit this text! 😡" onselect="dothinkboutit()" id="i">
+<input type="text" oncopy="myFunction()" value="Don't copy or edit this text! 😡" onselect="dothinkboutit()" onkeydown="messing(event)" id="i">
 
 <p id="demo"></p>
 
@@ -60,6 +60,10 @@ function myFunction() {
 function dothinkboutit() {
   document.getElementById("i").value = "Don't even think about it...";
 }
+	function messing(event) {
+		var x = event.key;
+		document.getElementById("i").label = 'Stop typing ' + x;
+	}
 </script>
       <div id="e"></div>
 <script>

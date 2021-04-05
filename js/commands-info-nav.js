@@ -22,7 +22,7 @@ var event = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getEleme
 
 /* document.addEventListener('click', function(e) {
     e = e || window.event;
-    var target = e.target || e.srcElement,
+    var target = e.target || event,
         text = target.textContent || target.innerHTML;   
 }, false);*/
 

@@ -48,8 +48,8 @@ fetch('commands.json')
                         att2.value = 'text-box bungee-body-text';
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
-                        onclick.value = 'localStorage.setItem("clickedon", data[o].name);';
-                        href.value = '/command#' + localStorage.getItem("clickedon");
+                        onclick.value = 'localStorage.setItem("clickedon", ' + data[o].name + ');';
+                        href.value = '/command#' + data[o].name;
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);

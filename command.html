@@ -83,7 +83,7 @@
 		  </div>
 		  <script src="/js/command-page.js"></script>
 		  <script>
-			  document.getElementById("commands-in-here").innerHTML = location.hash;
+			  document.getElementById("commands-in-here").innerHTML = location.hash + '<br>' + localStorage.getItem("clickedon");
 		  </script>
           </div>
       </section>

@@ -53,10 +53,11 @@ btn.addEventListener('click', function() {
    var element2 = document.getElementById("mainNav");
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');
-
+   var newatt = document.createAttribute("style");
+   newatt.value = 'background-color: #343a40 !important;'
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
-  element2.classList.toggle("dark-nav-theme");
+  element2.setAttributeNode(newatt);
 
 })
   // Magnific popup calls

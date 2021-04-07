@@ -53,8 +53,8 @@ btn.addEventListener('click', function() {
    var element2 = document.getElementById("mainNav");
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');
-   var newatt = document.createAttribute("style");
-   newatt.value = 'background-color: #343a40 !important;';
+   /* var newatt = document.createAttribute("style");
+   newatt.value = 'background-color: #343a40 !important;'; */
    element2.toggleAttribute("style");
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #343a40 !important;');

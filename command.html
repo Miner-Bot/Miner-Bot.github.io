@@ -84,7 +84,7 @@
               </div>
 		  <div id="testurlreturn">
 		  </div>
-		  <h1 id="title">[Command.name]</h1>
+		  <h1 class="text-center" id="title">[Command.name]</h1>
 		  <script>
 			  function titleCase(str) {
 				  return str
@@ -132,7 +132,7 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 			          div1.innerHTML = str;
                                   header.appendChild(div1);
 	header.appendChild(div);
-	
+}
 	if (typeof(Storage) !== "undefined") {
   // Store
        // localStorage.setItem("command", location.hash);
@@ -142,7 +142,6 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 } else {
   document.title = "Command Details";
 }
-			    }
 		    }
 		  </script>
 		  <!--<script src="/js/command-page.js"></script>-->

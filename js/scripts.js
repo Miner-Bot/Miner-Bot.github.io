@@ -54,8 +54,11 @@ btn.addEventListener('click', function() {
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');
    var newatt = document.createAttribute("style");
-   newatt.value = 'background-color: #343a40 !important;'
-   element2.toggleAttribute("style='background-color: #343a40 !important;'");
+   newatt.value = 'background-color: #343a40 !important;';
+   element2.toggleAttribute("style");
+   if (element2.hasAttribute("style")) {
+      element2.setAttribute("style", 'background-color: #343a40 !important;');
+   }
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
 })

@@ -84,8 +84,10 @@ btn.addEventListener('click', function() {
    document.body.classList.toggle('dark-theme');
    */
 
-   localStorage.setItem('themePreferences', state);
+   localStorage.setItem('themePreferences', state)
+   .then {
    state = !state;
+   };
 
 })
   // Magnific popup calls

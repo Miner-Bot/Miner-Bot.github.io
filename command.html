@@ -123,7 +123,7 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
 	
-			  document.getElementById("title").innerHTML = location.hash.slice(1);
+			  document.getElementById("title").innerHTML = titleCase(location.hash.slice(1));
 			  var header = document.getElementById("title");
 			  var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");

@@ -69,21 +69,24 @@ if (localStorage.themePreferences === true) {
 // Listen for a click on the button
        var state = false;
 btn.addEventListener('click', function() {
-  var element = document.getElementById("SearchQuery");
+  /* var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");
    var element2 = document.getElementById("mainNav");
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');
-   /* var newatt = document.createAttribute("style");
-   newatt.value = 'background-color: #343a40 !important;'; */
+   * var newatt = document.createAttribute("style");
+   * newatt.value = 'background-color: #343a40 !important;';
    element2.toggleAttribute("style");
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #343a40 !important;');
    }
-   state = !state;
+   // Then toggle (add/remove) the .dark-theme class to the body
+   document.body.classList.toggle('dark-theme');
+   */
+
    localStorage.setItem('themePreferences', state);
-  // Then toggle (add/remove) the .dark-theme class to the body
-  document.body.classList.toggle('dark-theme');
+   state = !state;
+
 })
   // Magnific popup calls
   $('#portfolio').magnificPopup({

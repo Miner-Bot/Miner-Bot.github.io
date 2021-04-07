@@ -45,7 +45,27 @@
   $(window).scroll(navbarCollapse);
 // Select the button
 const btn = document.querySelector('.btn-toggle');
+if (localStorage.themePreferences === true) {
+     var element = document.getElementById("SearchQuery");
+   element.addClass("dark-theme");
+   var element2 = document.getElementById("mainNav");
+   var footer = document.getElementById("footer");
+   footer.addClass('dark-theme');
+   var newatt = document.createAttribute("style");
+   newatt.value = 'background-color: #343a40 !important;';
+   element2.setAttributeNode(newatt);
+   document.body.addClass('dark-theme');
 
+} else if (localStorage.themePreferences === false) {
+        var element = document.getElementById("SearchQuery");
+   element.removeClass("dark-theme");
+   var element2 = document.getElementById("mainNav");
+   var footer = document.getElementById("footer");
+   footer.removeClass('dark-theme');
+   element2.removeAttribute("style");
+   document.body.removeClass('dark-theme');
+
+}
 // Listen for a click on the button
 btn.addEventListener('click', function() {
   var element = document.getElementById("SearchQuery");
@@ -59,6 +79,7 @@ btn.addEventListener('click', function() {
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #343a40 !important;');
    }
+   localStorage.setItem('themePreferences', true);
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
 })

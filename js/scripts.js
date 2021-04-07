@@ -79,7 +79,8 @@ btn.addEventListener('click', function() {
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #343a40 !important;');
    }
-   localStorage.setItem('themePreferences', true);
+   var bool = !bool || false;
+   localStorage.setItem('themePreferences', bool);
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
 })

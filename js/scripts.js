@@ -83,8 +83,9 @@ btn.addEventListener('click', function() {
    // Then toggle (add/remove) the .dark-theme class to the body
    document.body.classList.toggle('dark-theme');
    */
-
-   localStorage.setItem('themePreferences', state)
+var statemod = JSON.stringify(state);
+var statevalue = JSON.parse(statemod); // true
+   localStorage.setItem('themePreferences', statevalue)
    .then {
    state = !state;
    };

@@ -133,7 +133,7 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 				    for (i = 0; i < tr.length; i++) {
 					    td = tr[i].getElementsByTagName("summary")[0];
 					    if (td) {
-						    txtValue = td.textContent || td.innerHTML;
+						    txtValue = td.innerHTML;
 						    if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                         tr[i].open = true;
                                     } else {

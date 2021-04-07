@@ -61,7 +61,7 @@ btn.addEventListener('click', function() {
 element2.removeAttribute('style'));
    } else {
       element2.setAttributeNode(newatt);
-
+   }
 })
   // Magnific popup calls
   $('#portfolio').magnificPopup({

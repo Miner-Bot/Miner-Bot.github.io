@@ -93,7 +93,8 @@
 					  .join(' ');
 			  }
 			  function urlsort() {
-				  localStorage.setItem("clickedon", titleCase(location.hash.slice(1)));
+				  var cmd = titleCase(location.hash.slice(1));
+				  localStorage.setItem("clickedon", cmd);
 			  }
 			  fetch('commands.json')
 				  .then(function (response) {

@@ -123,6 +123,29 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 		  <script src="/js/command-page.js"></script>
 		  <script>
 			  document.getElementById("commands-in-here").innerHTML = location.hash + '<br>' + localStorage.getItem("clickedon");
+			  function myFunction() {
+                            if (location.hash) {
+				    var input, filter, table, tr, td, i, txtValue, data;
+				    data = document.getElementById('commands-in-here')
+				    input = location.hash.slice(1);
+				    filter = input.value.toUpperCase();
+				    tr = data.getElementsByTagName("details");
+				    for (var o = 0; o < data.length; o++) {
+					    var name = data[o].name;
+				    }
+				    for (i = 0; i < tr.length; i++) {
+					    td = tr[i].getElementsByTagName("summary")[0];
+					    if (td) {
+						    txtValue = td.textContent || td.innerHTML;
+						    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].style.display = "";
+                                    } else {
+                                        tr[i].style.display = "none";
+                                    }
+                                }
+                            }
+			    }
+                        }
 		  </script>
           </div>
       </section>

@@ -130,17 +130,14 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 				    input = location.hash.slice(1);
 				    filter = input.value.toUpperCase();
 				    tr = data.getElementsByTagName("details");
-				    for (var o = 0; o < data.length; o++) {
-					    var name = data[o].name;
-				    }
 				    for (i = 0; i < tr.length; i++) {
 					    td = tr[i].getElementsByTagName("summary")[0];
 					    if (td) {
 						    txtValue = td.textContent || td.innerHTML;
 						    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                        tr[i].style.display = "";
+                                        tr[i].open = true;
                                     } else {
-                                        tr[i].style.display = "none";
+                                        tr[i].open = false;
                                     }
                                 }
                             }

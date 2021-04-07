@@ -57,7 +57,10 @@ btn.addEventListener('click', function() {
    newatt.value = 'background-color: #343a40 !important;'
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
-  element2.setAttributeNode(newatt);
+   if (element2.hasAttribute('style')) {
+element2.removeAttribute('style'));
+   } else {
+      element2.setAttributeNode(newatt);
 
 })
   // Magnific popup calls

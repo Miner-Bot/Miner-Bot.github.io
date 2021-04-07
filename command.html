@@ -116,16 +116,29 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
 	att.value = data[o].name;
-	att2.value = "text-center";
+	att2.value = "text-center h4";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
 	
 			  document.getElementById("title").innerHTML = location.hash.slice(1);
 			  var header = document.getElementById("title");
-			  var div1 = document.createElement("div");
+			  var div1 = document.createElement("p");
+	var att3 = document.createAttribute("class");
+	att3.value = "h6";
+	div1.setAttributeNode(att3);
 			          div1.innerHTML = str;
                                   header.appendChild(div1);
 	header.appendChild(div);
+	
+	if (typeof(Storage) !== "undefined") {
+  // Store
+       // localStorage.setItem("command", location.hash);
+	document.title = localStorage.clickedon;
+  // Retrieve
+
+} else {
+  document.title = "Command Details";
+}
 			    }
 		    }
 		  </script>

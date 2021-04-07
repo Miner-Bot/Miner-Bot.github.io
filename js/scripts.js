@@ -55,7 +55,7 @@ btn.addEventListener('click', function() {
    footer.classList.toggle('dark-theme');
    var newatt = document.createAttribute("style");
    newatt.value = 'background-color: #343a40 !important;'
-   element2.toggleAttribute(newatt);
+   element2.toggleAttribute("style='background-color: #343a40 !important;'");
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
 })

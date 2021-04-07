@@ -67,6 +67,7 @@ if (localStorage.themePreferences === true) {
 
 }
 // Listen for a click on the button
+       var state = false;
 btn.addEventListener('click', function() {
   var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");
@@ -79,8 +80,8 @@ btn.addEventListener('click', function() {
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #343a40 !important;');
    }
-   var bool = !bool || false;
-   localStorage.setItem('themePreferences', bool);
+   state = !state;
+   localStorage.setItem('themePreferences', state);
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');
 })

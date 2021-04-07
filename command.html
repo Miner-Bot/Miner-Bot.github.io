@@ -115,8 +115,8 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
-	att.value = data[o].name;
-	att2.value = "text-center h4";
+	att.value = titleCase(data[o].name);
+	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
 	
@@ -124,7 +124,7 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 			  var header = document.getElementById("title");
 			  var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
-	att3.value = "h6";
+	att3.value = 'bungee-small-body-text';
 	div1.setAttributeNode(att3);
 			          div1.innerHTML = str;
                                   header.appendChild(div1);

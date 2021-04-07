@@ -50,7 +50,7 @@ const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function() {
   var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");
-   var element2 = document.getElementById("MainNav");
+   var element2 = document.getElementById("mainNav");
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');
 

@@ -80,7 +80,7 @@ btn.addEventListener('click', function() {
    newatt.value = 'background-color: #343a40 !important;';
    element2.toggleAttribute("style");
    if (element2.hasAttribute("style")) {
-      element2.setAttribute("style", 'background-color: #343a40 !important;');
+      element2.setAttribute("style", 'background-color: #4D5358 !important;');
    }
    // Then toggle (add/remove) the .dark-theme class to the body
    document.body.classList.toggle('dark-theme');

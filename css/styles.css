@@ -75,7 +75,10 @@ body.dark-theme {
 body.dark-theme a {
   color: #CED2DF;
 }
-body a.dark-theme {
+body.dark-theme table#commands-info {
+  background-color: #87817f !important;
+}
+a.dark-theme {
   color: #CED2DF;
 }
 

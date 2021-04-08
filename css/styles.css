@@ -1809,6 +1809,10 @@ pre code {
   width: 100%; /* Full-width */
   border: 1px solid #ddd; /* Add a grey border */
 }
+/* table#commands-info .dark {
+  background-color:
+  
+}*/
 #commands-info th, #commands-info td {
   text-align: center;
   padding: 12px;

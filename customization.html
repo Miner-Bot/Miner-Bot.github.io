@@ -127,7 +127,13 @@ function nightnight() {
 			</div>
 			<script>
 				function setData() {
-					localStorage.setItem('numberId', document.getElementById('selected').value);
+					if (!localStorage.numberId) {
+						localStorage.setItem('numberId', document.getElementById('selected').value);
+					}
+					if (localStorage.numberId) {
+						alert('Sorry, you already have a number! Don\'t be greedy. D:');
+					}
+					
 				}
 				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 				

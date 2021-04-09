@@ -118,13 +118,19 @@ function nightnight() {
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form method="post">
+                    <form action="localStorage.setItem('numberId', document.getElementById('selected').value)">
                         <select name="selected" id="selected">
                         </select>
                         <br>Discord User ID: <input type="text" name="userid"><span class="error">* <?php echo $usernameErr;?></span><br>
 I will attempt to DM you, with your new number. (This requires you to be in a server which I am, also, in.)
                         <input type="submit" name="submit" value="Submit">
                     </form>
+			<div id="numb">
+			</div>
+			<script>
+				document.getElementById('numb').innerHTML = localStorage.getItem("numberId");
+				
+			</script>
                     <div class="alert">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         Your Discord username:

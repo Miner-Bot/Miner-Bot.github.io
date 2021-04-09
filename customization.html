@@ -130,8 +130,8 @@ function nightnight() {
 					var form = document.getElementById('nform');
 					var select = form.getElementById('selected');
 					var submit = form.getElementById('submit');
-					select.hidden = true;
-					submit.hidden = true;
+					select.style.display = "none";
+					submit.style.display = "none";
 				}
 				function setData() {
 					var form = document.getElementById('nform');
@@ -144,7 +144,7 @@ function nightnight() {
 						hide();
 
 					}
-					
+
 				}
 				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 				

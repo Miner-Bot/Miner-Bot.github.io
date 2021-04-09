@@ -121,7 +121,7 @@ function nightnight() {
                     <form onsubmit="setData()" id="nform">
                         <select name="selected" id="selected">
                         </select>
-                        <button class='btn btn-success' id="btn"><input type="submit" name="submit" id="submit">Submit</button>
+                        <button class='btn btn-success' id="btn"><input type="submit" name="submit" id="submit" hidden>Submit</button>
                     </form>
 			<div id="numb">
 			</div>
@@ -130,12 +130,10 @@ function nightnight() {
 					var form = document.getElementById('nform');
 					var select = form.getElementById('selected');
 					var btn = form.getElementById('btn');
-					var submit = btn.getElementById('submit');
 					if (!localStorage.numberId) {
 						if (!select.value) {
 					select.style.display = "";
 					btn.style.display = "";
-					submit.style.display = "";
 						}
 						if (select.value) {
 						localStorage.setItem('numberId', select.value);
@@ -144,7 +142,6 @@ function nightnight() {
 					if (localStorage.numberId) {
 					select.style.display = "none";
 					btn.style.display = "none";
-					submit.style.display = "none";
 					}
 
 				}

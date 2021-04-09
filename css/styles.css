@@ -46,7 +46,10 @@
 *::after {
   box-sizing: border-box;
 }
-
+button #btn, input[type=submit] #submit {
+  margin: auto;
+  text-align: center;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;

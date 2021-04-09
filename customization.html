@@ -126,6 +126,13 @@ function nightnight() {
 			<div id="numb">
 			</div>
 			<script>
+				function hide() {
+					var form = document.getElementById('nform');
+					var select = form.getElementById('selected');
+					var submit = form.getElementById('submit');
+					select.hidden = true;
+					submit.hidden = true;
+				}
 				function setData() {
 					var form = document.getElementById('nform');
 					var select = document.getElementById('selected');
@@ -134,8 +141,8 @@ function nightnight() {
 						localStorage.setItem('numberId', select.value);
 					}
 					if (localStorage.numberId) {
-						form.select.hidden = true;
-						form.select.submit.hidden = true;
+						hide();
+
 					}
 					
 				}

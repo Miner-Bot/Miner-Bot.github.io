@@ -130,20 +130,20 @@ function nightnight() {
 					var form = document.getElementById('nform');
 					var select = form.getElementById('selected');
 					var btn = form.getElementById('btn');
-					if (!localStorage.numberId && select.value) {
+					if (!localStorage.numberId) {
 						localStorage.setItem('numberId', select.value);
 					}
 					if (localStorage.numberId) {
-					select.style.display = "none";
-					btn.style.display = "none";
+						form.style.display = "hidden";
 					}
 
 				}
 				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 				function hide() {
 					if (localStorage.numberId) {
-						select.style.display = "none";
-						btn.style.display = "none";
+						form.style.display = "hidden"
+						select.style.display = "hidden";
+						btn.style.display = "hidden";
 					}
 				}
 			</script>

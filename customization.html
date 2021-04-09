@@ -121,8 +121,6 @@ function nightnight() {
                     <form onsubmit="setData()">
                         <select name="selected" id="selected">
                         </select>
-                        <br>Discord User ID: <input type="text" name="userid"><span class="error">* <?php echo $usernameErr;?></span><br>
-I will attempt to DM you, with your new number. (This requires you to be in a server which I am, also, in.)
                         <input type="submit" name="submit" value="Submit">
                     </form>
 			<div id="numb">
@@ -131,7 +129,7 @@ I will attempt to DM you, with your new number. (This requires you to be in a se
 				function setData() {
 					localStorage.setItem('numberId', document.getElementById('selected').value);
 				}
-				document.getElementById('numb').innerHTML = localStorage.getItem("numberId");
+				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 				
 			</script>
                     <div class="alert">
@@ -163,7 +161,7 @@ I will attempt to DM you, with your new number. (This requires you to be in a se
                                 var att2 = document.createAttribute("label");
                                 option.innerHTML = data[i].number;
                                 att.value = data[i].number;
-                                att2.value = 'Selected Number\'s ID: ' + data[i].id;
+                                att2.value = 'This Number\'s ID: ' + data[i].id;
                                 mainContainer.appendChild(option);
                                 option.setAttributeNode(att);
                                 option.setAttributeNode(att2);

@@ -118,18 +118,19 @@ function nightnight() {
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form onsubmit="setData()" action="#phone" id="nform">
+                    <form onsubmit="setData()" id="nform">
                         <select name="selected" id="selected">
                         </select>
-                        <input type="submit" name="submit" value="Submit" id="submit">
+                        <button class='btn-success' id="btn"><input type="submit" name="submit" id="submit">Submit</button>
                     </form>
 			<div id="numb">
 			</div>
 			<script>
 				function setData() {
 					var form = document.getElementById('nform');
-					var select = document.getElementById('selected');
-					var submit = document.getElementById('submit');
+					var select = form.getElementById('selected');
+					var btn = form.getElementById('btn');
+					var submit = btn.getElementById('submit');
 					if (!localStorage.numberId) {
 						localStorage.setItem('numberId', select.value);
 					}

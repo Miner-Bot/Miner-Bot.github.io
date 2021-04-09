@@ -130,14 +130,8 @@ function nightnight() {
 					var form = document.getElementById('nform');
 					var select = form.getElementById('selected');
 					var btn = form.getElementById('btn');
-					if (!localStorage.numberId) {
-						if (!select.value) {
-					select.style.display = "";
-					btn.style.display = "";
-						}
-						if (select.value) {
+					if (!localStorage.numberId && select.value) {
 						localStorage.setItem('numberId', select.value);
-						}
 					}
 					if (localStorage.numberId) {
 					select.style.display = "none";
@@ -146,7 +140,12 @@ function nightnight() {
 
 				}
 				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
-				
+				function hide() {
+					if (localStorage.numberId) {
+						select.style.display = "none";
+						btn.style.display = "none";
+					}
+				}
 			</script>
                     <!--<div class="alert">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>

@@ -118,36 +118,40 @@ function nightnight() {
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form onsubmit="setData()" action="#phone">
+                    <form onsubmit="setData()" action="#phone" id="nform">
                         <select name="selected" id="selected">
                         </select>
-                        <input type="submit" name="submit" value="Submit">
+                        <input type="submit" name="submit" value="Submit" id="submit">
                     </form>
 			<div id="numb">
 			</div>
 			<script>
 				function setData() {
+					var form = document.getElementById('nform');
+					var select = document.getElementById('selected');
+					var submit = document.getElementById('submit');
 					if (!localStorage.numberId) {
-						localStorage.setItem('numberId', document.getElementById('selected').value);
+						localStorage.setItem('numberId', select.value);
 					}
 					if (localStorage.numberId) {
-						alert('Sorry, you already have a number! Don\'t be greedy. D:');
+						form.select.hidden = true;
+						form.select.submit.hidden = true;
 					}
 					
 				}
 				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 				
 			</script>
-                    <div class="alert">
+                    <!--<div class="alert">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         Your Discord username:
-                        <!-- MORE PHP CODE:
+                        /* MORE PHP CODE:
                         <?php
                         echo $userid;
                         echo $selected;
                         ?>
-                        -->
-                    </div>
+                        */
+                    </div>-->
                     <script>
                         fetch('numbers.json')
                             .then(function (response) {

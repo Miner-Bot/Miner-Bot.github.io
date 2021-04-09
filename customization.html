@@ -118,7 +118,7 @@ function nightnight() {
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form action="localStorage.setItem('numberId', document.getElementById('selected').value)">
+                    <form onsubmit="setData()">
                         <select name="selected" id="selected">
                         </select>
                         <br>Discord User ID: <input type="text" name="userid"><span class="error">* <?php echo $usernameErr;?></span><br>
@@ -128,6 +128,9 @@ I will attempt to DM you, with your new number. (This requires you to be in a se
 			<div id="numb">
 			</div>
 			<script>
+				function setData() {
+					localStorage.setItem('numberId', document.getElementById('selected').value);
+				}
 				document.getElementById('numb').innerHTML = localStorage.getItem("numberId");
 				
 			</script>

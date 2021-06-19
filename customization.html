@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="IcicleSavage" />
-        <title>Customizing MinerBot</title>
+        <title>Customize MinerBot</title>
         <!-- Favicon
         <link rel="icon" type="image/x-icon" href="assets/img/tabpic.ico" />-->
 	    <!-- Improved Favicon-->
@@ -37,19 +37,19 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    <body id="page-top" onload="hide()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
-                <button class="btn btn-toggle" onclick="nightnight"><i class="fa fa-moon"></i></button>
+                <button class="btn btn-toggle"><i class="fa fa-moon"></i></button>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="btn btn-primary btn-block nav-link js-scroll-trigger" href="/#get-to-know-minerbot">About MinerBot</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#invite">Invite</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#commands">Commands</a></li>
-                        <li class="nav-item"><a class="btn btn-primary nav-link-customization js-scroll-trigger" href="#p">Customization</a></li>
+                        <li class="nav-item"><a class="btn btn-primary nav-link-customization js-scroll-trigger" href="#p">Customize</a></li>
                     </ul>
                 </div>
                 <script>
@@ -118,23 +118,45 @@ function nightnight() {
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form method="post">
+                    <form onsubmit="setData()" id="nform">
                         <select name="selected" id="selected">
                         </select>
-                        <br>Discord User ID: <input type="text" name="userid"><span class="error">* <?php echo $usernameErr;?></span><br>
-I will attempt to DM you, with your new number. (This requires you to be in a server which I am, also, in.)
-                        <input type="submit" name="submit" value="Submit">
+                        <button class='btn btn-success' id="btn"><input type="submit" name="submit" id="submit" hidden>Submit</button>
                     </form>
-                    <div class="alert">
+			<div id="numb">
+			</div>
+			<script>
+				function setData() {
+					var form = document.getElementById('nform');
+					var select = form.getElementById('selected');
+					var btn = form.getElementById('btn');
+					if (!localStorage.numberId) {
+						localStorage.setItem('numberId', select.value);
+					}
+					if (localStorage.numberId) {
+						form.style.display = "hidden";
+					}
+
+				}
+				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
+				function hide() {
+					if (localStorage.numberId) {
+						form.style.display = "hidden"
+						select.style.display = "hidden";
+						btn.style.display = "hidden";
+					}
+				}
+			</script>
+                    <!--<div class="alert">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         Your Discord username:
-                        <!-- MORE PHP CODE:
+                        /* MORE PHP CODE:
                         <?php
                         echo $userid;
                         echo $selected;
                         ?>
-                        -->
-                    </div>
+                        */
+                    </div>-->
                     <script>
                         fetch('numbers.json')
                             .then(function (response) {
@@ -154,7 +176,7 @@ I will attempt to DM you, with your new number. (This requires you to be in a se
                                 var att2 = document.createAttribute("label");
                                 option.innerHTML = data[i].number;
                                 att.value = data[i].number;
-                                att2.value = 'Selected Number\'s ID: ' + data[i].id;
+                                att2.value = 'This Number\'s ID: ' + data[i].id;
                                 mainContainer.appendChild(option);
                                 option.setAttributeNode(att);
                                 option.setAttributeNode(att2);

@@ -6,6 +6,9 @@
         <meta name="description" content="" />
         <meta name="author" content="IcicleSavage" />
         <title>Command Details - " "</title>
+	    <script>
+		    // document.title = location.hash;
+	    </script>
         <!-- Favicon
         <link rel="icon" type="image/x-icon" href="assets/img/tabpic.ico" />-->
 	    <!-- Improved Favicon-->
@@ -46,20 +49,20 @@
   gtag('config', 'G-DG2FJ05YPK');
 </script>
     </head>
-    <body onload="urlsort()">
+    <body onload="myFunction()">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background:gray !important;" id="mainNav">
             <div class="container">
 		    <a onclick="back()" class="btn"><i class="fa fa-angle-left"></i></a>
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">MinerBot</a>
+		<a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
                 <button class="btn btn-toggle" title="Toggle Night Mode"><i class="fa fa-moon"></i></button>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="btn btn-primary btn-block nav-link js-scroll-trigger" href="#get-to-know-minerbot">About MinerBot</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#inviteM">Invite</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#commands">Commands</a></li>
-                        <li class="nav-item"><a class="btn btn-primary btn-block nav-link js-scroll-trigger" href="/customization#p">Customization</a></li>
+                        <li class="nav-item"><a class="btn btn-primary btn-block nav-link js-scroll-trigger" href="#/get-to-know-minerbot">About MinerBot</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#inviteM">Invite</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#commands">Commands</a></li>
+                        <li class="nav-item"><a class="btn btn-primary btn-block nav-link js-scroll-trigger" href="/customization#p">Customize</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,6 +71,7 @@
 				window.history.back();
 				// window.location.replace('/#commands');
 			}
+
 		</script>
         </nav>
         <!-- Commands -->
@@ -78,7 +82,97 @@
               </div>
 		  <div id="testurlreturn">
 		  </div>
-		  <script src="/js/command-page.js"></script>
+		  <div class="container-fluid text-box">
+		  <h1 class="text-left" id="title">[Command.name]</h1>
+		  </div>
+		  <script>
+			  function titleCase(str) {
+				  return str
+					  .split(' ')
+					  .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+					  .join(' ');
+			  }
+			  function urlsort() {
+				  var cmd = titleCase(location.hash.slice(1));
+				  localStorage.setItem("clickedon", cmd);
+			  }
+			  window.onload = urlsort;
+			  fetch('commands.json')
+				  .then(function (response) {
+				  return response.json();
+			  })
+				  .then(function (data) {
+				  appendData(data);
+			  })
+				  .catch(function (err) {
+				  console.log(err);
+			  });
+function appendData(data) {
+const prefix = '=';
+for (var o = 0; o < data.length; o++) {
+var str;
+if (data[o].usage && data[o].aliases) {
+str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+} else if (data[o].usage && !data[o].aliases) {
+str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage;
+} else if (!data[o].usage && data[o].aliases) {
+str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
+} else if (!data[o].usage && !data[o].aliases) {
+str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
+}
+	var div = document.createElement("div");
+	var att = document.createAttribute("id");
+	var att2 = document.createAttribute("class");
+	att.value = titleCase(data[o].name);
+	att2.value = "text-box bungee-body-text";
+	div.setAttributeNode(att);
+	div.setAttributeNode(att2);
+	
+			  document.getElementById("title").innerHTML = titleCase(location.hash.slice(1));
+			  var header = document.getElementById("title");
+			  var div1 = document.createElement("p");
+	var att3 = document.createAttribute("class");
+	att3.value = 'bungee-small-body-text';
+	div1.setAttributeNode(att3);
+			          div1.innerHTML = str;
+                                  header.appendChild(div1);
+	header.appendChild(div);
+}
+	if (typeof(Storage) !== "undefined") {
+  // Store
+       // localStorage.setItem("command", location.hash);
+	document.title = localStorage.clickedon;
+  // Retrieve
+
+} else {
+  document.title = "Command Details";
+}
+		    }
+		  </script>
+		  <!--<script src="/js/command-page.js"></script>-->
+		  <script>
+			  document.getElementById("commands-in-here").innerHTML = location.hash + '<br>' + localStorage.getItem("clickedon");
+			  function myFunction() {
+                            if (location.hash) {
+				    var input, filter, table, tr, td, i, txtValue, data;
+				    data = document.getElementById('commands-in-here')
+				    input = location.hash.slice(1);
+				    filter = input.value.toUpperCase();
+				    tr = data.getElementsByTagName("details");
+				    for (i = 0; i < tr.length; i++) {
+					    td = tr[i].getElementsByTagName("summary")[0];
+					    if (td) {
+						    txtValue = td.innerHTML;
+						    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].open = true;
+                                    } else {
+                                        tr[i].open = false;
+                                    }
+                                }
+                            }
+			    }
+                        }
+		  </script>
           </div>
       </section>
 

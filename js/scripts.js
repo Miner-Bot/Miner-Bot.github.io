@@ -142,14 +142,5 @@ btn.addEventListener('click', function() {
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
     }
   })
-  $(document).ready(function(){   
-    setTimeout(function () {
-//        $("#cookieConsent").fadeIn(200);
-        document.getElementById('cookieConsent').fadeIn;
-     }, 4000);
-    $("#closeCookieConsent, .cookieConsentOK").click(function() {
-        $("#cookieConsent").fadeOut(200);
-    });
-});
 
 })(jQuery); // End of use strict

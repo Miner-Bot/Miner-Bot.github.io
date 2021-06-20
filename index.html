@@ -46,12 +46,16 @@
   gtag('config', 'G-DG2FJ05YPK');
 </script>
     </head>
-    <body id="page-top" onload="disclaimer()">
-	    <script>
-		    function disclaimer() {
-			    alert("DISCLAIMER: THIS BOT IS NOT A MALICIOUS, *DATA* MINING BOT. THIS IS A DISCORD BOT, AND NOT USED FOR ANYTHING OTHER THAN ENTERTAINMENT, ON DISCORD. Thanks for stopping by! Click 'Ok' to continue on with your visit.");
-		    }
-	    </script>
+    <body id="page-top">
+	    <div id="cookieConsent">
+            <div id="closeCookieConsent">x</div>
+            Note: MinerBot's sole, purpose is entertainment, within Discord, and serves no other, outside, purpose. If you see other "Miner"Bots, they are actual (data) mining bots. Tip: DO NOT DOWNLOAD THEM! This site is safe. (Some parts of this website are jokes intended for entertainment purposes only.)<a href="#" target="_blank">More info</a>. <a class="cookieConsentOK" onclick="warningok()">That's Fine</a>
+        </div>
+        <script>
+            function warningok() {
+                //document.getElementById('cookieConsent').hidden = true;
+            }
+        </script>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">

@@ -16,7 +16,7 @@ var element = a.getElementByTagName("tr")[o].getElementByTagName("td")[o].getEle
 		localStorage.setItem("clickedon", commandname);
 
 
-	});
+	};
 }
 /*
 document.addEventListener('click', function(e) {

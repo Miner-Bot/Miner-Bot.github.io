@@ -107,7 +107,13 @@
         "description": "Let's introduce ourselves! Also, this is how you can learn my commands.",
         "aliases": [
             "hi",
-            "hey"
+            "hey",
+            "wsg",
+            "ws",
+            "minerbot",
+            "?",
+            "miner",
+            "MinerBot"
         ],
         "usage": "My name is[Your preffered name]"
     }

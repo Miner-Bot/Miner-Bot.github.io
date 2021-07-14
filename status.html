@@ -117,16 +117,17 @@
 				    }
 			    }
 			    function readStatus() {
-			    let status;
-				    var mainContainer = document.getElementById("bot-status");
-				    mainContainer.innerHTML = status.timestamp;
-				    for (var i = 0; i < data.length; i++) {
-				    var table = document.createElement("table");
+			    fetch('status.json')
+				    .then(function (response) {
+				    return response.json();
+			    })
+				    .then(function (data) {
+				    appendData(data);
+			    })
+				    .catch(function (err) {
+				    console.log(err);
+			    });
                         }
-			    }
-			    
-			    function appendData2(data) {
-				    
 			    }
 		    </script>
         </section>

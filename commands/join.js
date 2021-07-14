@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'join',
-	description: 'Find out what my ping is at.',
+	description: 'Ask me to join your voice channel (that you are currently in).',
 	cooldown: 5,
 	execute(message, args, client) {
 		client.emit(message);

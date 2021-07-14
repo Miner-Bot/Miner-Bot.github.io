@@ -1,0 +1,30 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: MinerBot
+
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches-ignore:
+      # Push events to branches matching refs/heads/mona/octocat
+      - 'Miner-Bot/MinerBot'
+      - 'Miner-Bot/Miner-bot.github.io'
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+    - run: npm install discord.js
+    - run: npm install @actions/core
+         | npm install @actions/github
+    - name: MinerBot
+      run: node index-github.js
+      if: ${{ success() }}

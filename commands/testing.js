@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'testing',
-	description: 'Get the stats.',
+	description: 'TESTING 123',
 	execute(message, args, client) {
 		client.voiceChannelIDs;
 		const data = [];

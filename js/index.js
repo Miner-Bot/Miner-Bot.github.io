@@ -4,9 +4,12 @@ const { prefix, token } = require('.//config.json');
 // const ytdl = require('ytdl-core');
 // const ytdldiscord = require('ytdl-core-discord');
 
+
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+// const timestampForStatus = client.readyTimestamp;
+// const uptime = client.uptime;
 const cooldowns = new Discord.Collection();
 
 // for getting current voice channel
@@ -154,7 +157,7 @@ client.on('guildCreate', guild => {
 //		message.channel.send(`<@${userMention}> I just sent you a DM with your number.`);
 //	}
 // });
-
+// const status = JSON.parse(fs.readFileSync('./Miner-Bot.github.io/MinerBot/status.json', 'utf8'));
 client.once('ready', () => {
 	console.log('Ready!');
 	console.log(client.uptime);
@@ -162,6 +165,18 @@ client.once('ready', () => {
 	fs.writeFile('./Miner-Bot.github.io/MinerBot/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
 		if(err) console.log(err);
 	});
+	fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
+		if (err) throw err;
+		let obj = JSON.parse(data);
+		obj = [obj, statusjson];
+		const jsonEdited = JSON.stringify(obj);
+		fs.writeFile('./Miner-Bot.github.io/MinerBot/status.json', jsonEdited, '', err => {
+			if(err) console.log(err);
+		});
+	});
+	const timestampData = client.readyAt;
+	const statusjson = { 'timestamp': timestampData, 'status': client.user.presence.status };
 });
+
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
 client.login(token);

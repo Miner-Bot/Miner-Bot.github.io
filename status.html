@@ -95,16 +95,16 @@
 					    var att3 = document.createAttribute("class");
 
 
-					    att2.value = 'auto';
+					    att2.value = 'table';
 					    att1.value = 'row';
-					    att3.value = 'auto';
+					    att3.value = 'table';
 					    
 					    mainContainer.appendChild(tr);
 					    tr.setAttributeNode(att1);
 					    tr.appendChild(td);
 					    tr.appendChild(status);
 					    td.setAttributeNode(att2);
-					    status.setAttributeNode(att2);
+					    status.setAttributeNode(att3);
 
 					    td.innerHTML = new Date(data[i].timestamp);
 					    status.innerHTML = data[i].status[0];

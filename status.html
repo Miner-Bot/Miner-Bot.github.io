@@ -92,21 +92,25 @@
 					    var mainContainer = document.getElementById("statustable");
 					    var tr = document.createElement("tr");
 					    var td = document.createElement("td");
+					    var status = document.createElement("td");
 					    
 					    var att1 = document.createAttribute("class")
 					    var att2 = document.createAttribute("class");
 					    var att3 = document.createAttribute("class");
 
 
-					    att2.value = 'text-box col-lg-2 bungee-body-text';
+					    att2.value = 'auto';
 					    att1.value = 'row';
-					    att3.value = 'text-box col-lg-2 bungee-body-text';
+					    att3.value = 'auto';
 					    
 					    mainContainer.appendChild(tr);
 					    tr.setAttributeNode(att1);
 					    tr.appendChild(td);
+					    tr.appendChild(status);
 					    td.setAttributeNode(att2);
+					    status.setAttributeNode(att2);
 
+					    tr.innerHTML = 'Times'
 					    td.innerHTML = new Date(data[i].timestamp);
 					    
 					/*    var tr = document.createElement("tr");

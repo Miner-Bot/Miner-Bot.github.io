@@ -106,7 +106,7 @@
 					    td.setAttributeNode(att2);
 					    status.setAttributeNode(att3);
 
-					    td.innerHTML = new Date(data[i].timestamp) || new Date(data[i].timestamp).toLocaleString();
+					    td.innerHTML = new Date(data[i].timestamp);
 					    status.innerHTML = data[i].status;
 					    
 					/*    var tr = document.createElement("tr");

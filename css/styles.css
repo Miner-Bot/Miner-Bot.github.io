@@ -89,6 +89,43 @@ a.dark-theme {
   width: 100% !important
 }
 
+#notice {
+  height: 140px;
+  float: unset;
+  width: 70%;
+  align-content: center;
+  margin: 0 auto;
+  margin-top: .78in;
+  text-align: left;
+  cursor: help;
+  position: sticky;
+  padding: .05in;
+  padding-left: .5rem;
+  padding-right: .7rem;
+  background-color:tomato !important;
+  color: white !important;
+  font-family: "JetBrains Mono" !important;
+  font-size: 11pt;
+}
+#noticebody {
+  position:fixed;
+}
+#notice>#close {
+  height: 140px;
+  vertical-align: top;
+  width: inherit;
+  position: fixed;
+}
+#containingalert {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  vertical-align: center;
+  z-index: 1;
+}
+
 footer {
   background-color: #f8f9fa;
   padding-top: 3rem !important;
@@ -99,7 +136,7 @@ summary#command-summary {
   border-color: #000000;
   background-color: #c4c1c0;
   color: #fff;
-  align-text: center;
+  align-content: center;
   width: 100%;
 }
 summary#command-summary::marker {
@@ -297,7 +334,7 @@ samp {
 }
 
 pre {
-  margin-top: 0;.
+  margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
   -ms-overflow-style: scrollbar;

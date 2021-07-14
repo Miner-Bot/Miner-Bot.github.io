@@ -46,13 +46,8 @@
   gtag('config', 'G-DG2FJ05YPK');
 </script>
     </head>
-    <body id="page-top" onload="disclaimer()">
-	    <script>
-		    function disclaimer() {
-			    alert("DISCLAIMER: THIS BOT IS NOT A MALICIOUS, *DATA* MINING BOT. THIS IS A DISCORD BOT, AND NOT USED FOR ANYTHING OTHER THAN ENTERTAINMENT, ON DISCORD. Thanks for stopping by! Click 'Ok' to continue on with your visit.");
-		    }
-	    </script>
-        <!-- Navigation-->
+    <body id="page-top">
+	    <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">MinerBot</a>
@@ -87,6 +82,27 @@
         <section class="page-section bg-primary" id="get-to-know-minerbot">
             <div class="container">
                 <div class="row justify-content-center">
+                    <div class="container" id="containingalert">
+                    <div id="notice" class="alert-primary alert-dismmissable"><div id="noitcebody">
+                        <div id="close"><div id="closebtn" class="close" style="cursor: pointer">×</div></div>
+                        Note: MinerBot's sole, purpose is entertainment, within Discord, and serves no other outside purpose. If you see other "Miner-Bots", they are most likely actual, data, mining bots. Tip: DO NOT DOWNLOAD THEM! This bot, and site are safe. [Because you don't have to download anything, in order for the bot to work!] (Some parts of this website are jokes intended for entertainment purposes only.)
+                    </div>
+                    </div>
+                </div>
+                    <script>
+                    // function checkIfWarned() {
+                    //     if (localStorage.warning) {
+                    //         document.getElementById('notice').hidden = true;
+                    //     }
+                    //     else {
+                    //         document.getElementById('notice').hidden = false;
+                    //     }
+                    // }
+                        var btn = document.getElementById('closebtn');
+                        btn.addEventListener('click', function() {
+                            document.getElementById('notice').hidden = true;
+                        });
+                    </script>
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">MinerBot can do stuff!</h2>
                         <hr class="divider light my-4" />

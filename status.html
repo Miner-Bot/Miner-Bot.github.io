@@ -75,11 +75,6 @@
                         
                     </div>
                 </div>
-		    <style>
-#statustable {
-  width: 100%;
-			    }
-		    </style>
             </div>
 		    <script>
 			    fetch('status.json')
@@ -97,38 +92,23 @@
 					    var mainContainer = document.getElementById("statustable");
 					    var tr = document.createElement("tr");
 					    var td = document.createElement("td");
-					    var td2 = document.createElement("td");
-
-					    var att = document.createAttribute("id");
+					    
 					    var att1 = document.createAttribute("class")
 					    var att2 = document.createAttribute("class");
 					    var att3 = document.createAttribute("class");
-					    var att5 = document.createAttribute("class");
-					    var att6 = document.createAttribute("id");
 
 
-					    att.value = 'status-table';
 					    att2.value = 'text-box col-lg-2 bungee-body-text';
 					    att1.value = 'row';
 					    att3.value = 'text-box col-lg-2 bungee-body-text';
-					    att5.value = 'row';
-					    att6.value = 'status';
+					    
+					    mainContainer.appendChild(tr);
+					    tr.setAttributeNode(att1);
+					    tr.appendChild(td);
+					    td.setAttributeNode(att2);
 
-				    mainContainer.setAttributeNode(att5);
-				    mainContainer.setAttributeNode(att6);
-                        
-				    mainContainer.appendChild(tr);
-				    tr.setAttributeNode(att);
-				    tr.setAttributeNode(att1);
-				    tr.appendChild(td);
-				    tr.appendChild(td2);
-				    td.setAttributeNode(att2);
-				    td2.setAttributeNode(att3);
-
-
-				    td.innerHTML = new Date(data[i].timestamp);
-				    td2.innerHTML = data[i].status;
-
+					    td.innerHTML = new Date(data[i].timestamp);
+					    
 					/*    var tr = document.createElement("tr");
 					    var td = document.createElement("td");
 					    mainContainer.appendChild(tr);

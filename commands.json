@@ -27,6 +27,11 @@
         "description": "Drive around"
     },
     {
+        "name": "game",
+        "description": "Fun game!",
+        "cooldown": 5
+    },
+    {
         "name": "help",
         "description": "**[This command]** ; List of all the avaiable commands, or get more info about a specific command.",
         "aliases": [

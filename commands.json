@@ -4,6 +4,12 @@
         "description": "Used when I need to announce something!"
     },
     {
+        "name": "play",
+        "description": "I'll join the voice channel, that you are currently in.",
+        "cooldown": 120,
+        "args": true
+    },
+    {
         "name": "credits",
         "description": "You might be wondering, \"Who made this...?\" Well, here's your answer.",
         "aliases": [
@@ -57,12 +63,6 @@
     {
         "name": "number",
         "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A"
-    },
-    {
-        "name": "play",
-        "description": "I'll join the voice channel, that you are currently in.",
-        "cooldown": 120,
-        "args": true
     },
     {
         "name": "ping",

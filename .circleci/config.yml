@@ -1,0 +1,17 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+workflows:
+  node-tests:
+    jobs:
+      - node/test
+      - build:
+          context: Token
+
+jobs:
+  build:
+    steps:
+      - run:
+          name: "token"
+          command: |
+            echo $CONFIG

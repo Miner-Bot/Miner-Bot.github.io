@@ -1,0 +1,12 @@
+<html>
+<body>
+<script>
+  function keydown(event) {
+while (event.key === "Enter") {
+var text = document.getElementById('txt').value;
+var message = { "msg":text };
+	document.getElementById('errors').innerHTML = JSON.stringify(message);
+}
+  </script>
+  </body>
+</html>

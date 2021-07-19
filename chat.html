@@ -1,8 +1,10 @@
 <html>
 <body>
-<script>
+
+	<input type="text" id="txt" onkeydown="keydown(event)">
+	<script>
   function keydown(event) {
-while (event.key === "Enter") {
+if (event.key === "Enter") {
 var text = document.getElementById('txt').value;
 var message = { "msg":text };
 	document.getElementById('errors').innerHTML = JSON.stringify(message);

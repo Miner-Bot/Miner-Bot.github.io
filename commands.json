@@ -55,6 +55,10 @@
         "args": true
     },
     {
+        "name": "msgs",
+        "description": "Pushes messages (from website) to dev."
+    },
+    {
         "name": "number",
         "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A"
     },

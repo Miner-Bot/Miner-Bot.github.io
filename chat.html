@@ -36,10 +36,10 @@
 			msg.appendAttributeNode('att');
 			msg.appendAttributeNode('att2');
 		if (data[o].direction === 'in') {
-msg[o].innerHTML = data[o].msg;
+msg.innerHTML = data[o].msg;
 		}
 			else if (data[o].direction != 'in') {
-				msg[o].innerHTML = '';
+				msg.innerHTML = '';
 			}
 		}
 	}

@@ -96,26 +96,19 @@ chatbubble > msg {
 msg {
   position: absolute;
   width: inherit;
+  text-align: left !important;
 }
 
 msg.out {
   background-color: #325ac7;
   padding-right: 7px !important;
-  text-align: right !important;
-}
-
-chatbubble > msg.out {
-  right: 0px;
+  right: 0px !important;
 }
 
 msg.in {
   background-color: #c2c2c2;
   padding-left: 7px !important;
-  text-align: left !important;
-}
-
-chatbubble > msg.in {
-  left: 0px;
+  left: 0px !important;
 }
 
 #funny {

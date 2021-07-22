@@ -85,7 +85,7 @@ a.dark-theme {
   color: #CED2DF;
 }
 
-#chatbubble > msg {
+#chatbubble > #msg {
   background-color: #c2c2c2;
   border-radius: 2rem;
   border-color: #c2c2c2 !important;  padding-left: 15%;
@@ -93,18 +93,18 @@ a.dark-theme {
   color: rgb(255, 255, 255) !important;
 }
 
-msg {
+#msg {
 position: absolute;
   right: 0px;
   width: inherit;
 }
 
-msg.out {
+#msg.out {
   background-color: #325ac7;
   text-align: right !important;
 }
 
-msg.in {
+#msg.in {
   background-color: #c2c2c2;
   text-align: left !important;
 }

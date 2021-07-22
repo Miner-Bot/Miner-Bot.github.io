@@ -88,25 +88,34 @@ a.dark-theme {
 chatbubble > msg {
   background-color: #c2c2c2;
   border-radius: 2rem;
-  border-color: #c2c2c2 !important;  padding-left: 15%;
+  border-color: #c2c2c2 !important;
+  padding-left: 15%;
   width: 20%;
   color: rgb(255, 255, 255) !important;
 }
 
 msg {
-position: absolute;
-  right: 0px;
+  position: absolute;
   width: inherit;
 }
 
 msg.out {
   background-color: #325ac7;
+  padding-right: 2rem;
   text-align: right !important;
+}
+
+chatbubble > msg.out {
+  right: 0px;
 }
 
 msg.in {
   background-color: #c2c2c2;
   text-align: left !important;
+}
+
+chatbubble > msg.in {
+  right: 0px;
 }
 
 #funny {

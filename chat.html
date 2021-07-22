@@ -13,7 +13,8 @@
     if (event.key === "Enter") {
     var text = document.getElementById('txt').value;
     var message = { "msg":text };
-      document.getElementById('outmsg').innerHTML = text;
+	    var jsonstringfy = JSON.stringify(message);
+      document.getElementById('outmsg').innerHTML = text + '<br>' + jsonstringfy;
     }
       };
       </script>

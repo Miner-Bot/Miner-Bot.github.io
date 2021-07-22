@@ -1,3 +1,25 @@
-{
+[{
+    "direction":"in",
     "msg":"hi"
-}
+},
+ {
+     "direction":"out",
+     "msg":"wsp"
+ },
+ {
+     "direction":"in",
+     "msg":"What can I help you with?"
+ },
+ {
+     "direction":"out",
+     "msg":"ur bot is dumb."
+ },
+ {
+     "direction":"in",
+     "msg":"Well, that's not very nice."
+ },
+ {
+     "direction":"out",
+     "msg":"well..its the truth"
+ }
+]

@@ -15,7 +15,6 @@
     var text = document.getElementById('txt').value;
     var message = { "msg":text };
 	    var jsonstringfy = JSON.stringify(message);
-	    var file = new File(jsonstringfy, 'e.json', { type: 'application/json'});
       document.getElementById('outmsg').innerHTML = text;
 document.getElementById('ex').innerHTML = jsonstringfy;
 	    /* if (text === "hi") {

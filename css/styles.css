@@ -89,7 +89,6 @@ chatbubble > msg {
   background-color: #c2c2c2;
   border-radius: 2rem;
   border-color: #c2c2c2 !important;
-  padding-left: 15%;
   width: 20%;
   color: rgb(255, 255, 255) !important;
 }
@@ -101,7 +100,7 @@ msg {
 
 msg.out {
   background-color: #325ac7;
-  padding-right: 1rem;
+  padding-right: 7px !important;
   text-align: right !important;
 }
 
@@ -111,7 +110,7 @@ chatbubble > msg.out {
 
 msg.in {
   background-color: #c2c2c2;
-  padding-left: 1rem;
+  padding-left: 7px !important;
   text-align: left !important;
 }
 

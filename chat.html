@@ -24,12 +24,14 @@
 			
 	function appendData(data) {
 		for (var o = 0; o < data.length; o++) {
+			var main = document.body;
 		var bub = document.createElement('chatbubble');
 		var msg = document.createElement('msg');
 		var att = document.createAttribute('class');
 		var att2 = document.createAttribute('id');
-	att.value = data[o].direction;
-		att2.value = data[o].direction + 'msg';
+	main.appendChild(bub);
+			att.value = data[o].direction;
+			att2.value = data[o].direction + 'msg';
 	bub.appendChild(msg);
 			msg.appendAttributeNode('att');
 			msg.appendAttributeNode('att2');

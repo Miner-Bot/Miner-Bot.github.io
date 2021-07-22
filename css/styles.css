@@ -94,7 +94,8 @@ chatbubble > msg {
 }
 
 msg {
-  display: block;
+position: absolute;
+  right: 0px;
   width: inherit;
 }
 

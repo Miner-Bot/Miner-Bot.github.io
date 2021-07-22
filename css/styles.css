@@ -101,7 +101,7 @@ msg {
 
 msg.out {
   background-color: #325ac7;
-  padding-right: 2rem;
+  padding-right: 1rem;
   text-align: right !important;
 }
 
@@ -111,11 +111,12 @@ chatbubble > msg.out {
 
 msg.in {
   background-color: #c2c2c2;
+  padding-left: 1rem;
   text-align: left !important;
 }
 
 chatbubble > msg.in {
-  right: 0px;
+  left: 0px;
 }
 
 #funny {

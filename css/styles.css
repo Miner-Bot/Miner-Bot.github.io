@@ -85,7 +85,7 @@ a.dark-theme {
   color: #CED2DF;
 }
 
-#chatbubble > #msg {
+.chatbubble > #msg {
   background-color: #c2c2c2;
   border-radius: 2rem;
   border-color: #c2c2c2 !important;  padding-left: 15%;

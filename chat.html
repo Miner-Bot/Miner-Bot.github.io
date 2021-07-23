@@ -8,6 +8,9 @@
 <body>
 	<div id="ex"></div>
 	<!--<div class="container" style="{width:80%;right:0px;}">--><chatbubble><msg class="out" id="outmsg"></msg></chatbubble>
+	<div id="outmsgs"></div>
+	<div id="inmsgs"></div>
+
 	<chatbubble><msg class="in" id="inmsg">hi</msg></chatbubble>
     <input type="text" id="txt" onkeydown="keydown(event)">
 <script>
@@ -25,7 +28,7 @@
 			
 	function appendData(data) {
 		for (var o = 0; o < data.length; o++) {
-			var main = document.body;
+			var main = document.getElementById('outmsgs');
 		var bub = document.createElement('chatbubble');
 		var msg = document.createElement('msg');
 		var att = document.createAttribute('class');
@@ -48,10 +51,18 @@ msg.innerHTML = data[o].msg;
 function keydown(event) {
     if (event.key === "Enter") {
     var text = document.getElementById('txt').value;
-    var message = { "msg":text };
-	    var jsonstringfy = JSON.stringify(message);
-      document.getElementById('outmsg').innerHTML = text;
-document.getElementById('ex').innerHTML = jsonstringfy;
+	    var main = document.getElementById('outmsgs');
+	    var bub = document.createElement('chatbubble');
+	    var message = document.createElement('msg');
+	    var att = document.createAttribute('class');
+	    var att2 = document.createAttribute('id');
+	main.appendChild(bub);
+			att.value = 'out';
+			att2.value = 'outmsg';
+	bub.appendChild(message);
+			message.setAttributeNode(att);
+			message.setAttributeNode(att2);
+	    message.innerHTML = text;
 if (text === 'hi') {
 	document.getElementById('inmsg').innerHTML = 'hey!';
 }

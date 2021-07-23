@@ -91,6 +91,7 @@ chatbubble > msg {
   border-color: #c2c2c2 !important;
   width: 20%;
   color: rgb(255, 255, 255) !important;
+  display: block;
 }
 
 msg {
@@ -99,7 +100,6 @@ msg {
   padding-left: 7px;
   padding-right: 7px;
   text-align: left !important;
-  margin-bottom: 1rem;
 }
 
 msg.out {

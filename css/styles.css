@@ -99,6 +99,7 @@ msg {
   padding-left: 7px;
   padding-right: 7px;
   text-align: left !important;
+  margin-bottom: 1rem;
 }
 
 msg.out {

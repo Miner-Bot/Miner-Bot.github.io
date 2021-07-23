@@ -29,13 +29,13 @@
 		var bub = document.createElement('chatbubble');
 		var msg = document.createElement('msg');
 		var att = document.createAttribute('class');
-		// var att2 = document.createAttribute('id');
+		var att2 = document.createAttribute('id');
 	main.appendChild(bub);
 			att.value = data[o].direction;
-			// att2.value = data[o].direction + 'msg';
+			att2.value = data[o].direction + 'msg';
 	bub.appendChild(msg);
-			msg.appendAttributeNode('att');
-			msg.appendAttributeNode('att2');
+			msg.setAttributeNode(att);
+			msg.setAttributeNode(att2);
 		if (data[o].direction === 'in') {
 msg.innerHTML = data[o].msg;
 		}

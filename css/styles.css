@@ -129,7 +129,7 @@ msg.in {
   margin-top: .78in;
   text-align: left;
   cursor: help;
-  position: fixed;
+  position: sticky;
   padding: .05in;
   padding-left: .5rem;
   padding-right: .7rem;

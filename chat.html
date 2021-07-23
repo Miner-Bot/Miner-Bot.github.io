@@ -30,21 +30,21 @@
 		for (var o = 0; o < data.length; o++) {
 		// var indata = data[o].direction.includes('in');
 		// var outdata = data[o].direction.includes('out');
-		if (data[o].direction === 'in') {
-			var main = document.getElementById('inmsgs');
-			var bub = document.createElement('chatbubble');
-			var msg = document.createElement('msg');
-			var att = document.createAttribute('class');
-			var att2 = document.createAttribute('id');
-			main.appendChild(bub);
-			att.value = 'in';
-			att2.value = 'inmsg';
-			bub.appendChild(msg);
-			msg.setAttributeNode(att);
-			msg.setAttributeNode(att2);
-			msg.innerHTML = data[o].msg; // indata;
-		}
-		if (data[o].direction === 'out') {
+			if (data[o].direction === 'in') {
+				var main = document.getElementById('inmsgs');
+				var bub = document.createElement('chatbubble');
+				var msg = document.createElement('msg');
+				var att = document.createAttribute('class');
+				var att2 = document.createAttribute('id');
+				main.appendChild(bub);
+				att.value = 'in';
+				att2.value = 'inmsg';
+				bub.appendChild(msg);
+				msg.setAttributeNode(att);
+				msg.setAttributeNode(att2);
+				msg.innerHTML = data[o].msg; // indata;
+			}
+			else if (data[o].direction === 'out') {
 				var main = document.getElementById('outmsgs');
 				main.appendChild(bub);
 				att.value = 'out';

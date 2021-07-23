@@ -28,23 +28,29 @@
 			
 	function appendData(data) {
 		for (var o = 0; o < data.length; o++) {
-			var main = document.getElementById('outmsgs');
-		var bub = document.createElement('chatbubble');
-		var msg = document.createElement('msg');
-		var att = document.createAttribute('class');
-		var att2 = document.createAttribute('id');
-	main.appendChild(bub);
-			att.value = data[o].direction;
-			att2.value = data[o].direction + 'msg';
-	bub.appendChild(msg);
+		if (data[o].direction === 'in') {
+			var main = document.getElementById('inmsgs');
+			var bub = document.createElement('chatbubble');
+			var msg = document.createElement('msg');
+			var att = document.createAttribute('class');
+			var att2 = document.createAttribute('id');
+			main.appendChild(bub);
+			att.value = 'in';
+			att2.value = 'inmsg';
+			bub.appendChild(msg);
 			msg.setAttributeNode(att);
 			msg.setAttributeNode(att2);
-		if (data[o].direction === 'in') {
-msg.innerHTML = data[o].msg;
-		}
-			else if (data[o].direction != 'in') {
-				msg.innerHTML = '';
+		} else if (data[o].direction === 'out') {
+				main = document.getElementById('outmsgs');
+				main.appendChild(bub);
+				att.value = 'out';
+				att2.value = 'outmsg';
+				bub.appendChild(msg);
+				msg.setAttributeNode(att);
+				msg.setAttributeNode(att2);
 			}
+			msg.innerHTML = data[o].msg;
+
 		}
 	}
 

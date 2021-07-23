@@ -1,6 +1,6 @@
 [{
     "direction":"in",
-    "msg":"hi"
+    "msg":"Hello!"
 },
  {
      "direction":"out",
@@ -16,10 +16,10 @@
  },
  {
      "direction":"in",
-     "msg":"Well, that's not very nice."
+     "msg":"Well, that's not very nice. I worked very hard on him. What happened? Did he error, or not execute a command correctly?"
  },
  {
      "direction":"out",
-     "msg":"well..its the truth"
+     "msg":"no i jus think he dumb."
  }
 ]

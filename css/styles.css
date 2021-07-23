@@ -91,9 +91,8 @@ chatbubble > msg {
   border-color: #c2c2c2 !important;
   width: 20%;
   color: rgb(255, 255, 255) !important;
-  display: block;
-  padding-top: 8px;
-  padding bottom: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 msg {

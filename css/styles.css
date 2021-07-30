@@ -96,7 +96,7 @@ chatbubble > msg {
 }
 
 msg {
-  position: absolute;
+  position: relative;
   width: inherit;
   padding-left: 7px;
   padding-right: 7px;

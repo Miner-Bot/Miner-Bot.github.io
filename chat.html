@@ -28,8 +28,8 @@
 			
 	function appendData(data) {
 		for (var o = 0; o < data.length; o++) {
-		var indata = data[o].direction.includes('in');
-		var outdata = data[o].direction.includes('out');
+		var indata = data[o].direction = 'in';
+		var outdata = data[o].direction = 'out';
 			if (data[o].direction === 'in') {
 				var main = document.getElementById('inmsgs');
 				var bub = document.createElement('chatbubble');

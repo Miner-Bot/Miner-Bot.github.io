@@ -93,6 +93,7 @@ chatbubble > msg {
   color: rgb(255, 255, 255) !important;
   margin-top: 20px;
   margin-bottom: 50px;
+  break-after: column;
 }
 
 chatbubble {

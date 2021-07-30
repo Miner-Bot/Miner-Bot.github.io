@@ -28,8 +28,6 @@
 			
 	function appendData(data) {
 		for (var o = 0; o < data.length; o++) {
-		var indata = data[o].direction = 'in';
-		var outdata = data[o].direction = 'out';
 			if (data[o].direction === 'in') {
 				var main = document.getElementById('inmsgs');
 				var bub = document.createElement('chatbubble');
@@ -42,9 +40,9 @@
 				bub.appendChild(msg);
 				msg.setAttributeNode(att);
 				msg.setAttributeNode(att2);
-				msg.innerHTML = indata; // data[o].msg;
+				msg.innerHTML = data[o].msg; // data[o].msg;
 			}
-			else if (data[o].direction === 'out') {
+			if (data[o].direction === 'out') {
 				var main = document.getElementById('outmsgs');
 				main.appendChild(bub);
 				att.value = 'out';
@@ -52,7 +50,7 @@
 				bub.appendChild(msg);
 				msg.setAttributeNode(att);
 				msg.setAttributeNode(att2);
-				msg.innerHTML = outdata; // data[o].msg;
+				msg.innerHTML = data[o].msg; // data[o].msg;
 			}
 		}
 	}

@@ -60,23 +60,25 @@
 
 function keydown(event) {
     if (event.key === "Enter") {
-    var text = document.getElementById('txt').value;
+    	var text = document.getElementById('txt').value;
 	    var main = document.getElementById('outmsgs');
 	    var bub = document.createElement('chatbubble');
 	    var message = document.createElement('msg');
+		var br = document.createElement('br');
 	    var att = document.createAttribute('class');
 	    var att2 = document.createAttribute('id');
-	main.appendChild(bub);
+		main.appendChild(bub);
 			att.value = 'out';
 			att2.value = 'outmsg';
-	bub.appendChild(message);
+		bub.appendChild(message);
 			message.setAttributeNode(att);
 			message.setAttributeNode(att2);
 	    message.innerHTML = text;
-if (text === 'hi') {
-	document.getElementById('inmsg').innerHTML = 'hey!';
-}
-    
+		main.appendChild(br);
+// if (text === 'hi') {
+// 	document.getElementById('inmsg').innerHTML = 'hey!';
+// }
+    text = "";
     }
       };
       </script>

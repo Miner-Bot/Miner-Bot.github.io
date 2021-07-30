@@ -87,6 +87,7 @@ a.dark-theme {
 
 div#outmsgs, div#inmsgs {
   line-break: normal;
+  height: max-content;
 }
 
 chatbubble > msg {
@@ -96,22 +97,25 @@ chatbubble > msg {
   width: 20%;
   color: rgb(255, 255, 255) !important;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  inline-size: max-content;
+  width: max-content;
 }
 
 chatbubble {
-  position: static;
-  padding-top: 20px;
-  break-after: column;
+  position: fixed;
+  top: auto;
+  right: 0px;
+  left: 0px;
+  bottom: auto;
+  margin-bottom: 30px;
 }
 
 msg {
-  position: absolute;
+  position: fixed;
   width: inherit;
   padding-left: 7px;
   padding-right: 7px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   text-align: left !important;
 }
 

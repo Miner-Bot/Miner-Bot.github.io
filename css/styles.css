@@ -100,9 +100,9 @@ chatbubble > msg {
 }
 
 chatbubble {
-  position: fixed;
-  top: auto;
-  break-after: 20px;
+  position: static;
+  padding-top: 20px;
+  break-after: column;
 }
 
 msg {
@@ -110,6 +110,8 @@ msg {
   width: inherit;
   padding-left: 7px;
   padding-right: 7px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: left !important;
 }
 

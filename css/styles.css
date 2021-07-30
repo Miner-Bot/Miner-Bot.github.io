@@ -95,8 +95,13 @@ chatbubble > msg {
   margin-bottom: 50px;
 }
 
+chatbubble {
+  position: fixed;
+  top: auto;
+}
+
 msg {
-  position: relative;
+  position: absolute;
   width: inherit;
   padding-left: 7px;
   padding-right: 7px;
@@ -107,7 +112,6 @@ msg.out {
   background-color: #325ac7;
   margin-right: 7px;
   right: 0px !important;
-  
 }
 
 msg.in {

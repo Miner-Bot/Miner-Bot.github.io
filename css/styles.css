@@ -85,6 +85,10 @@ a.dark-theme {
   color: #CED2DF;
 }
 
+div#outmsgs, div#inmsgs {
+  line-break: normal;
+}
+
 chatbubble > msg {
   background-color: #c2c2c2;
   border-radius: 2rem;
@@ -93,12 +97,12 @@ chatbubble > msg {
   color: rgb(255, 255, 255) !important;
   margin-top: 20px;
   margin-bottom: 50px;
-  break-after: column;
 }
 
 chatbubble {
   position: fixed;
   top: auto;
+  break-after: 20px;
 }
 
 msg {

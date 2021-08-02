@@ -111,7 +111,7 @@ chatbubble {
 
 msg {
   position: fixed;
-  width: inherit;
+  width: fit-content;
   padding-left: 7px;
   padding-right: 7px;
   text-align: left !important;

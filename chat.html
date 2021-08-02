@@ -44,8 +44,7 @@
 				msg.setAttributeNode(att2);
 				msg.innerHTML = data[o].msg; // data[o].msg;
 				main.appendChild(br);
-			}
-			if (data[o].direction === 'out') {
+			} else if (data[o].direction === 'out') {
 				main = document.getElementById('outmsgs');
 				main.appendChild(bub);
 				att.value = 'out';

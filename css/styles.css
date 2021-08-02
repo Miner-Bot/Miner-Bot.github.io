@@ -98,8 +98,6 @@ chatbubble > msg {
   color: rgb(255, 255, 255) !important;
   margin-top: 20px;
   margin-bottom: 30px;
-  inline-size: max-content;
-  width: max-content;
 }
 
 chatbubble {

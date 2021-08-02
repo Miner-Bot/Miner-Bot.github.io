@@ -28,13 +28,14 @@
 			
 	function appendData(data) {
 		for (var o = 0; o < data.length; o++) {
+			var main;
+			var bub = document.createElement('chatbubble');
+			var msg = document.createElement('msg');
+			var br = document.createElement('br');
+			var att = document.createAttribute('class');
+			var att2 = document.createAttribute('id');
 			if (data[o].direction === 'in') {
-				var main = document.getElementById('inmsgs');
-				var bub = document.createElement('chatbubble');
-				var msg = document.createElement('msg');
-				var br = document.createElement('br');
-				var att = document.createAttribute('class');
-				var att2 = document.createAttribute('id');
+				main = document.getElementById('inmsgs');
 				main.appendChild(bub);
 				att.value = 'in';
 				att2.value = 'inmsg';
@@ -45,7 +46,7 @@
 				main.appendChild(br);
 			}
 			if (data[o].direction === 'out') {
-				var main = document.getElementById('outmsgs');
+				main = document.getElementById('outmsgs');
 				main.appendChild(bub);
 				att.value = 'out';
 				att2.value = 'outmsg';

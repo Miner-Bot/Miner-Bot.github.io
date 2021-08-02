@@ -96,8 +96,6 @@ chatbubble > msg {
   border-color: #c2c2c2 !important;
   width: fit-content;
   height: fit-content;
-  max-height: 40px;
-  max-width: 40%;
   color: rgb(255, 255, 255) !important;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -114,8 +112,10 @@ chatbubble {
 
 msg {
   position: fixed;
-  width: inherit;
-  max-height: inherit;
+  width: fit-content;
+  height: fit-content;
+  max-height: 40px;
+  max-width: 40%;
   padding-left: 7px;
   padding-right: 7px;
   text-align: left !important;

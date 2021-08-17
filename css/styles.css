@@ -86,9 +86,20 @@ a.dark-theme {
 }
 
 div#outmsgs, div#inmsgs {
+  position: relative;
   line-break: normal;
   height: fit-content;
   max-height: 100%;
+  width: 40%;
+  top: 50px;
+}
+
+div#outmsgs {
+  right: 0px;
+}
+
+div#inmsgs {
+  left: 0px;
 }
 
 chatbubble > msg {
@@ -103,7 +114,7 @@ chatbubble > msg {
 }
 
 chatbubble {
-  position: fixed;
+  position: relative;
   top: auto;
   right: 0px;
   left: 0px;

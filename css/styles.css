@@ -87,7 +87,8 @@ a.dark-theme {
 
 div#outmsgs, div#inmsgs {
   line-break: normal;
-  height: max-content;
+  height: fit-content;
+  max-height: 100%;
 }
 
 chatbubble > msg {

@@ -127,6 +127,8 @@ chatbubble {
   bottom: auto;
   margin-bottom: 30px;
   border: 3px solid #000;
+  height: fit-content;
+  width: fit-content;
 }
 
 msg.out {

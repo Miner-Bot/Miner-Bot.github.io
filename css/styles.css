@@ -150,7 +150,7 @@ msg.in {
   width: 100% !important
 }
 
-#notice {
+#containingalert>#notice {
   height: 140px;
   float: unset;
   width: 70%;
@@ -170,9 +170,7 @@ msg.in {
   font-family: "JetBrains Mono" !important;
   font-size: 11pt;
 }
-#noticebody {
-  position:fixed;
-}
+
 #notice>#close {
   height: 140px;
   vertical-align: top;

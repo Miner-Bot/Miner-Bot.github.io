@@ -9,10 +9,8 @@
 	<div id="info-bar-top" class="info-bar-top"></div>
 	<div id="ex"></div>
 	<!--<div class="container" style="{width:80%;right:0px;}">--><chatbubble><msg class="out" id="outmsg"></msg></chatbubble>
-	<div id="outmsgs"></div>
-	<div id="inmsgs"></div>
+	<div id="msgs"></div>
 
-	<chatbubble><msg class="in" id="inmsg">hi</msg></chatbubble>
     <input type="text" id="txt" onkeydown="keydown(event)">
 <script>
 	fetch('chats/dev.json')
@@ -28,15 +26,14 @@
                     });
 			
 	function appendData(data) {
+		var main = document.getElementById('msgs');;
+		var bub = document.createElement('chatbubble');
+		var msg = document.createElement('msg');
+		var br = document.createElement('br');
+		var att = document.createAttribute('class');
+		var att2 = document.createAttribute('id');
 		for (var o = 0; o < data.length; o++) {
-			var main;
-			var bub = document.createElement('chatbubble');
-			var msg = document.createElement('msg');
-			var br = document.createElement('br');
-			var att = document.createAttribute('class');
-			var att2 = document.createAttribute('id');
 			if (data[o].direction === 'in') {
-				main = document.getElementById('inmsgs');
 				main.appendChild(bub);
 				att.value = 'in';
 				att2.value = 'inmsg';
@@ -46,7 +43,6 @@
 				msg.innerHTML = data[o].msg; // data[o].msg;
 				main.appendChild(br);
 			} else if (data[o].direction === 'out') {
-				main = document.getElementById('outmsgs');
 				main.appendChild(bub);
 				att.value = 'out';
 				att2.value = 'outmsg';
@@ -62,7 +58,7 @@
 function keydown(event) {
     if (event.key === "Enter") {
     	var text = document.getElementById('txt').value;
-	    var main = document.getElementById('outmsgs');
+	    var main = document.getElementById('msgs');
 	    var bub = document.createElement('chatbubble');
 	    var message = document.createElement('msg');
 		var br = document.createElement('br');

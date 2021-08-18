@@ -85,20 +85,13 @@ a.dark-theme {
   color: #CED2DF;
 }
 
-div#outmsgs, div#inmsgs {
+div#msgs {
   position: relative;
   line-break: normal;
   height: fit-content;
   max-height: 100%;
-  width: 40%;
+  width: 100%;
   top: 50px;
-}
-
-div#outmsgs {
-  right: 0px;
-}
-
-div#inmsgs {
   left: 0px;
 }
 
@@ -106,7 +99,7 @@ chatbubble > msg {
   position: fixed;
   background-color: #c2c2c2;
   border-radius: 2rem;
-  border-color: #c2c2c2 !important;
+  border-color: #c2c2c2 !important
   width: fit-content;
   height: fit-content;
   color: rgb(255, 255, 255) !important;

@@ -145,6 +145,11 @@ msg.in {
   background-color: #cfd1d4;
   text-align: center;
   padding-bottom: 20px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 
 #funny {

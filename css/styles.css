@@ -103,6 +103,7 @@ div#inmsgs {
 }
 
 chatbubble > msg {
+  position: fixed;
   background-color: #c2c2c2;
   border-radius: 2rem;
   border-color: #c2c2c2 !important;
@@ -111,6 +112,11 @@ chatbubble > msg {
   color: rgb(255, 255, 255) !important;
   margin-top: 20px;
   margin-bottom: 30px;
+  max-height: 40px;
+  max-width: 40%;
+  padding-left: 7px;
+  padding-right: 7px;
+  text-align: left !important;
 }
 
 chatbubble {
@@ -120,17 +126,6 @@ chatbubble {
   left: 0px;
   bottom: auto;
   margin-bottom: 30px;
-}
-
-msg {
-  position: fixed;
-  width: fit-content;
-  height: fit-content;
-  max-height: 40px;
-  max-width: 40%;
-  padding-left: 7px;
-  padding-right: 7px;
-  text-align: left !important;
 }
 
 msg.out {

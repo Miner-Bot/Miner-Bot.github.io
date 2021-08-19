@@ -34,7 +34,7 @@
 		var att2 = document.createAttribute('id');
 		for (var o = 0; o < data.length; o++) {
 			var sqr = document.getElementsByTagName("msg");
-			var val = window.getComputedStyle(sqr);
+			var val = window.getComputedStyle(msg);
 			var orig = val.getPropertyValue('top');
 			sqr.style.top = (orig + 45) + "px";
 			// r.style.setProperty('--orig', ((orig + 45) + 'px'));

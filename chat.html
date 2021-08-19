@@ -33,7 +33,7 @@
 		var att = document.createAttribute('class');
 		var att2 = document.createAttribute('id');
 		for (var o = 0; o < data.length; o++) {
-			var sqr = document.getElementByTagName("msg");
+			var sqr = document.getElementsByTagName("msg");
 			var val = parseInt(getComputedStyle(sqr).top, 10);
 			sqr.style.top = (val + 100) + "px";
 			// r.style.setProperty('--orig', ((orig + 45) + 'px'));

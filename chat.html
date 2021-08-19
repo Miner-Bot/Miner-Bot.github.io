@@ -36,7 +36,7 @@
 			var sqr = document.getElementsByTagName("msg");
 			var val = window.getComputedStyle(msg);
 			var orig = val.getPropertyValue('top');
-			sqr.style.top = (orig + 45) + "px";
+			msg.style.top = (orig + 45) + "px";
 			// r.style.setProperty('--orig', ((orig + 45) + 'px'));
 			if (data[o].direction === 'in') {
 				main.appendChild(bub);

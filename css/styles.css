@@ -96,7 +96,8 @@ div#msgs {
 }
 
 chatbubble > msg {
-  position: fixed;
+  position: absolute;
+  top: 5px;
   background-color: #c2c2c2;
   border-radius: 2rem;
   border-color: #c2c2c2 !important;
@@ -115,12 +116,11 @@ chatbubble > msg {
 chatbubble {
   position: relative;
   top: auto;
-  right: 0px;
-  left: 0px;
   bottom: auto;
   margin-bottom: 30px;
   height: fit-content;
-  width: fit-content;
+  max-height: 40px;
+  width: 100%;
 }
 
 msg.out {

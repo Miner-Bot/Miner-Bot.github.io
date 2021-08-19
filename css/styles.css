@@ -85,6 +85,12 @@ a.dark-theme {
   color: #CED2DF;
 }
 
+#ex {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
 div#msgs {
   position: relative;
   line-break: normal;

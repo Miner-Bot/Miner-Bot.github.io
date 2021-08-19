@@ -110,8 +110,8 @@ chatbubble > msg {
   width: fit-content;
   height: fit-content;
   color: rgb(255, 255, 255) !important;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   max-height: 40px;
   max-width: 40%;
   padding-left: 7px;

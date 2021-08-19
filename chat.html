@@ -34,8 +34,9 @@
 		var att2 = document.createAttribute('id');
 		for (var o = 0; o < data.length; o++) {
 			var sqr = document.getElementsByTagName("msg");
-			var val = parseInt(getComputedStyle(sqr).top, 10);
-			sqr.style.top = (val + 100) + "px";
+			var val = window.getComputedStyle(sqr);
+			var orig = val.getPropertyValue('top');
+			sqr.style.top = (orig + 45) + "px";
 			// r.style.setProperty('--orig', ((orig + 45) + 'px'));
 			if (data[o].direction === 'in') {
 				main.appendChild(bub);

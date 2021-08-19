@@ -105,7 +105,7 @@ chatbubble > msg {
   position: absolute;
   top: 5px;
   background-color: #c2c2c2;
-  border-radius: 2rem;
+  border-radius: 2px;
   border-color: #c2c2c2 !important;
   width: fit-content;
   height: fit-content;

@@ -33,10 +33,10 @@
 		var att = document.createAttribute('class');
 		var att2 = document.createAttribute('id');
 		for (var o = 0; o < data.length; o++) {
-			var r = document.querySelector(':root');
-			var rs = getComputedStyle(r);
-			var orig = rs.getPropertyValue('--orig');
-			r.style.setProperty('--orig', ((orig + 45) + 'px'));
+			var sqr = document.getElementByTagName("msg");
+			var val = parseInt(getComputedStyle(sqr).top, 10);
+			sqr.style.top = (val + 100) + "px";
+			// r.style.setProperty('--orig', ((orig + 45) + 'px'));
 			if (data[o].direction === 'in') {
 				main.appendChild(bub);
 				att.value = 'in';

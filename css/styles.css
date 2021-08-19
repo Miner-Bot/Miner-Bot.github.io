@@ -85,7 +85,7 @@ a.dark-theme {
   color: #CED2DF;
 }
 
-#ex {
+div#ex {
   position: fixed;
   bottom: 0px;
   left: 0px;

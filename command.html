@@ -139,15 +139,14 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 	header.appendChild(div);
 
 }
-	for (var i = 0; i < 		
-	if (typeof(Storage) !== "undefined") {
+/*	if (typeof(Storage) !== "undefined") {
 			// Store
 			// localStorage.setItem("command", location.hash);
-			document.title = data[i].name;
 			// Retrieve
 		} else {
 			document.title = "Command Details";
 		}
+		*/
 }
 		  </script>
 		  <!--<script src="/js/command-page.js"></script>-->
@@ -169,8 +168,8 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 						    } else {
 							    tr[i].open = false;
 						    }
+						    document.title = td.innerHTML;
 					    }
-					    document.title = td.innerHTML;
 				    }
 			    }
 			  }

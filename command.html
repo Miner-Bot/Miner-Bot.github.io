@@ -137,17 +137,16 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 			          div1.innerHTML = str;
                                   header.appendChild(div1);
 	header.appendChild(div);
+		if (typeof(Storage) !== "undefined") {
+			// Store
+			// localStorage.setItem("command", location.hash);
+			document.title = data[o].name;
+			// Retrieve
+		} else {
+			document.title = "Command Details";
+		}
 }
-	if (typeof(Storage) !== "undefined") {
-  // Store
-       // localStorage.setItem("command", location.hash);
-	document.title = localStorage.clickedon;
-  // Retrieve
-
-} else {
-  document.title = "Command Details";
 }
-		    }
 		  </script>
 		  <!--<script src="/js/command-page.js"></script>-->
 		  <script>

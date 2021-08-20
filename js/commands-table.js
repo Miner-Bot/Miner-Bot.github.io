@@ -39,7 +39,7 @@ fetch('commands.json')
                         var att2 = document.createAttribute("class");
                         var att3 = document.createAttribute("class");
                         var att4 = document.createAttribute("class");
-                        var href = document.createAttribute("href");
+                        // -for href method- var href = document.createAttribute("href");
                         var aclass = document.createAttribute("class");
                         var onclick = document.createAttribute("onclick");
 
@@ -51,8 +51,8 @@ fetch('commands.json')
                         
                         a.innerHTML = titleCase(data[o].name);
                         
-                        onclick.value = 'localStorage.clickedon = ' + data[o].name;
-                        href.value = '/command#' + data[o].name;
+                        onclick.value = 'localStorage.setItem("clickedon", "' + data[o].name + '");window.location.replace("/command#' + data[o].name + '");';
+                        // -for href method- href.value = '/command#' + data[o].name;
                         
                         table.appendChild(tr);
                         tr.setAttributeNode(att);
@@ -60,7 +60,7 @@ fetch('commands.json')
                         td.setAttributeNode(att2);
 
                         a.setAttributeNode(onclick);
-                        a.setAttributeNode(href);
+                        // -for href method- a.setAttributeNode(href);
                         td.appendChild(a);
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';
                         td.appendChild(hr);

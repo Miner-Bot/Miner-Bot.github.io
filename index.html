@@ -280,7 +280,7 @@
 </div>
 		<script>
 			function Timestampe() {
-				var timeo = document.lastModified;
+				var timeo = new Date(document.lastModified);
 			document.getElementById("timeOfLastEdit").innerhtml = timeo;
 			}
 			function Funnny() {

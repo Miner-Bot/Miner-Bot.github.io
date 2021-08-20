@@ -128,9 +128,10 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
 	
-			  document.getElementById("title").innerHTML = titleCase(location.hash.slice(1));
-			  var header = document.getElementById("title");
-			  var div1 = document.createElement("p");
+	document.getElementById("title").innerHTML = titleCase(location.hash.slice(1));
+	document.title = titleCase(location.hash.slice(1))
+	var header = document.getElementById("title");
+	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
 	att3.value = 'bungee-small-body-text';
 	div1.setAttributeNode(att3);
@@ -139,7 +140,8 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 	header.appendChild(div);
 
 }
-/*	if (typeof(Storage) !== "undefined") {
+/*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
+if (typeof(Storage) !== "undefined") {
 			// Store
 			// localStorage.setItem("command", location.hash);
 			// Retrieve

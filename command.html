@@ -137,15 +137,17 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 			          div1.innerHTML = str;
                                   header.appendChild(div1);
 	header.appendChild(div);
-		if (typeof(Storage) !== "undefined") {
+
+}
+	for (var i = 0; i < 		
+	if (typeof(Storage) !== "undefined") {
 			// Store
 			// localStorage.setItem("command", location.hash);
-			document.title = data[o].name;
+			document.title = data[i].name;
 			// Retrieve
 		} else {
 			document.title = "Command Details";
 		}
-}
 }
 		  </script>
 		  <!--<script src="/js/command-page.js"></script>-->
@@ -163,14 +165,15 @@ str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + pre
 					    if (td) {
 						    txtValue = td.innerHTML;
 						    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                        tr[i].open = true;
-                                    } else {
-                                        tr[i].open = false;
-                                    }
-                                }
-                            }
+							    tr[i].open = true;
+						    } else {
+							    tr[i].open = false;
+						    }
+					    }
+					    document.title = td.innerHTML;
+				    }
 			    }
-                        }
+			  }
 		  </script>
           </div>
       </section>

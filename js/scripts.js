@@ -85,7 +85,7 @@ btn.addEventListener('click', function() {
    // Then toggle (add/remove) the .dark-theme class to the body
    document.body.classList.toggle('dark-theme');
    var brand = document.getElementById('navbar-brand');
-   brand.classList.toggle('navbar-dark');
+   brand.classList.toggle('navbrand-dark');
 
   /* var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");

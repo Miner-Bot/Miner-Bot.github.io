@@ -10393,7 +10393,7 @@ hr.light {
   #mainNav.navbar-scrolled .navbar-brand {
     color: #F57653;
   }
-  #mainNav.navbar-scrolled .navbar-brand, #navbar-brand.navbar-dark {
+  #mainNav.navbar-scrolled #navbar-brand.navbar-dark {
     color: rgb(255, 255, 255);
   }
   #mainNav.navbar-scrolled .navbar-brand:hover {

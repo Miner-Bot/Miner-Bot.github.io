@@ -83,7 +83,8 @@ btn.addEventListener('click', function() {
       element2.setAttribute("style", 'background-color: #4D5358 !important;');
    }
    // Then toggle (add/remove) the .dark-theme class to the body
-   document.body.classList.toggle('dark-theme')
+   document.body.classList.toggle('dark-theme');
+   element2.getElementById('navbar-brand').classList.toggle('navbrand-dark-theme');
    
   /* var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");

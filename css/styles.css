@@ -96,6 +96,7 @@ body.dark-theme #mainNav {
 body.dark-theme #mainNav.navbar-scrolled {
   box-shadow: 0 0.5rem 1rem rgba(77, 83, 88, 0.15);
   background-color: #4D5358;
+  transition: background-color 0.2s ease;
 }
 
 div#ex {

@@ -85,6 +85,11 @@ a.dark-theme {
   color: #CED2DF;
 }
 
+body.dark-theme #mainNav {
+  background-color: #4D5358 !important;
+  color: #f7f7f7 !important;
+}
+
 div#ex {
   position: fixed;
   bottom: 0px;
@@ -10336,9 +10341,6 @@ hr.light {
   background-color: #fff;
   transition: background-color 0.2s ease;
 }
-#mainNav.dark-theme {
-  background-color: #262626;
-}
 #mainNav .navbar-brand {
   font-family: "Bungee Shade", cursive, "Coda Caption", "Merriweather Sans", sans-serif;
   font-weight: 500;
@@ -10366,9 +10368,6 @@ hr.light {
     box-shadow: none;
     background-color: transparent;
   }
-  #mainNav.dark-theme {
-    background-color: #eee;
-  }
 
   #mainNav .navbar-brand {
     color: rgb(255, 255, 255);
@@ -10392,9 +10391,6 @@ hr.light {
   }
   #mainNav.navbar-scrolled .navbar-brand {
     color: #F57653;
-  }
-  #mainNav.navbar-scrolled .navbar-dark {
-    color: rgb(255, 255, 255) !important;
   }
   #mainNav.navbar-scrolled .navbar-brand:hover {
     color: #f4623a;

@@ -85,7 +85,7 @@ a.dark-theme {
   color: #CED2DF;
 }
 
-body.dark-theme #mainNav.navbar-scrolled .nav-link, .navbar-brand {
+body.dark-theme #mainNav.navbar-scrolled .nav-link, body.dark-theme #mainNav.navbar-scrolled .navbar-brand {
   color: #f7f7f7 !important;
 }
 

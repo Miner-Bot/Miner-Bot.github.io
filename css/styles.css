@@ -79,14 +79,14 @@ body.dark-theme a {
   color: #CED2DF;
 }
 body.dark-theme table#commands-info {
-  background-color: #87817f !important;
+  background-color: #87817f;
 }
 a.dark-theme {
   color: #CED2DF;
 }
 
 body.dark-theme #mainNav.navbar-scrolled .nav-link, body.dark-theme #mainNav.navbar-scrolled .navbar-brand {
-  color: #f7f7f7 !important;
+  color: #f7f7f7;
 }
 
 div#ex {

@@ -73,7 +73,7 @@ if (localStorage.themePreferences === "true") {
 btn.addEventListener('click', function() {
    var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");
-   var element2 = document.getElementById("mainNav");
+   // var element2 = document.getElementById("mainNav");
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');
    var newatt = document.createAttribute("style");
@@ -83,10 +83,11 @@ btn.addEventListener('click', function() {
    if (brand.hasAttribute("style")) {
       brand.setAttribute("style", 'color: rgb(255, 255, 255);');
    }*/
-   element2.toggleAttribute("style");
+   /* --> element2.toggleAttribute("style");
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #4D5358 !important;');
-   }
+   } <--
+   */
    // Then toggle (add/remove) the .dark-theme class to the body
    document.body.classList.toggle('dark-theme');
 

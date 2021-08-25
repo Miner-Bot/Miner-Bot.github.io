@@ -85,8 +85,7 @@ a.dark-theme {
   color: #CED2DF;
 }
 
-body.dark-theme #mainNav {
-  background-color: #4D5358 !important;
+body.dark-theme #mainNav .nav-link .navbar-brand {
   color: #f7f7f7 !important;
 }
 

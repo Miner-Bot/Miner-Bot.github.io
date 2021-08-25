@@ -78,11 +78,11 @@ btn.addEventListener('click', function() {
    footer.classList.toggle('dark-theme');
    var newatt = document.createAttribute("style");
    newatt.value = 'background-color: #343a40 !important;';
-   var brand = document.getElementById('navbar-brand');
+   /* var brand = document.getElementById('navbar-brand');
    brand.toggleAttribute("style");
    if (brand.hasAttribute("style")) {
       brand.setAttribute("style", 'color: rgb(255, 255, 255);');
-   }
+   }*/
    element2.toggleAttribute("style");
    if (element2.hasAttribute("style")) {
       element2.setAttribute("style", 'background-color: #4D5358 !important;');

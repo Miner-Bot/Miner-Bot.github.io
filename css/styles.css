@@ -89,6 +89,15 @@ body.dark-theme #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link, body.d
   color: #f7f7f7;
 }
 
+body.dark-theme #mainNav {
+  box-shadow: none;
+  background-color: transparent;
+}
+body.dark-theme #mainNav.navbar-scrolled {
+  box-shadow: 0 0.5rem 1rem rgba(77, 83, 88, 0.15);
+  background-color: #4D5358;
+}
+
 div#ex {
   position: fixed;
   bottom: 0px;

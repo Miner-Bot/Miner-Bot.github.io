@@ -61,6 +61,16 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+a.command-title {
+  color: #f26624;
+  text-decoration: underline;
+  background-color: transparent;
+}
+a.command-title:hover {
+  color: #f27412;
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

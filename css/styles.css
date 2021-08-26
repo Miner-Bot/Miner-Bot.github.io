@@ -1959,10 +1959,12 @@ table#commands-info .dark {
 }
 #SearchQuery {
   width: 100%;
+  cursor: url(assets/img/search-solid.svg), auto;
   background-color: #fff;
 }
 #SearchQuery.dark-theme {
   width: 100%;
+  cursor: url(assets/img/search-solid.svg), auto;
   background-color: #333;
 }
 input[type=text].dark-theme {

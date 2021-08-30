@@ -118,16 +118,16 @@
 						localStorage.setItem('numberId', select.value);
 					}
 					if (localStorage.numberId) {
-						form.style.display = "hidden";
+						form.style.display = "none";
+						document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 					}
 
 				}
-				document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
 				function hide() {
 					if (localStorage.numberId) {
-						form.style.display = "hidden"
-						select.style.display = "hidden";
-						btn.style.display = "hidden";
+						form.style.display = "none"
+						select.style.display = "none";
+						btn.style.display = "none";
 					}
 				}
 			</script>

@@ -42,7 +42,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
-                <button class="btn btn-toggle"><i class="fa fa-moon"></i></button>
+                <button class="btn btn-toggle" title="Toggle Night Mode"><i class="fa fa-moon"></i></button>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
@@ -52,23 +52,7 @@
                         <li class="nav-item"><a class="btn btn-primary nav-link-customization js-scroll-trigger" href="#p">Customize</a></li>
                     </ul>
                 </div>
-                <script>
-// Listen for a click on the button
-function nightnight() {
-  document.documentURI = 'customization.html'
-    var element = document.getElementById("SearchQuery");
-   element.classList.toggle("dark-theme");
-   var element2 = document.getElementById("MainNav");
-   var footer = document.getElementById("footer");
-   footer.classList.toggle('dark-theme');
-
-  // Then toggle (add/remove) the .dark-theme class to the body
-  document.body.classList.toggle('dark-theme');
-  element2.classList.toggle("dark-nav-theme");
-
-}
-                </script>
-            </div>
+		</div>
         </nav>
         <!-- About-->
         <section class="page-section bg-primary" id="p">
@@ -215,7 +199,7 @@ function nightnight() {
         </section>
         <!-- Footer-->
         <footer id="footer">
-            <div class="container"><div class="small text-center text-muted">* = The numbers defined by MinerBot are meant, solely, for use in Discord (only through MinerBot, to be more specific). The owner of the bot is not liable for any incidents that happen in result of any calls made to any of the numbers, provided by MinerBot.</div></div>
+            <div class="container"><div class="small text-center text-muted">* = The numbers defined by MinerBot are meant for use through Minerbot, and are not intended for use in the real world. Nor are these numbers related to their real world purposes.</div></div>
             <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2021, MinerBot. <br>All rights reserved.</div></div>
         </footer>
         <!-- Bootstrap core JS-->

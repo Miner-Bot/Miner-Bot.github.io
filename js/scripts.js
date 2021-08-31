@@ -133,6 +133,14 @@ btn.addEventListener('click', function() {
    }
 */
 })
+var btn2 = document.querySelector('.btn-toggle2');
+btn2.addEventListener('click', function() {
+   var footer = document.getElementById("footer");
+   footer.classList.toggle('dark-theme');
+   var newatt = document.createAttribute("style");
+   newatt.value = 'background-color: #343a40 !important;';
+   document.body.classList.toggle('dark-theme');
+})
   // Magnific popup calls
   $('#portfolio').magnificPopup({
     delegate: 'a',

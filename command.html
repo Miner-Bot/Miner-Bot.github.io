@@ -129,12 +129,12 @@ const prefix = '=';
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
-	att.value = titleCase(index.name);
+	att.value = index.name;
 	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
 	
-	document.title = titleCase(location.hash.slice(1));
+	document.title = location.hash.slice(1);
 	var header = document.getElementById("title");
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");

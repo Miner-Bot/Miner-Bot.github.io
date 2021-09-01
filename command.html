@@ -110,8 +110,8 @@
 			  });
 function appendData(data) {
 const prefix = '=';
-var val = location.hash.slice(1);
-var index = data.findIndex(function(item, i){
+	var val = location.hash.slice(1);
+	var index = data.findIndex(function(item, i){
 	item.name === val;
 });
 	var str;
@@ -143,7 +143,6 @@ var index = data.findIndex(function(item, i){
 	header.appendChild(div1);
 	header.appendChild(div);
 	header.innerHTML = titleCase(location.hash.slice(1));
-}
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {
 			// Store

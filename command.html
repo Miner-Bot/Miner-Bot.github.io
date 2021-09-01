@@ -111,7 +111,7 @@
 function appendData(data) {
 const prefix = '=';
 	var cmd = window.location.hash.slice(1);
-	const array1 = JSON.parse(data);
+	const array1 = data;
 	const found = array1.find(element => element.name = cmd);
 	var description = found.description;
 	var usage = found.usage;

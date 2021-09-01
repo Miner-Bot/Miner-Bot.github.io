@@ -133,7 +133,7 @@ btn.addEventListener('click', function() {
    }
 */
 })
-var btn2 = document.getElementById('ToggleNightMode2');
+const btn2 = document.getElementById('ToggleNightMode2');
 btn2.addEventListener('click', function() {
    var footer = document.getElementById("footer");
    footer.classList.toggle('dark-theme');

@@ -120,13 +120,13 @@ const prefix = '=';
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
 	if (usage && aliases) {
-		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + usage + '<br>' + 'Aliases:' + ' ' + prefix + aliases;
+		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + found.usage + '<br>' + 'Aliases:' + ' ' + prefix + found.aliases;
 	} else if (usage && !aliases) {
-		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + usage;
+		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + found.usage;
 	} else if (!usage && aliases) {
-		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name + '<br>' + 'Aliases:' + ' ' + prefix + aliases;
+		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + '<br>' + 'Aliases:' + ' ' + prefix + found.aliases;
 	} else if (!usage && !aliases) {
-		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
+		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
 	}
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
@@ -145,7 +145,7 @@ const prefix = '=';
 	div1.innerHTML = str;
 	header.appendChild(div1);
 	header.appendChild(div);
-	header.innerHTML = titleCase(location.hash.slice(1)) + found.description;
+	header.innerHTML = titleCase(location.hash.slice(1));
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {
 			// Store

@@ -110,6 +110,7 @@
 			  });
 function appendData(data) {
 const prefix = '=';
+	for (var o = -1; data.indexOf(location.hash.slice(1)) > o; o = data.indexOf(location.hash.slice(1))) {
 	var val = window.location.hash.slice(1);
 	var index = data.findIndex(function getIndex(val) {
 		data.name === val;
@@ -139,10 +140,11 @@ const prefix = '=';
 	var att3 = document.createAttribute("class");
 	att3.value = 'bungee-small-body-text';
 	div1.setAttributeNode(att3);
-	div1.innerHTML = data[index].description;
+	div1.innerHTML = data[o].description;
 	header.appendChild(div1);
 	header.appendChild(div);
 	header.innerHTML = titleCase(location.hash.slice(1)) + index.description;
+}
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {
 			// Store

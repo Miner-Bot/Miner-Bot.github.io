@@ -76,6 +76,7 @@
         <!-- Commands -->
         <section class="page-section" id="command">
           <div class="container-fluid p-0">
+		  <div id="err"></div>
               <div class="container" id="commands-in-here">
                     <h2 class="text-center h2">Commands</h2>
               </div>
@@ -105,6 +106,7 @@
 			  })
 				  .catch(function (err) {
 				  console.log(err);
+				  document.getElementById('err').innerHTML = err;
 			  });
 function appendData(data) {
 const prefix = '=';

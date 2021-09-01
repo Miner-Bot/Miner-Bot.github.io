@@ -122,14 +122,14 @@ const prefix = '=';
 	} else if (index.usage && !index.aliases) {
 		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name + ' ' + index.usage;
 	} else if (!index.usage && index.aliases) {
-		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name + '<br>' + 'Aliases:' + ' ' + prefix + data[index].aliases;
+		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name + '<br>' + 'Aliases:' + ' ' + prefix + index.aliases;
 	} else if (!index.usage && !index.aliases) {
-		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name;
+		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name;
 	}
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
-	att.value = titleCase(data[index].name);
+	att.value = titleCase(index.name);
 	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);

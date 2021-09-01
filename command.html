@@ -95,7 +95,7 @@
 				  var cmd = titleCase(location.hash.slice(1));
 				  localStorage.setItem("clickedon", cmd);
 			  }
-			  window.onload = urlsort;
+			  window.onload = urlsort();
 			  fetch('commands.json')
 				  .then(function (response) {
 				  return response.json();
@@ -109,37 +109,35 @@
 function appendData(data) {
 const prefix = '=';
 for (var o = 0; o < data.length; o++) {
-var str;
-	var datar = data.filter(d => d.name === `${location.hash.slice(1)}`);
-console.log('arr1', arr1);
-if (datar.usage && datar.aliases) {
-str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name + ' ' + datar.usage + '<br>' + 'Aliases:' + ' ' + prefix + datar.aliases;
-} else if (datar.usage && !datar.aliases) {
-str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name + ' ' + datar.usage;
-} else if (!datar.usage && datar.aliases) {
-str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name + '<br>' + 'Aliases:' + ' ' + prefix + datar.aliases;
-} else if (!datar.usage && !datar.aliases) {
-str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name;
-}
+	var str;
+	var data = data.filter(data => data.name === location.hash.slice(1));
+	if (data.usage && data.aliases) {
+		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name + ' ' + data.usage + '<br>' + 'Aliases:' + ' ' + prefix + data.aliases;
+	} else if (data.usage && !data.aliases) {
+		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name + ' ' + data.usage;
+	} else if (!data.usage && data.aliases) {
+		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name + '<br>' + 'Aliases:' + ' ' + prefix + data.aliases;
+	} else if (!data.usage && !data.aliases) {
+		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name;
+	}
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
-	att.value = titleCase(data[o].name);
+	att.value = titleCase(data.name);
 	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
 	
-	document.getElementById("title").innerHTML = titleCase(location.hash.slice(1));
 	document.title = titleCase(location.hash.slice(1))
 	var header = document.getElementById("title");
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
 	att3.value = 'bungee-small-body-text';
 	div1.setAttributeNode(att3);
-			          div1.innerHTML = str;
-                                  header.appendChild(div1);
+	div1.innerHTML = str;
+	header.appendChild(div1);
 	header.appendChild(div);
-
+	header.innerHTML = titleCase(location.hash.slice(1));
 }
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {

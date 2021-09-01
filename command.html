@@ -108,22 +108,25 @@
 			  });
 function appendData(data) {
 const prefix = '=';
-for (var o = 0; o < data.length; o++) {
+var val = location.hash.splice(1);
+var index = data.findIndex(function(item, i){
+  return item.name === val
+});
 	var str;
-	var data = data.filter(data => data.name === location.hash.slice(1));
-	if (data.usage && data.aliases) {
-		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name + ' ' + data.usage + '<br>' + 'Aliases:' + ' ' + prefix + data.aliases;
-	} else if (data.usage && !data.aliases) {
-		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name + ' ' + data.usage;
-	} else if (!data.usage && data.aliases) {
-		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name + '<br>' + 'Aliases:' + ' ' + prefix + data.aliases;
-	} else if (!data.usage && !data.aliases) {
-		str = 'Description:' + ' ' + data.description + '<br>' + 'Usage:' + ' ' + prefix + data.name;
+	// var data = data.findIndex(d => d.name === location.hash.slice(1));
+	if (data[index].usage && data[index].aliases) {
+		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name + ' ' + data[index].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[index].aliases;
+	} else if (data[index].usage && !data[index].aliases) {
+		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name + ' ' + data[index].usage;
+	} else if (!data[index].usage && data[index].aliases) {
+		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name + '<br>' + 'Aliases:' + ' ' + prefix + data[index].aliases;
+	} else if (!data[index].usage && !data[index].aliases) {
+		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name;
 	}
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
-	att.value = titleCase(data.name);
+	att.value = titleCase(data[index].name);
 	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);

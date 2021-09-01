@@ -153,7 +153,6 @@ if (typeof(Storage) !== "undefined") {
 		  </script>
 		  <!--<script src="/js/command-page.js"></script>-->
 		  <script>
-			  document.getElementById("commands-in-here").innerHTML = location.hash + '<br>' + localStorage.getItem("clickedon");
 			  function myFunction() {
                             if (location.hash) {
 				    var input, filter, table, tr, td, i, txtValue, data;
@@ -170,7 +169,6 @@ if (typeof(Storage) !== "undefined") {
 						    } else {
 							    tr[i].open = false;
 						    }
-						    document.title = td.innerHTML;
 					    }
 				    }
 			    }

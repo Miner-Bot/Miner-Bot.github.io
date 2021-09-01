@@ -111,28 +111,27 @@
 function appendData(data) {
 const prefix = '=';
 	var cmd = window.location.hash.slice(1);
-	const commandIndex = (command) => command.name === cmd;
-	var index = data.findIndex(commandIndex);
-	for (var o = -1;  > o; o = data.indexOf(location.hash.slice(1))) {
-	var val = window.location.hash.slice(1);
-	var index = data.findIndex(function getIndex(val) {
-		data.name === val;
-	}, index);
+	const array1 = JSON.parse(data);
+	const found = array1.find(element => element.name = cmd);
+	var description = found.description;
+	var usage = found.usage;
+	var aliases = found.aliases;
+	
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
-	if (index.usage && index.aliases) {
-		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name + ' ' + index.usage + '<br>' + 'Aliases:' + ' ' + prefix + index.aliases;
-	} else if (index.usage && !index.aliases) {
-		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name + ' ' + index.usage;
-	} else if (!index.usage && index.aliases) {
-		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name + '<br>' + 'Aliases:' + ' ' + prefix + index.aliases;
-	} else if (!index.usage && !index.aliases) {
-		str = 'Description:' + ' ' + index.description + '<br>' + 'Usage:' + ' ' + prefix + index.name;
+	if (usage && aliases) {
+		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + usage + '<br>' + 'Aliases:' + ' ' + prefix + aliases;
+	} else if (usage && !aliases) {
+		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + usage;
+	} else if (!usage && aliases) {
+		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name + '<br>' + 'Aliases:' + ' ' + prefix + aliases;
+	} else if (!usage && !aliases) {
+		str = 'Description:' + ' ' + description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
 	}
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");
 	var att2 = document.createAttribute("class");
-	att.value = index.name;
+	att.value = found.name;
 	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
@@ -143,10 +142,10 @@ const prefix = '=';
 	var att3 = document.createAttribute("class");
 	att3.value = 'bungee-small-body-text';
 	div1.setAttributeNode(att3);
-	div1.innerHTML = data[o].description;
+	div1.innerHTML = str;
 	header.appendChild(div1);
 	header.appendChild(div);
-	header.innerHTML = titleCase(location.hash.slice(1)) + index.description;
+	header.innerHTML = titleCase(location.hash.slice(1)) + found.description;
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {
 			// Store

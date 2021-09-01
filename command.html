@@ -111,14 +111,16 @@ function appendData(data) {
 const prefix = '=';
 for (var o = 0; o < data.length; o++) {
 var str;
-if (data[o].usage && data[o].aliases) {
-str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
-} else if (data[o].usage && !data[o].aliases) {
-str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage;
-} else if (!data[o].usage && data[o].aliases) {
-str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
-} else if (!data[o].usage && !data[o].aliases) {
-str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
+	var datar = data.filter(d => d.name === `${location.hash.slice(1)}`);
+console.log('arr1', arr1);
+if (datar.usage && datar.aliases) {
+str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name + ' ' + datar.usage + '<br>' + 'Aliases:' + ' ' + prefix + datar.aliases;
+} else if (datar.usage && !datar.aliases) {
+str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name + ' ' + datar.usage;
+} else if (!datar.usage && datar.aliases) {
+str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name + '<br>' + 'Aliases:' + ' ' + prefix + datar.aliases;
+} else if (!datar.usage && !datar.aliases) {
+str = 'Description:' + ' ' + datar.description + '<br>' + 'Usage:' + ' ' + prefix + datar.name;
 }
 	var div = document.createElement("div");
 	var att = document.createAttribute("id");

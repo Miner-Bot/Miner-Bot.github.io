@@ -112,7 +112,7 @@ function appendData(data) {
 const prefix = '=';
 var val = location.hash.slice(1);
 var index = data.findIndex(function(item, i){
-  return item.name === val
+	item.name === val;
 });
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));

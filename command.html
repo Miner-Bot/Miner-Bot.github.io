@@ -108,7 +108,7 @@
 			  });
 function appendData(data) {
 const prefix = '=';
-var val = location.hash.splice(1);
+var val = location.hash.slice(1);
 var index = data.findIndex(function(item, i){
   return item.name === val
 });

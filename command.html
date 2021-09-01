@@ -135,12 +135,13 @@ const prefix = '=';
 	att2.value = "text-box bungee-body-text";
 	div.setAttributeNode(att);
 	div.setAttributeNode(att2);
+	div.innerHTML = str;
 	
 	document.title = location.hash.slice(1);
 	var header = document.getElementById("title");
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
-	att3.value = 'bungee-small-body-text';
+	att3.value = 'text-box bungee-small-body-text';
 	div1.setAttributeNode(att3);
 	div1.innerHTML = str;
 	header.appendChild(div1);

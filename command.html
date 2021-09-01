@@ -139,7 +139,7 @@ const prefix = '=';
 	var att3 = document.createAttribute("class");
 	att3.value = 'bungee-small-body-text';
 	div1.setAttributeNode(att3);
-	div1.innerHTML = str || index.description + '<br>';
+	div1.innerHTML = index.description + '<br>';
 	header.appendChild(div1);
 	header.appendChild(div);
 	header.innerHTML = titleCase(location.hash.slice(1));

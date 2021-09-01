@@ -110,14 +110,16 @@
 			  });
 function appendData(data) {
 const prefix = '=';
+	var index = -1;
 	var val = location.hash.slice(1);
 	var index = data.findIndex(function(item, i){
 	item.name === val;
+		index = i;
 });
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
 	if (data[index].usage && data[index].aliases) {
-		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name + ' ' + data[index].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[index].aliases;
+		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[i].name + ' ' + data[i].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[index].aliases;
 	} else if (data[index].usage && !data[index].aliases) {
 		str = 'Description:' + ' ' + data[index].description + '<br>' + 'Usage:' + ' ' + prefix + data[index].name + ' ' + data[index].usage;
 	} else if (!data[index].usage && data[index].aliases) {

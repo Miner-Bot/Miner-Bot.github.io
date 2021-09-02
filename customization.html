@@ -141,21 +141,7 @@
 				function saveNumber() {
 					const myForm = document.getElementById('nform');
 					const formData = new FormData(myForm);
-					const data = formData;
-					fetch('/numkey', {
-						method: 'POST', // or 'PUT'
-						headers: {
-							'Content-Type': 'application/json',
-						},
-						body: JSON.stringify(data),
-					})
-						.then(response => response.json())
-						.then(data => {
-						  console.log('Success:', data);
-					})
-						.catch((error) => {
-						  console.error('Error:', error);
-					});
+					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}`);
 				}
 			</script>
                     <!--<div class="alert">

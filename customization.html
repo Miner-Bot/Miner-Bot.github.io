@@ -111,9 +111,9 @@
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
                     <form onsubmit="setData()" id="nform">
-                        <select name="selected" id="selected">
-                        </select>
-                        <button class='btn btn-success' id="btn"><input type="submit" name="submit" id="submit">Submit</button>
+                        <select name="selected" id="selected"></select>
+			    <input type="text" name="user" id="user" value="@DiscordUsername#0000"></input>
+                        <button class='btn btn-success' id="btn"><input type="submit" name="submit" id="submit">Submit</input></button>
                     </form>
 			<div id="numb">
 			</div>
@@ -137,6 +137,25 @@
 						select.style.display = "none";
 						btn.style.display = "none";
 					}
+				}
+				function saveNumber(user, value) {
+					const myForm = document.getElementById('nform');
+					const formData = new FormData(myForm);
+					const data = formData;
+					fetch('/numkey', {
+						method: 'POST', // or 'PUT'
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(data),
+					})
+						.then(response => response.json())
+						.then(data => {
+						  console.log('Success:', data);
+					})
+						.catch((error) => {
+						  console.error('Error:', error);
+					});
 				}
 			</script>
                     <!--<div class="alert">

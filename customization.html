@@ -119,16 +119,18 @@
 			</div>
 			<script>
 				function setData() {
-					var form = document.getElementById('nform');
-					var select = form.getElementById('selected');
-					var btn = form.getElementById('btn');
 					var paramsString = window.location.search;
 					var searchParams = new URLSearchParams(paramsString);
 					if (!window.location.search) {
-						return
+						if (document.cookie) {
+							var newUrl = '/SelectedNumber.html' + '?' + document.cookie;
+							window.open(newUrl, "_blank");
+						}
+						else if (!document.cookie) {
+							return
+						}
 					}
 					if (window.location.search && searchParams.has('selected') && searchParams.has('user') === true) {
-						form.style.display = "none";
 						var newUrl = '/SelectedNumber.html' + window.location.search;
 						window.open(newUrl, "_blank");
 					}
@@ -144,9 +146,11 @@
 				function saveNumber() {
 					const myForm = document.getElementById('nform');
 					const formData = new FormData(myForm);
-					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}`);
-					var cookieString = 'selected=' + formData.get('selected') + '; Secure; user=' + formData.get('user') + '; Secure';
+					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}]`);
+					var cookieString = 'selected=' + formData.get('selected') + '; user=' + formData.get('user') + ';';
 					document.cookie = cookieString;
+					// window.localStorage.set("selected",formData.get('selected'));
+					// window.localStorage.set("user",formData.get('user'));
 				}
 			</script>
                     <!--<div class="alert">

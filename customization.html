@@ -124,7 +124,7 @@
 					if (!window.location.search) {
 						if (document.cookie) {
 							var newUrl = '/SelectedNumber.html' + '?' + document.cookie;
-							window.open(newUrl, "_blank");
+							window.open(newUrl, "_self");
 						}
 						else if (!document.cookie) {
 							return
@@ -132,7 +132,7 @@
 					}
 					if (window.location.search && searchParams.has('selected') && searchParams.has('user') === true) {
 						var newUrl = '/SelectedNumber.html' + window.location.search;
-						window.open(newUrl, "_blank");
+						window.open(newUrl, "_self");
 					}
 
 				}

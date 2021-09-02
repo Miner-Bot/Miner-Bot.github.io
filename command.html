@@ -84,6 +84,7 @@
 		  </div>
 		  <div class="container-fluid text-box">
 		  <h1 class="text-left" id="title">[Command.name]</h1>
+			  <div class="text-box bungee-body-text" id="info"></div>
 		  </div>
 		  <script>
 			  function titleCase(str) {
@@ -119,28 +120,25 @@ const prefix = '=';
 	
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
-	if (usage && aliases) {
+	if (found.usage && found.aliases) {
 		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + found.usage + '<br>' + 'Aliases:' + ' ' + prefix + found.aliases;
-	} else if (usage && !aliases) {
+	} else if (found.usage && !found.aliases) {
 		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + found.usage;
-	} else if (!usage && aliases) {
+	} else if (!found.usage && found.aliases) {
 		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + '<br>' + 'Aliases:' + ' ' + prefix + found.aliases;
-	} else if (!usage && !aliases) {
+	} else if (!found.usage && !found.aliases) {
 		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
 	}
-	var div = document.createElement("div");
+	var div = document.getElementById("info");
 	var att = document.createAttribute("id");
-	var att2 = document.createAttribute("class");
-	att.value = found.name;
-	att2.value = "text-box bungee-body-text";
-	div.setAttributeNode(att);
-	div.setAttributeNode(att2);
-	div.innerHTML = str;
 	
 	document.title = location.hash.slice(1);
 	var header = document.getElementById("title");
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
+	att.value = found.name;
+	div.setAttributeNode(att);
+	div.innerHTML = str;
 	att3.value = 'text-box bungee-small-body-text';
 	div1.setAttributeNode(att3);
 	div1.innerHTML = str;

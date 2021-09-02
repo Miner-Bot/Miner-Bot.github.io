@@ -58,6 +58,11 @@
         </nav>
         <!-- About-->
         <section class="page-section">
+		<div id="dataIn">
+		</div>
+		<script>
+			document.getElementById('dataIn').innerHTML = window.location.search.slice(1);
+		</script>
       </section>
   </body>
 </html>

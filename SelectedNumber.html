@@ -61,10 +61,13 @@
 		<div id="dataIn">
 		</div>
 		<script>
+			const parent = document.getElementById('dataIn');
+			const div = document.createElement('div');
 			var paramsString = window.location.search;
 			var searchParams = new URLSearchParams(paramsString);
 			for(var value of searchParams.values()) {
-				document.getElementById('dataIn').innerHTML = value;
+				div.innerHTML = value;
+				parent.appenChild(div);
 			}
 		</script>
       </section>

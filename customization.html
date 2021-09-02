@@ -122,12 +122,15 @@
 					var form = document.getElementById('nform');
 					var select = form.getElementById('selected');
 					var btn = form.getElementById('btn');
-					if (!localStorage.numberId) {
-						localStorage.setItem('numberId', select.value);
+					var paramsString = window.location.search;
+					var searchParams = new URLSearchParams(paramsString);
+					if (!window.location.search) {
+						return
 					}
-					if (localStorage.numberId) {
+					if (window.location.search && searchParams.has('selected') && searchParams.has('user') === true) {
 						form.style.display = "none";
-						document.getElementById('numb').innerHTML = 'Your number: ' + localStorage.getItem("numberId");
+						var newUrl = '/SelectedNumber.html' + window.location.search;
+						window.open(newUrl, "_blank");
 					}
 
 				}

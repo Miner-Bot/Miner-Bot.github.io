@@ -145,6 +145,8 @@
 					const myForm = document.getElementById('nform');
 					const formData = new FormData(myForm);
 					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}`);
+					var cookieString = 'selected=' + formData.get('selected') + '; Secure; user=' + formData.get('user') + '; Secure';
+					document.cookie = cookieString;
 				}
 			</script>
                     <!--<div class="alert">

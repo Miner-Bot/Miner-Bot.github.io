@@ -110,7 +110,7 @@
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form onsubmit="setData()" id="nform">
+                    <form onsubmit="saveNumber()" id="nform">
                         <select name="selected" id="selected"></select>
 			    <input type="text" name="user" id="user" value="@DiscordUsername#0000"></input>
                         <button class='btn btn-success' id="btn"><input type="submit" name="submit" id="submit">Submit</input></button>
@@ -138,7 +138,7 @@
 						btn.style.display = "none";
 					}
 				}
-				function saveNumber(user, value) {
+				function saveNumber() {
 					const myForm = document.getElementById('nform');
 					const formData = new FormData(myForm);
 					const data = formData;

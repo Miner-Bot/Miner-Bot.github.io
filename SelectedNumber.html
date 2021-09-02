@@ -61,7 +61,11 @@
 		<div id="dataIn">
 		</div>
 		<script>
-			document.getElementById('dataIn').innerHTML = window.location.search.slice(1);
+			var paramsString = window.location.search;
+			var searchParams = new URLSearchParams(paramsString);
+			for(var value of searchParams.values()) {
+				document.getElementById('dataIn').innerHTML = value;
+			}
 		</script>
       </section>
   </body>

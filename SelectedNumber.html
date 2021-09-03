@@ -60,7 +60,8 @@
 				for(var value of searchParams.values()) {
 					const parent = document.getElementById('dataIn');
 					const div = document.createElement('div');
-					div.innerHTML = value;
+					const date = new Date();
+					div.innerHTML = date + '<br>' + value;
 					parent.appendChild(div);
 				}
 			}

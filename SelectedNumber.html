@@ -53,7 +53,7 @@
 <div id="dataIn">
 </div>
 		</div>
-                  <a class="badge badge-info" style="position:fixed;right:3px;bottom:3px;" onclick="bookmarkPage()" title="Or click here to have it bookmarked super quick!">Bookmark this page for easy access to your designated number!</a>
+                  <a id="bookmarkme" class="badge badge-info" style="position:fixed;right:3px;bottom:3px;" onclick="bookmarkPage()" title="Or click here to have it bookmarked super quick!">Bookmark this page for easy access to your designated number!</a>
 
 		<script>
 			if (window.location.search) {
@@ -95,13 +95,21 @@
 				}
 			}
 		</script>
-		<script>
-			function bookmarkPage() {
-				var createBookmark = browser.bookmarks.create({
-					title: "My mINE-FONE Number",
-					url: "https://minerbot.xyz/SelectedNumber.html" + window.location.search;
-				});
-			}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+			$(function() {
+  $('#bookmarkme').click(function() {
+    if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+      window.sidebar.addPanel("My mINE-FONE Number ~ MinerBot", window.location.href, '');
+    } else if (window.external && ('AddFavorite' in window.external)) { // IE Favorite
+      window.external.AddFavorite(location.href, "My mINE-FONE Number ~ MinerBot");
+    } else if (window.opera && window.print) { // Opera Hotlist
+      this.title = "My mINE-FONE Number ~ MinerBot";
+      return true;
+    } else { // webkit - safari/chrome
+      alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+    }
+  });
+});
 		</script>
       </section>
   </body>

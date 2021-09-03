@@ -51,7 +51,7 @@
         </nav>
         <!-- About-->
         <section class="page-section">
-		<button onclick="deleteCookies()">DELETE COOKIE DATA</button>
+		<div style="font-family:JetBrains Mono;">Selected Number:</div>
 		<div id="dataIn">
 		</div>
 		<script>
@@ -82,10 +82,11 @@
 			}
 			function checkCookie() {
 				var user = getCookie("user");
+				var selected = getCookie("selected");
 				if (user != "") {
 					const parent = document.getElementById('dataIn');
 					const div = document.createElement('div');
-					div.innerHTML = user;
+					div.innerHTML = selected + '<br>' + 'For Discord User:' + '<br>' + user;
 					parent.appendChild(div);
 				}
 			}

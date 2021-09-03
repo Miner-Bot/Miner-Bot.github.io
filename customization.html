@@ -130,14 +130,17 @@
 						else if (!document.cookie) {
 							return;
 						}
-					}
+					}*/
 					if (window.location.search && searchParams.has('selected') && searchParams.has('user') === true) {
 						var newUrl = '/SelectedNumber.html' + window.location.search;
 						window.open(newUrl, "_self");
+						var selectedInput = document.getElementById('selected');
+						var userInput = document.getElementById('user');
+						selectedInput.value = searchParams.get('selected');
+						userInput.value = searchParams.get('user');
 					}
 
 				}
-				*/
 				function hide() {
 					if (localStorage.numberId) {
 						form.style.display = "none"

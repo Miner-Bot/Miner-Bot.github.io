@@ -123,11 +123,11 @@
 					var searchParams = new URLSearchParams(paramsString);
 					if (!window.location.search) {
 						if (document.cookie) {
-							var newUrl = '/SelectedNumber.html' + '?' + document.cookie;
+							var newUrl = '/SelectedNumber.html';
 							window.open(newUrl, "_self");
 						}
 						else if (!document.cookie) {
-							return
+							return;
 						}
 					}
 					if (window.location.search && searchParams.has('selected') && searchParams.has('user') === true) {

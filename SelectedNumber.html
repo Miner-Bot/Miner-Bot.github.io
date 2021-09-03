@@ -84,10 +84,11 @@
 			function checkCookie() {
 				var user = getCookie("user");
 				var selected = getCookie("selected");
+				const date = new Date();
 				if (user != "") {
 					const parent = document.getElementById('dataIn');
 					const div = document.createElement('div');
-					div.innerHTML = selected + '<br>' + 'For Discord User:' + '<br>' + user;
+					div.innerHTML = date + selected + '<br>' + 'For Discord User:' + '<br>' + user;
 					parent.appendChild(div);
 				}
 			}

@@ -55,13 +55,14 @@
 		</div>
 		<script>
 			if (window.location.search) {
-				var paramsString = window.location.search;
-				var searchParams = new URLSearchParams(paramsString);
+				const paramsString = window.location.search;
+				const searchParams = new URLSearchParams(paramsString);
+				const parent = document.getElementById('dataIn');
+				const date = new Date();
+				parent.innerHTML = date + '<br>' + parent.innerHTML;
 				for(var value of searchParams.values()) {
-					const parent = document.getElementById('dataIn');
 					const div = document.createElement('div');
-					const date = new Date();
-					div.innerHTML = date + '<br>' + value;
+					div.innerHTML = value;
 					parent.appendChild(div);
 				}
 			}

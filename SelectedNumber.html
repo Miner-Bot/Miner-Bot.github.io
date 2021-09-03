@@ -59,7 +59,7 @@
 				const searchParams = new URLSearchParams(paramsString);
 				const parent = document.getElementById('dataIn');
 				const date = new Date();
-				parent.innerHTML = date + '<br>' + parent.innerHTML;
+				parent.innerHTML = date + '<br>' + '===================' + 'Selected Number:';
 				for(var value of searchParams.values()) {
 					const div = document.createElement('div');
 					div.innerHTML = value;

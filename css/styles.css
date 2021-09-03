@@ -197,7 +197,7 @@ msg.in {
   padding-right: .7rem;
   background-color:tomato !important;
   color: white !important;
-  font-family: "JetBrains Mono" !important;
+  font-family: "JetBrains Mono", monospace !important;
   font-size: 11pt;
 }
 

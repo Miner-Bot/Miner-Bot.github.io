@@ -58,17 +58,24 @@
         </nav>
         <!-- About-->
         <section class="page-section">
-		<button onclick="document.cookie = '; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';">DELETE COOKIE DATA</button>
+		<button onclick="document.cookie = 'selected=""; user=""; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'">DELETE COOKIE DATA</button>
 		<div id="dataIn">
 		</div>
 		<script>
-			var paramsString = window.location.search;
-			var searchParams = new URLSearchParams(paramsString);
-			for(var value of searchParams.values()) {
+			if (document.cookie) {
 				const parent = document.getElementById('dataIn');
 				const div = document.createElement('div');
-				div.innerHTML = value;
+				div.innerHTML = document.cookie;
 				parent.appendChild(div);
+			} else if (!document.cookie && window.location.search) {
+				var paramsString = window.location.search;
+				var searchParams = new URLSearchParams(paramsString);
+				for(var value of searchParams.values()) {
+					const parent = document.getElementById('dataIn');
+					const div = document.createElement('div');
+					div.innerHTML = value;
+					parent.appendChild(div);
+				}
 			}
 		</script>
       </section>

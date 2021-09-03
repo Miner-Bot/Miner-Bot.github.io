@@ -49,10 +49,10 @@
         </nav>
         <!-- About-->
         <section class="page-section">
-<div style="font-family:'JetBrains Mono', monospace;">Selected Number:
+<div style="font-family:'JetBrains Mono', monospace;">
 <div id="dataIn">
 </div>
-	<a class="badge-info" style="position:fixed;right:3px;bottom:3px;" onclick="javascript.bookmark();"></a>
+	<a class="badge-info" style="position:fixed;right:3px;bottom:3px;" onclick="bookmarkPage()" title="Or click here to have it bookmarked super quick!">Bookmark this page for easy access to your designated number!</a>
 		</div>
 		<script>
 			if (window.location.search) {
@@ -60,7 +60,7 @@
 				const searchParams = new URLSearchParams(paramsString);
 				const parent = document.getElementById('dataIn');
 				const date = new Date();
-				parent.innerHTML = date.toDateString() + '<br>' + '===================' + 'Selected Number:';
+				parent.innerHTML = date.toDateString() + '<br>' + '===================' + '<br>' + 'Selected Number:';
 				for(var value of searchParams.values()) {
 					const div = document.createElement('div');
 					div.innerHTML = value;
@@ -92,6 +92,12 @@
 					div.innerHTML = selected + '<br>' + 'For Discord User:' + '<br>' + user;
 					parent.appendChild(div);
 				}
+			}
+			function bookmarkPage() {
+				var createBookmark = browser.bookmarks.create({
+					title: "My mINE-FONE Number",
+					url: "https://minerbot.xyz/SelectedNumber.html" + window.location.search;
+				});
 			}
 		</script>
       </section>

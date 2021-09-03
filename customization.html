@@ -147,7 +147,7 @@
 					const myForm = document.getElementById('nform');
 					const formData = new FormData(myForm);
 					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}]`);
-					var cookieString = 'selected=' + formData.get('selected') + '; user=' + formData.get('user') + ';';
+					var cookieString = 'selected=' + formData.get('selected') + '; user=' + encodeURIComponent(formData.get('user')) + ';';
 					document.cookie = cookieString;
 					// window.localStorage.set("selected",formData.get('selected'));
 					// window.localStorage.set("user",formData.get('user'));

@@ -117,7 +117,16 @@
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
                     <form onsubmit="saveNumber()" action="/SelectedNumber.html" method="GET" id="nform">
 			    <select name="selected" id="selected"></select>
-			    <input type="text" name="user" id="user" value="@DiscordUsername#0000">
+			    <div class="input-group mb-3">
+				    <div class="input-group-prepend">
+					    <span class="input-group-text">@</span>
+				    </div>
+				    <input type="text" class="form-control" name="user" id="user" placeholder="DiscordUsername">
+				    <div class="input-group-append">
+					    <span class="input-group-text">#</span>
+					    <input type="number" id="last4" placeholder="0000">
+				    </div>
+			    </div>
 			    <input type="text" name="dateSubmitted" id="dateSubmitted" hidden>
 			    <input class="btn btn-success" type="submit" value="Submit" id="submit">
                     </form>

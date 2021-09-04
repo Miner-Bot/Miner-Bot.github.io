@@ -66,6 +66,9 @@
 				parent.innerHTML = 'Submitted on: ' + date.toDateString() + '<br>' + '===================' + '<br>' + 'Selected Number:';
 				for(var value of searchParams.values()) {
 					const div = document.createElement('div');
+					const att = document.createAttribute('class');
+					att.value = 'card-body';
+					div.setAttributeNode(att);
 					div.innerHTML = value;
 					parent.appendChild(div);
 				}

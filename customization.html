@@ -118,6 +118,7 @@
                     <form onsubmit="saveNumber()" action="/SelectedNumber.html" method="GET" id="nform">
 			    <select name="selected" id="selected"></select>
 			    <input type="text" name="user" id="user" value="@DiscordUsername#0000">
+			    <input type="text" name="dateSubmitted" id="dateSubmitted" hidden>
 			    <input class="btn btn-success" type="submit" value="Submit" id="submit">
                     </form>
 			<div id="numb">
@@ -155,6 +156,8 @@
 				function saveNumber() {
 					const myForm = document.getElementById('nform');
 					const formData = new FormData(myForm);
+					var date = new Date();
+					document.getElementById('dateSubmitted').value = date.toDateString();
 					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}]`);
 					var cookieString = 'selected=' + formData.get('selected') + '; user=' + formData.get('user') + ';';
 					document.cookie = cookieString;

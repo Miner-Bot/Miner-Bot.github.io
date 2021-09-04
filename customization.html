@@ -169,7 +169,8 @@
 					const formData = new FormData(myForm);
 					var date = new Date();
 					document.getElementById('dateSubmitted').value = 'Timestamp: ' + date;//.toDateString();
-					var userFull = formData.get('user') + '#' + document.getElementById('last4').value;
+					var userFull = document.getElementById('user').value + '#' + document.getElementById('last4').value;
+					// document.getElementById('user').value = userFull;
 					formData.set('user', userFull);
 					alert(`Your number is: ${formData.get('selected')} [FOR DISCORD ACCOUNT: ${formData.get('user')}]`);
 					var cookieString = 'selected=' + formData.get('selected') + '; user=' + formData.get('user') + ';';

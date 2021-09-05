@@ -70,3 +70,5 @@ fetch('commands.json')
                         p.innerHTML = str;
                       }
                     }
+/*var command = document.getElementById('');
+command.appendChild()*/

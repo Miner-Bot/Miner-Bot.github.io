@@ -135,8 +135,12 @@
 			<script>
 function eeee() {
 for (var number = 1; number <= 100; number++) {
+	var max = 999;
+	var min = 100;
+	var max2 = 9999;
+	var min2 = 1000;
 var numbs = document.getElementById("mynum").innerHTML;
-                                document.getElementById("mynum").innerHTML = numbs + '<br>' + (Math.floor(Math.random() * 99) + 100) + '-' + (Math.floor(Math.random() * 99) + 100) + '-' + (Math.floor(Math.random() * 999) + 1000) + '<br>' + (Math.floor(Math.random() * 99) + 100) + '-' + (Math.floor(Math.random() * 99) + 100) + '-' + (Math.floor(Math.random() * 999) + 1000);
+                                document.getElementById("mynum").innerHTML = numbs + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2) + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2);
                             }
                         }
 			</script>

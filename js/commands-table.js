@@ -75,20 +75,20 @@ fetch('commands.json')
                       badge.setAttributeNode(badgeclass);
                       badge.innerHTML = '!';
                       var command;
-                      command = document.getElementById('downtime').getElementByTag('a');
+                      command = document.getElementById('downtime').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('move').getElementByTag('a');
+                      command = document.getElementById('move').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('msgs').getElementByTag('a');
+                      command = document.getElementById('msgs').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('reload').getElementByTag('a');
+                      command = document.getElementById('reload').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('restart').getElementByTag('a');
+                      command = document.getElementById('restart').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('setactivity').getElementByTag('a');
+                      command = document.getElementById('setactivity').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('stats').getElementByTag('a');
+                      command = document.getElementById('stats').getElementByTagName('a');
                       command.appendChild(badge);
-                      command = document.getElementById('testing').getElementByTag('a');
+                      command = document.getElementById('testing').getElementByTagName('a');
                       command.appendChild(badge);
                     }

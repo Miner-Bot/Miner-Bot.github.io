@@ -70,5 +70,12 @@ fetch('commands.json')
                         p.innerHTML = str;
                       }
                     }
-/*var command = document.getElementById('');
+/*var command = document.getElementById('downtime');
+command = document.getElementById('move');
+command = document.getElementById('msgs');
+command = document.getElementById('reload');
+command = document.getElementById('restart');
+command = document.getElementById('setactivity');
+command = document.getElementById('stats');
+command = document.getElementById('testing');
 command.appendChild()*/

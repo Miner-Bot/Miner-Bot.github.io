@@ -70,9 +70,9 @@ fetch('commands.json')
                         p.innerHTML = str;
                       }
                       var badge = document.createElement('span');
-                      var att = document.createAttribute('class');
-                      att.value = 'badge badge-pill badge-danger';
-                      badge.setAttributeNode(att);
+                      var badgeclass = document.createAttribute('class');
+                      badgeclass.value = 'badge badge-pill badge-danger';
+                      badge.setAttributeNode(badgeclass);
                       badge.innerHTML = '!';
                       var command;
                       command = document.getElementById('downtime');

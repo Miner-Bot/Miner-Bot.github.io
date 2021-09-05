@@ -70,12 +70,25 @@ fetch('commands.json')
                         p.innerHTML = str;
                       }
                     }
-/*var command = document.getElementById('downtime');
+var badge = document.createElement('span');
+var att = document.createAttribute('class');
+att.value = 'badge badge-pill badge-danger';
+badge.setAttributeNode(att);
+badge.innerHTML = '!';
+var command;
+command = document.getElementById('downtime');
+command.appendChild(badge);
 command = document.getElementById('move');
+command.appendChild(badge);
 command = document.getElementById('msgs');
+command.appendChild(badge);
 command = document.getElementById('reload');
+command.appendChild(badge);
 command = document.getElementById('restart');
+command.appendChild(badge);
 command = document.getElementById('setactivity');
+command.appendChild(badge);
 command = document.getElementById('stats');
+command.appendChild(badge);
 command = document.getElementById('testing');
-command.appendChild()*/
+command.appendChild(badge);

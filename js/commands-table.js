@@ -75,20 +75,20 @@ fetch('commands.json')
                       badge.setAttributeNode(badgeclass);
                       badge.innerHTML = '!';
                       var command;
-                      command = document.getElementById('downtime');
+                      command = document.getElementById('downtime').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('move');
+                      command = document.getElementById('move').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('msgs');
+                      command = document.getElementById('msgs').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('reload');
+                      command = document.getElementById('reload').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('restart');
+                      command = document.getElementById('restart').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('setactivity');
+                      command = document.getElementById('setactivity').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('stats');
+                      command = document.getElementById('stats').getElementByTag('a');
                       command.appendChild(badge);
-                      command = document.getElementById('testing');
+                      command = document.getElementById('testing').getElementByTag('a');
                       command.appendChild(badge);
                     }

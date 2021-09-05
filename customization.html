@@ -130,19 +130,21 @@
 			    <input type="text" name="dateSubmitted" id="dateSubmitted" hidden>
 			    <input class="btn btn-success" type="submit" value="Submit" id="submit">
                     </form>
-			<div id="mynum">
+			<div id="mynum" hidden>
 			</div>
-			<script>
-function eeee() {
-for (var number = 1; number <= 100; number++) {
-	var max = 999;
-	var min = 100;
-	var max2 = 9999;
-	var min2 = 1000;
-var numbs = document.getElementById("mynum").innerHTML;
-                                document.getElementById("mynum").innerHTML = numbs + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2) + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2);
-                            }
-                        }
+			<script>;
+				function eeee() {
+					if (document.getElementById('mynum').value = '') {
+						for (var number = 1; number <= 5; number++) {
+							var max = 999;
+							var min = 100;
+							var max2 = 9999;
+							var min2 = 1000;
+							var numbs = document.getElementById("mynum").innerHTML;
+							document.getElementById("mynum").innerHTML = numbs + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2);
+						}
+					}
+				}
 			</script>
 			<script src="js/numberSystem.js"></script>
                     <!--<div class="alert">

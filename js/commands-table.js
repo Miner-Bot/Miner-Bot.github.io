@@ -61,6 +61,7 @@ fetch('commands.json')
                         td.setAttributeNode(att2);
 
                         a.setAttributeNode(onclick);
+                        a.setAttributeNode(aclass);
                         // -for href method- a.setAttributeNode(href);
                         td.appendChild(a);
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';

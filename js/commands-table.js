@@ -51,7 +51,7 @@ fetch('commands.json')
                         att4.value = 'bungee-small-body-text';
                         
                         a.innerHTML = titleCase(data[o].name);
-                        aclass.value = 'L' + data[o].name
+                        aclass.value = 'L' + data[o].name;
                         
                         onclick.value = 'localStorage.setItem("clickedon", "' + data[o].name + '");window.location.replace("/command#' + data[o].name + '");';
                         // -for href method- href.value = '/command#' + data[o].name;

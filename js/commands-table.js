@@ -13,6 +13,7 @@ fetch('commands.json')
 })
   .catch(function (err) {
   console.log(err);
+  document.getElementById('commands-info').innerHTML = err;
 });
 
                     function appendData(data) {

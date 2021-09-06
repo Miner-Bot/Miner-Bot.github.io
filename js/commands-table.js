@@ -74,8 +74,10 @@ fetch('commands.json')
                       badgeclass.value = 'badge badge-pill badge-danger';
                       badge.setAttributeNode(badgeclass);
                       badge.innerHTML = '!';
+                      var specialCommands = {"downtime","move","msgs","reload","restart","setactivity","stats","testing"};
+for (var i;i <specialCommands.length
                       var command;
-                      command = document.getElementById('downtime').getElementByTagName('a');
+                      command = document.getElementById(specialCommands[i]).getElementByTagName('a');
                       command.appendChild(badge);
                       command = document.getElementById('move').getElementByTagName('a');
                       command.appendChild(badge);

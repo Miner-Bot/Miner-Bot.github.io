@@ -40,7 +40,7 @@ fetch('commands.json')
                         var att3 = document.createAttribute("class");
                         var att4 = document.createAttribute("class");
                         // -for href method- var href = document.createAttribute("href");
-                        var aclass = document.createAttribute("class");
+                        var aclass = document.createAttribute("id");
                         var onclick = document.createAttribute("onclick");
 
 
@@ -50,6 +50,7 @@ fetch('commands.json')
                         att4.value = 'bungee-small-body-text';
                         
                         a.innerHTML = titleCase(data[o].name);
+                        aclass.value = 'L' + data[o].name
                         
                         onclick.value = 'localStorage.setItem("clickedon", "' + data[o].name + '");window.location.replace("/command#' + data[o].name + '");';
                         // -for href method- href.value = '/command#' + data[o].name;
@@ -77,7 +78,7 @@ fetch('commands.json')
   var specialCommands = {"downtime","move","msgs","reload","restart","setactivity","stats","testing"};
   for (var i = 0;i < specialCommands.length; i++) {
     var command;
-    command = document.getElementById(specialCommands[i]).getElementByTagName('a');
+    command = document.getElementById('L' + specialCommands[i]);
     command.appendChild(badge);
   }
                       /*command = document.getElementById('move').getElementByTagName('a');

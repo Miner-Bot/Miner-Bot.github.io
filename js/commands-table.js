@@ -69,6 +69,17 @@ fetch('commands.json')
                         p.setAttributeNode(att4);
                         p.innerHTML = str;
                       }
+                        var badge = document.createElement('span');
+  var badgeclass = document.createAttribute('class');
+  badgeclass.value = 'badge badge-pill badge-danger';
+  badge.setAttributeNode(badgeclass);
+  badge.innerHTML = '!';
+  var specialCommands = {"downtime","move","msgs","reload","restart","setactivity","stats","testing"};
+  for (var i = 0;i < specialCommands.length; i++) {
+    var command;
+    command = document.getElementById(specialCommands[i]).getElementByTagName('a');
+    command.appendChild(badge);
+  }
                       /*command = document.getElementById('move').getElementByTagName('a');
                       command.appendChild(badge);
                       command = document.getElementById('msgs').getElementByTagName('a');
@@ -84,14 +95,3 @@ fetch('commands.json')
                       command = document.getElementById('testing').getElementByTagName('a');
                       command.appendChild(badge);*/
                     }
-  var badge = document.createElement('span');
-  var badgeclass = document.createAttribute('class');
-  badgeclass.value = 'badge badge-pill badge-danger';
-  badge.setAttributeNode(badgeclass);
-  badge.innerHTML = '!';
-  var specialCommands = {"downtime","move","msgs","reload","restart","setactivity","stats","testing"};
-  for (var i = 0;i < specialCommands.length; i++) {
-    var command;
-    command = document.getElementById(specialCommands[i]).getElementByTagName('a');
-    command.appendChild(badge);
-  }

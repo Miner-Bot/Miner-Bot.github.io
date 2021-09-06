@@ -83,9 +83,7 @@ fetch('commands.json')
                       command.appendChild(badge);
                       command = document.getElementById('testing').getElementByTagName('a');
                       command.appendChild(badge);*/
-                      SpecialCommands();
                     }
-function SpecialCommands() {
   var badge = document.createElement('span');
   var badgeclass = document.createAttribute('class');
   badgeclass.value = 'badge badge-pill badge-danger';
@@ -97,4 +95,3 @@ function SpecialCommands() {
     command = document.getElementById(specialCommands[i]).getElementByTagName('a');
     command.appendChild(badge);
   }
-}

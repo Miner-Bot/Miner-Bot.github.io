@@ -63,6 +63,14 @@ fetch('commands.json')
                         a.setAttributeNode(onclick);
                         // -for href method- a.setAttributeNode(href);
                         td.appendChild(a);
+                        if (tr.getAttribute('id') === "downtime" || "move" || "msgs" || "reload" || "restart" || "setactivity" || "stats" || "testing") {
+                          var badge = document.createElement('span');
+                          var badgeclass = document.createAttribute('class');
+                          badgeclass.value = 'badge badge-pill badge-danger';
+                          badge.setAttributeNode(badgeclass);
+                          badge.innerHTML = '!';
+                          a.appendChild(badge);
+                        }
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';
                         td.appendChild(hr);
                         td.appendChild(p);

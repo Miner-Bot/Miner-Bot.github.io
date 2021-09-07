@@ -76,7 +76,7 @@ fetch('commands.json')
                       badge.setAttributeNode(badgeclass);
                       badge.innerHTML = '!';
                       var specialCommands = '{"downtime","move","msgs","reload","restart","setactivity","stats","testing"}';
-                      specialCommands = JSON.parse(specialCommands);
+                      specialCommands = JSON.stringify(specialCommands);
                       for (var i = 0;i < specialCommands.length; i++) {
                         var command;
                         command = document.getElementById(specialCommands[i]).getElememtsByTagName('a')[0];

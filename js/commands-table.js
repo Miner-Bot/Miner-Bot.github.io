@@ -70,6 +70,8 @@ fetch('commands.json')
                           badge.setAttributeNode(badgeclass);
                           badge.innerHTML = '!';
                           a.appendChild(badge);
+                        } else {
+                          return;
                         }
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';
                         td.appendChild(hr);
@@ -77,18 +79,6 @@ fetch('commands.json')
                         hr.setAttributeNode(att3);
                         p.setAttributeNode(att4);
                         p.innerHTML = str;
-                      }
-                      var badge = document.createElement('span');
-                      var badgeclass = document.createAttribute('class');
-                      badgeclass.value = 'badge badge-pill badge-danger';
-                      badge.setAttributeNode(badgeclass);
-                      badge.innerHTML = '!';
-                      var specialCommands = '{"downtime","move","msgs","reload","restart","setactivity","stats","testing"}';
-                      specialCommands = JSON.stringify(specialCommands);
-                      for (var i = 0;i < specialCommands.length; i++) {
-                        var command;
-                        command = document.getElementById(specialCommands[i]).getElememtsByTagName('a')[0];
-                        command.appendChild(badge);
                       }
                       /*command = document.getElementById('move').getElementByTagName('a');
                       command.appendChild(badge);

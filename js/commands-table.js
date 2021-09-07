@@ -70,8 +70,6 @@ fetch('commands.json')
                           badge.setAttributeNode(badgeclass);
                           badge.innerHTML = '!';
                           a.appendChild(badge);
-                        } else {
-                          return "";
                         }
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';
                         td.appendChild(hr);

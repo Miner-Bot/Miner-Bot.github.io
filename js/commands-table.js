@@ -51,7 +51,6 @@ fetch('commands.json')
                         att4.value = 'bungee-small-body-text';
                         
                         a.innerHTML = titleCase(data[o].name);
-                        aclass.value = 'L' + data[o].name;
                         
                         onclick.value = 'localStorage.setItem("clickedon", "' + data[o].name + '");window.location.replace("/command#' + data[o].name + '");';
                         // -for href method- href.value = '/command#' + data[o].name;
@@ -62,7 +61,6 @@ fetch('commands.json')
                         td.setAttributeNode(att2);
 
                         a.setAttributeNode(onclick);
-                        a.setAttributeNode(aclass);
                         // -for href method- a.setAttributeNode(href);
                         td.appendChild(a);
                         // td.innerHTML = '<a class="js-scroll-trigger" href="/command' + location.hash + '" onclick="localStorage.setItem("clickedon", data[o].name)">' + titleCase(data[o].name) + '</a>';
@@ -80,7 +78,7 @@ fetch('commands.json')
   var specialCommands = '{"downtime","move","msgs","reload","restart","setactivity","stats","testing"}';
   for (var i = 0;i < specialCommands.length; i++) {
     var command;
-    command = document.getElementById('L' + specialCommands[i]);
+    command = document.getElementById(specialCommands[i]).getElememtsByTagName('a')[0];
     command.appendChild(badge);
   }
                       /*command = document.getElementById('move').getElementByTagName('a');

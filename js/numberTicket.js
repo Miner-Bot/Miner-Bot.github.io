@@ -5,12 +5,13 @@ if (window.location.search) {
 	const date = new Date(searchParams.get('dateSubmitted').slice(11));
 	parent.innerHTML = 'Submitted on: ' + date.toDateString() + '<br>' + '=============================' + '<br>' + 'Number Information:';
 	for(var value of searchParams.values()) {
+		const card = document.getElementById('numberTicketCard');
 		const div = document.createElement('div');
 		const att = document.createAttribute('class');
 		att.value = 'card-body';
 		div.setAttributeNode(att);
 		div.innerHTML = value;
-		parent.appendChild(div);
+		card.appendChild(div);
 	}
 }
 function getCookie(cname) {

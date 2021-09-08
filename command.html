@@ -135,6 +135,7 @@ const prefix = '=';
 	} else if (!found.usage && !found.aliases) {
 		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
 	}
+	console.log(str);
 	var div = document.getElementById("info");
 	var att = document.createAttribute("id");
 	

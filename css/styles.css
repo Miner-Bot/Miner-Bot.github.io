@@ -181,24 +181,24 @@ msg.in {
 }
 
 #containingalert>#notice {
-  height: 140px;
-  float: unset;
-  width: 70%;
-  align-content: center;
-  margin: 0 auto;
-  margin-top: .78in;
-  text-align: left;
-  cursor: help;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  padding: .05in;
-  padding-left: .5rem;
-  padding-right: .7rem;
-  background-color:tomato !important;
-  color: white !important;
-  font-family: "JetBrains Mono", monospace !important;
-  font-size: 11pt;
+    height: 140px;
+    float: unset;
+    width: 40%;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: .78in;
+    text-align: left;
+    cursor: help;
+    position: fixed;
+    top: 37px;
+    left: 30%;
+    padding: .05in;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    background-color: tomato !important;
+    color: white !important;
+    font-family: "JetBrains Mono", monospace !important;
+    font-size: 11pt;
 }
 
 #notice>#close {

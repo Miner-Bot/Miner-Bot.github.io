@@ -4,18 +4,17 @@ if (window.location.search) {
 	const parent = document.getElementById('dataIn');
 	const date = new Date(searchParams.get('dateSubmitted').slice(11));
 	parent.innerHTML = 'Submitted on: ' + date.toDateString() + '<br>' + '=============================' + '<br>' + 'Number Information:';
-	const div = document.createElement('div');
 	for(var value of searchParams.values()) {
 		const card = document.getElementById('numberTicketCard');
+		const div = document.createElement('div');
 		const att = document.createAttribute('class');
 		att.value = 'card-body';
 		div.setAttributeNode(att);
 		div.innerHTML = value;
 		card.appendChild(div);
-	}
-	for(var key of searchParams.keys()) {
-		var value = div.innerHTML;
-		value = key + ' = ' + value;
+		for(var key of searchParams.keys()) {
+			div.innerHTML = key + ' = ' + value;
+		}
 	}
 	console.log(parent.innerHTML);
 }

@@ -102,7 +102,9 @@
 				  .then(function (response) {
 				  return response.json();
 			  })
-				  .then(data => appendData(data))
+				  .then(function (data) {
+				  return appendData(data);
+			  })
 				  .catch(function (err) {
 				  console.log(err);
 				  document.getElementById('err').innerHTML = err;

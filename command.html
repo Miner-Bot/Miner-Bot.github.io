@@ -150,8 +150,7 @@ const prefix = '=';
 	div1.setAttributeNode(att3);
 	div1.innerHTML = str;
 	header.appendChild(div1);
-	header.appendChild(div);
-	header.innerHTML = titleCase(location.hash.slice(1));
+	header.innerHTML = titleCase(found.name);
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {
 			// Store

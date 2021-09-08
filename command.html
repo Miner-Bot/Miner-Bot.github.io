@@ -82,7 +82,7 @@
               </div>
 		  <div id="testurlreturn">
 		  </div>
-		  <div class="container-fluid card">
+		  <div class="container-fluid card" style="width:80%;">
 		  <h1 class="card-header" id="title">[Command.name]</h1>
 			  <div class="card-body" id="info"></div>
 		  </div>
@@ -119,7 +119,7 @@ const prefix = '=';
 			return i;
 		}
 	});
-	console.debug(found.name, index);
+	console.info(`filtered element: ${found.name}, index: ${index}`);
 	var description = found.description;
 	var usage = found.usage;
 	var aliases = found.aliases;

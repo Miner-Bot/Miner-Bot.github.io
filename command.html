@@ -124,8 +124,8 @@ const prefix = '=';
 	console.log(found, index);
 	var description = found.description;
 	var usage = found.usage;
-	var aliases = found.aliases;
-	
+	var aliases = found[index].aliases;
+	console.log(description,usage,aliases);
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
 	if (found[index].usage && found[index].aliases) {

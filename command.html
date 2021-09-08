@@ -119,11 +119,11 @@ const prefix = '=';
 			return i;
 		}
 	});
-	console.log(found, index);
+	console.debug(found.name, index);
 	var description = found.description;
 	var usage = found.usage;
 	var aliases = found.aliases;
-	console.log(description,usage,aliases);
+	console.debug(`description = ${description}; usage = ${usage}; aliases = ${aliases}`);
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
 	if (found.usage && found.aliases) {
@@ -135,7 +135,7 @@ const prefix = '=';
 	} else if (!found.usage && !found.aliases) {
 		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
 	}
-	console.log(str);
+	console.debug(`str = ${str}`);
 	var div = document.getElementById("info");
 	var att = document.createAttribute("id");
 	
@@ -151,8 +151,8 @@ const prefix = '=';
 	div1.innerHTML = str;
 	header.appendChild(div1);
 	header.innerHTML = titleCase(found.name);
-	console.log(div.innerHTML);
-	console.log(header.innerHTML);
+	console.debug(`div.innerHTML = ${div.innerHTML}`);
+	console.debug(`header.innerHTML = ${header.innerHTML}`);
 /*	failed attempt to use local storage to transfer the command that was clicked on, to this page, and put the command name in the title [document.title]
 if (typeof(Storage) !== "undefined") {
 			// Store

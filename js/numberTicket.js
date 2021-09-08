@@ -13,6 +13,7 @@ if (window.location.search) {
 		div.innerHTML = value;
 		card.appendChild(div);
 	}
+	console.log(parent.innerHTML);
 }
 function getCookie(cname) {
 	let name = cname + "=";

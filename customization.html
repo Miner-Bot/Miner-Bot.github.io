@@ -116,7 +116,9 @@
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
                     <form onsubmit="saveNumber()" action="/SelectedNumber.html" method="GET" id="nform">
-			    <select class="form-control" name="selected" id="selected"></select>
+			    <select class="form-control" name="selected" id="selected">
+				    <option>[None Selected]</option>
+			    </select>
 			    <div class="input-group mb-3">
 				    <div class="input-group-prepend">
 					    <span class="input-group-text">@</span>

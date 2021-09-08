@@ -51,7 +51,7 @@ fetch('commands.json')
                         att2.value = 'text-box bungee-body-text';
                         att3.value = 'divider-page-width-mod my-2';
                         att4.value = 'bungee-small-body-text';
-                        relativeatt = 'position: relative;'
+                        relativeatt.value = 'position: relative;'
                         
                         a.innerHTML = titleCase(data[o].name);
                         

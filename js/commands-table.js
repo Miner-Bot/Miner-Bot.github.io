@@ -62,6 +62,7 @@ fetch('commands.json')
                         tr.setAttributeNode(att);
                         tr.appendChild(td);
                         td.setAttributeNode(att2);
+                        div.setAttributeNode(relativeatt);
 
                         a.setAttributeNode(onclick);
                         // -for href method- a.setAttributeNode(href);

@@ -4,15 +4,15 @@ if (window.location.search) {
 	const parent = document.getElementById('dataIn');
 	const date = new Date(searchParams.get('dateSubmitted').slice(11));
 	parent.innerHTML = 'Submitted on: ' + date.toDateString() + '<br>' + '=============================' + '<br>' + 'Number Information:';
-	searchParams.forEach(function(value, key) {
+	for(var value of searchParams.values()) {
 		const card = document.getElementById('numberTicketCard');
 		const div = document.createElement('div');
 		const att = document.createAttribute('class');
 		att.value = 'card-body';
 		div.setAttributeNode(att);
-		div.innerHTML = key + ': ' + value;
+		div.innerHTML = value;
 		card.appendChild(div);
-	});
+	}
 	console.log(parent.innerHTML);
 }
 function getCookie(cname) {

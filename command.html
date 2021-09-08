@@ -128,14 +128,14 @@ const prefix = '=';
 	
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
-	if (found.usage && found.aliases) {
-		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + found.usage + '<br>' + 'Aliases:' + ' ' + prefix + found.aliases;
-	} else if (found.usage && !found.aliases) {
-		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + ' ' + found.usage;
-	} else if (!found.usage && found.aliases) {
-		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name + '<br>' + 'Aliases:' + ' ' + prefix + found.aliases;
-	} else if (!found.usage && !found.aliases) {
-		str = 'Description:' + ' ' + found.description + '<br>' + 'Usage:' + ' ' + prefix + found.name;
+	if (found[index].usage && found[index].aliases) {
+		str = 'Description:' + ' ' + found[index].description + '<br>' + 'Usage:' + ' ' + prefix + found[index].name + ' ' + found[index].usage + '<br>' + 'Aliases:' + ' ' + prefix + found[index].aliases;
+	} else if (found[index].usage && !found[index].aliases) {
+		str = 'Description:' + ' ' + found[index].description + '<br>' + 'Usage:' + ' ' + prefix + found[index].name + ' ' + found[index].usage;
+	} else if (!found[index].usage && found[index].aliases) {
+		str = 'Description:' + ' ' + found[index].description + '<br>' + 'Usage:' + ' ' + prefix + found[index].name + '<br>' + 'Aliases:' + ' ' + prefix + found[index].aliases;
+	} else if (!found[index].usage && !found[index].aliases) {
+		str = 'Description:' + ' ' + found[index].description + '<br>' + 'Usage:' + ' ' + prefix + found[index].name;
 	}
 	var div = document.getElementById("info");
 	var att = document.createAttribute("id");
@@ -144,7 +144,7 @@ const prefix = '=';
 	var header = document.getElementById("title");
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
-	att.value = found.name;
+	att.value = found[index].name;
 	div.setAttributeNode(att);
 	div.innerHTML = str;
 	att3.value = 'text-box bungee-small-body-text';

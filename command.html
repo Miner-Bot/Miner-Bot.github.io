@@ -139,7 +139,7 @@ const prefix = '=';
 	var div = document.getElementById("info");
 	var att = document.createAttribute("id");
 	
-	document.title = location.hash.slice(1);
+	document.title = titleCase(location.hash.slice(1));
 	var header = document.getElementById("title");
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");

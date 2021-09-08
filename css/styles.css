@@ -183,15 +183,17 @@ msg.in {
 #containingalert>#notice {
     height: 140px;
     float: unset;
-    width: 40%;
+    width: fit-content;
+    max-width: 70%;
     align-content: center;
     margin: 0 auto;
     margin-top: .78in;
     text-align: left;
     cursor: help;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     top: 37px;
-    left: 30%;
+    left: auto;
     padding: .05in;
     padding-left: .5rem;
     padding-right: .5rem;

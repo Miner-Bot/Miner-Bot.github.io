@@ -16,7 +16,7 @@ function appendData(data) {
     var att2 = document.createAttribute("label");
     option.innerHTML = data[i].number;
     att.value = data[i].number;
-    att2.value = 'ID: ' + data[i].id + '(' + data[i].number + ')';
+    att2.value = '#' + data[i].id + '  (' + data[i].number + ')';
     mainContainer.appendChild(option);
     option.setAttributeNode(att);
     option.setAttributeNode(att2);

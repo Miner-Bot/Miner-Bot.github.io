@@ -44,7 +44,6 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 // Select the button
-const btn = document.querySelector('.btn-toggle');
 /* FUTURE FEATURE?:
 if (localStorage.themePreferences === "true") {
      var element = document.getElementById("SearchQuery");
@@ -70,26 +69,7 @@ if (localStorage.themePreferences === "true") {
 */
 // Listen for a click on the button
 /*       var state = false; */
-btn.addEventListener('click', function() {
-   var element = document.getElementById("SearchQuery");
-   element.classList.toggle("dark-theme");
-   // var element2 = document.getElementById("mainNav");
-   var footer = document.getElementById("footer");
-   footer.classList.toggle('dark-theme');
-   var newatt = document.createAttribute("style");
-   newatt.value = 'background-color: #343a40 !important;';
-   /* var brand = document.getElementById('navbar-brand');
-   brand.toggleAttribute("style");
-   if (brand.hasAttribute("style")) {
-      brand.setAttribute("style", 'color: rgb(255, 255, 255);');
-   }*/
-   /* --> element2.toggleAttribute("style");
-   if (element2.hasAttribute("style")) {
-      element2.setAttribute("style", 'background-color: #4D5358 !important;');
-   } <--
-   */
-   // Then toggle (add/remove) the .dark-theme class to the body
-   document.body.classList.toggle('dark-theme');
+
 
   /* var element = document.getElementById("SearchQuery");
    element.classList.toggle("dark-theme");
@@ -132,15 +112,6 @@ btn.addEventListener('click', function() {
    document.body.classList.toggle('dark-theme');
    }
 */
-})
-const btn2 = document.getElementById('ToggleNightMode2');
-btn2.addEventListener('click', function() {
-   var footer = document.getElementById("footer");
-   footer.classList.toggle('dark-theme');
-   var newatt = document.createAttribute("style");
-   newatt.value = 'background-color: #343a40 !important;';
-   document.body.classList.toggle('dark-theme');
-})
   // Magnific popup calls
   $('#portfolio').magnificPopup({
     delegate: 'a',
@@ -158,3 +129,24 @@ btn2.addEventListener('click', function() {
   })
 
 })(jQuery); // End of use strict
+
+const btn = document.querySelector('.btn-toggle');
+btn.addEventListener('click', function() {
+   var element = document.getElementById("SearchQuery");
+   element.classList.toggle("dark-theme");
+   // var element2 = document.getElementById("mainNav");
+   var footer = document.getElementById("footer");
+   footer.classList.toggle('dark-theme');
+   var newatt = document.createAttribute("style");
+   newatt.value = 'background-color: #343a40 !important;';
+   // Then toggle (add/remove) the .dark-theme class to the body
+   document.body.classList.toggle('dark-theme');
+});
+const btn2 = document.getElementById('ToggleNightMode2');
+btn2.addEventListener('click', function() {
+   var footer = document.getElementById("footer");
+   footer.classList.toggle('dark-theme');
+   var newatt = document.createAttribute("style");
+   newatt.value = 'background-color: #343a40 !important;';
+   document.body.classList.toggle('dark-theme');
+});

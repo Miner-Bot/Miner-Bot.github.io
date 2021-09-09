@@ -115,12 +115,17 @@ const prefix = '=';
 	const array1 = data;
 	var index = -1;
 	// const found = array1.find(element => element.name = cmd);
-	const found = data.find(function(item, i){
+	var found = data.find(function(item, i){
 		if(item.name === cmd){
 			index = i;
 			return i;
 		}
 	});
+	if (index === 0) {
+		found = data[index];
+	} else {
+		found = found;
+	}
 	console.info(`filtered element: ${found.name}, index: ${index}`);
 	var description = found.description;
 	var usage = found.usage;

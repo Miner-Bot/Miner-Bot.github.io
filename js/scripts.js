@@ -43,92 +43,6 @@
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-// Select the button
-/* FUTURE FEATURE?:
-if (localStorage.themePreferences === "true") {
-     var element = document.getElementById("SearchQuery");
-   element.addClass("dark-theme");
-   var element2 = document.getElementById("mainNav");
-   var footer = document.getElementById("footer");
-   footer.addClass('dark-theme');
-   var newatt = document.createAttribute("style");
-   newatt.value = 'background-color: #343a40 !important;';
-   element2.setAttributeNode(newatt);
-   document.body.addClass('dark-theme');
-
-} else if (localStorage.themePreferences === "false") {
-        var element = document.getElementById("SearchQuery");
-   element.removeClass("dark-theme");
-   var element2 = document.getElementById("mainNav");
-   var footer = document.getElementById("footer");
-   footer.removeClass('dark-theme');
-   element2.removeAttribute("style");
-   document.body.removeClass('dark-theme');
-
-}
-*/
-// Listen for a click on the button
-/*       var state = false; */
-
-
-  /* var element = document.getElementById("SearchQuery");
-   element.classList.toggle("dark-theme");
-   var element2 = document.getElementById("mainNav");
-   var footer = document.getElementById("footer");
-   footer.classList.toggle('dark-theme');
-   * var newatt = document.createAttribute("style");
-   * newatt.value = 'background-color: #343a40 !important;';
-   element2.toggleAttribute("style");
-   if (element2.hasAttribute("style")) {
-      element2.setAttribute("style", 'background-color: #343a40 !important;');
-   }
-   // Then toggle (add/remove) the .dark-theme class to the body
-   document.body.classList.toggle('dark-theme');
-   */
-   /*if (typeof(Storage) !== "undefined") {
-   if (state === true) {
-      var stateval = "true";
-   }
-   if (state === false) {
-      stateval = "false";
-   }
-   localStorage.setItem('themePreferences', stateval)
-   .then {
-   state = !state;
-   };
-   } else {
-      var element = document.getElementById("SearchQuery");
-   element.classList.toggle("dark-theme");
-   var element2 = document.getElementById("mainNav");
-   var footer = document.getElementById("footer");
-   footer.classList.toggle('dark-theme');
-   * var newatt = document.createAttribute("style");
-   * newatt.value = 'background-color: #343a40 !important;';
-   element2.toggleAttribute("style");
-   if (element2.hasAttribute("style")) {
-      element2.setAttribute("style", 'background-color: #343a40 !important;');
-   }
-   // Then toggle (add/remove) the .dark-theme class to the body
-   document.body.classList.toggle('dark-theme');
-   }
-*/
-  // Magnific popup calls
-  $('#portfolio').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    tLoading: 'Loading image #%curr%...',
-    mainClass: 'mfp-img-mobile',
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0, 1]
-    },
-    image: {
-      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-    }
-  })
-
-})(jQuery); // End of use strict
 
 const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function() {
@@ -150,3 +64,20 @@ btn2.addEventListener('click', function() {
    newatt.value = 'background-color: #343a40 !important;';
    document.body.classList.toggle('dark-theme');
 });
+  // Magnific popup calls
+  $('#portfolio').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    tLoading: 'Loading image #%curr%...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0, 1]
+    },
+    image: {
+      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+    }
+  })
+
+})(jQuery); // End of use strict

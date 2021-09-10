@@ -11,29 +11,28 @@ function numberFunction() {
 			  });
 }
 function appendData(data) {
-  const array1 = data;
-	var index = -1;
-	// const found = array1.find(element => element.name = cmd);
-	var found = data.find(function(item, i){
-		if(item.username === username){
-			index = i;
-			return i;
+	class User {
+		constructor(user) {
+			this.username = user;
 		}
-	});
-
-	if (index === 0) {
-		found = data[index];
-	} else {
-		found = found;
+		number() {
+			const array1 = data;
+			var index = -1;
+			var found = data.find(function(item, i){
+				if(item.username === this.username){
+					index = i;
+					return i;
+				}
+			});
+			if (index === 0) {
+				found = data[index];
+			} else {
+				found = found;
+			}
+		}
 	}
 }
 
-class Number {
-  get(username) {
-    this.number = numberFunction();
-  }
-}
+const mycar = new User("FirstUser");
 
-const mycar = new Number("IcicleSavage");
-
-console.log(mycar.number);
+mycar.number();

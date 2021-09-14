@@ -83,7 +83,7 @@ function appendData(data) {
       title.value = "Not for public use (Only works for the creator)";
       astyle.value = "position: absolute;right: 0px !important;top: 0px !important"
       badgeclass.value = 'badge badge-pill badge-danger';
-      badgestyle.value = 'position:inherit;';
+      badgestyle.value = 'position:absolute; right: 0px !important; top: 0px !important;';
       tooltip.setAttributeNode(DataAtt);
       tooltip.setAttributeNode(title);
       badge.setAttributeNode(badgeclass);

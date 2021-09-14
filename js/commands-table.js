@@ -70,7 +70,7 @@ function appendData(data) {
       /*
       data-toggle="tooltip" title="Hooray!"
       */
-      var thref = document.createAtribute('href');
+      var thref = document.createAttribute('href');
       var DataAtt = document.createAttribute('data-toggle');
       var title = document.createAttribute('title');
       var badgeclass = document.createAttribute('class');

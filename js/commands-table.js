@@ -72,12 +72,14 @@ function appendData(data) {
       */
       var DataAtt = document.createAttribute('data-toggle');
       var title = document.createAttribute('title');
+      var astyle = document.createAttribute('style');
       var badgeclass = document.createAttribute('class');
       var badgestyle = document.createAttribute('style');
       DataAtt.value = "tooltip";
       title.value = "Not for public use (Only works for the creator)";
+      astyle.value = "position: absolute;right: 0px !important;top: 0px !important"
       badgeclass.value = 'badge badge-pill badge-danger';
-      badgestyle.value = 'position: absolute;right: 0px !important;top: 0px !important;';
+      badgestyle.value = 'position:inherit;';
       tooltip.setAttributeNode(DataAtt);
       tooltip.setAttributeNode(title);
       badge.setAttributeNode(badgeclass);

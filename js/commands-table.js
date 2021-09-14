@@ -70,17 +70,14 @@ function appendData(data) {
       /*
       data-toggle="tooltip" title="Hooray!"
       */
-      var thref = document.createAttribute('href');
       var DataAtt = document.createAttribute('data-toggle');
       var title = document.createAttribute('title');
       var badgeclass = document.createAttribute('class');
       var badgestyle = document.createAttribute('style');
-      thref.value = "#";
       DataAtt.value = "tooltip";
       title.value = "Not for public use (Only works for the creator)";
       badgeclass.value = 'badge badge-pill badge-danger';
       badgestyle.value = 'position: absolute;right: 0px !important;top: 0px !important;';
-      tooltip.setAttributeNode(thref);
       tooltip.setAttributeNode(DataAtt);
       tooltip.setAttributeNode(title);
       badge.setAttributeNode(badgeclass);

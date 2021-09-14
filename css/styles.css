@@ -62,12 +62,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 a.command-title {
-  color: #f26624;
+  color: #212529;
   text-decoration: underline;
   background-color: transparent;
 }
 a.command-title:hover {
-  color: #f27412;
+  color: #282d31;
   text-decoration: underline;
 }
 

@@ -37,14 +37,16 @@ function appendData(data) {
     var a = document.createElement("a");
     var div = document.createElement("div");
     var att = document.createAttribute("id");
+    var title = document.createAttribute("title");
     var att2 = document.createAttribute("class");
     var att3 = document.createAttribute("class");
     var att4 = document.createAttribute("class");
     // -for href method- var href = document.createAttribute("href");
-    var aclass = document.createAttribute("id");
+    var aclass = document.createAttribute("class");
     var onclick = document.createAttribute("onclick");
     var relativeatt = document.createAttribute("style");
     att.value = data[o].name;
+    title.value = titleCase(data[o].name);
     att2.value = 'text-box bungee-body-text';
     att3.value = 'divider-page-width-mod my-2';
     att4.value = 'bungee-small-body-text';
@@ -52,6 +54,7 @@ function appendData(data) {
     
     a.innerHTML = titleCase(data[o].name);
     
+    aclass.value = 'commandlink';
     onclick.value = 'localStorage.setItem("clickedon", "' + data[o].name + '");window.location.replace("/command#' + data[o].name + '");';
     // -for href method- href.value = '/command#' + data[o].name;
     
@@ -61,6 +64,7 @@ function appendData(data) {
     td.setAttributeNode(att2);
     div.setAttributeNode(relativeatt);
     a.setAttributeNode(onclick);
+    a.setAttributeNode(aclass);
     // -for href method- a.setAttributeNode(href);
     td.appendChild(div);
     td.appendChild(a);

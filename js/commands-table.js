@@ -18,7 +18,8 @@ fetch('commands.json')
 
 function appendData(data) {
   const prefix = '=';
-  for (var o = 0; o < data.length; o++) {
+  var l = data.length
+  for (var o = 0; o < l; o++) {
     var str;
     if (data[o].usage && data[o].aliases) {
       str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;

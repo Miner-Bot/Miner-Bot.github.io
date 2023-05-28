@@ -181,7 +181,7 @@ msg.in {
 }
 
 #containingalert>#notice {
-    height: fit-content;
+    height: 140px;
     float: unset;
     width: fit-content;
     max-width: 70%;
@@ -223,6 +223,11 @@ footer {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
+
+#commandlink {
+  color: #2c2c2c !important;
+}
+
 summary#command-summary {
   border: .6px;
   border-color: #000000;

@@ -64,6 +64,9 @@ btn2.addEventListener('click', function() {
    newatt.value = 'background-color: #343a40 !important;';
    document.body.classList.toggle('dark-theme');
 });
+       $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip(); 
+       });
   // Magnific popup calls
   $('#portfolio').magnificPopup({
     delegate: 'a',

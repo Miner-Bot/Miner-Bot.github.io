@@ -18,7 +18,8 @@ fetch('commands.json')
 
 function appendData(data) {
   const prefix = '=';
-  for (var o = 0; o < data.length; o++) {
+  var l = data.length
+  for (var o = 0; o < l; o++) {
     var str;
     if (data[o].usage && data[o].aliases) {
       str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
@@ -83,7 +84,7 @@ function appendData(data) {
       title.value = "Not for public use (Only works for the creator)";
       astyle.value = "position: absolute;right: 0px !important;top: 0px !important"
       badgeclass.value = 'badge badge-pill badge-danger';
-      badgestyle.value = 'position:inherit;';
+      badgestyle.value = 'position:absolute; right: 0px !important; top: 0px !important;';
       tooltip.setAttributeNode(DataAtt);
       tooltip.setAttributeNode(title);
       badge.setAttributeNode(badgeclass);

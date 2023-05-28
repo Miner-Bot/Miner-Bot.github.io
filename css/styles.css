@@ -181,7 +181,7 @@ msg.in {
 }
 
 #containingalert>#notice {
-    height: 140px;
+    height: fit-content;
     float: unset;
     width: fit-content;
     max-width: 70%;

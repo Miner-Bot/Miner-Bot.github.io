@@ -224,7 +224,7 @@ footer {
   padding-bottom: 3rem !important;
 }
 
-#commandlink {
+a.commandlink {
   color: #2c2c2c !important;
 }
 

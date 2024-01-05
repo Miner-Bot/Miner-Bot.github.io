@@ -1,0 +1,26 @@
+<script>
+fetch('numbers.json')
+	.then(function(response) {
+		return response.json();
+	})
+	.then(function(data) {
+		appendData(data);
+	})
+	.catch(function(err) {
+		console.log(err);
+	});
+function appendData(data) {
+	const mainContainer = document.getElementById('selected');
+	for (let i = 0; i < data.length; i++) {
+		const option = document.createElement('option');
+		const att = document.createAttribute('value');
+		const att2 = document.createAttribute('label');
+		option.innerHTML = data[i].number;
+		att.value = data[i].number;
+		att2.value = 'Selected Number\'s ID: ' + data[i].id;
+		mainContainer.appendChild(option);
+		option.setAttributeNode(att);
+		option.setAttributeNode(att2);
+	}
+}
+</script>

@@ -1,4 +1,4 @@
-# **About MinerBot**
+﻿# **About MinerBot**
 
 &nbsp;&nbsp;&nbsp;A Discord bot who is the successor of Jakey, another bot that ~~has~~had similar features, was based originally off of Jakey's features. But, later on in his development, the developer decided to make him serve much broader purposes. MinerBot can now do more than Jakey could ever dream to do. 
 <br />&nbsp;&nbsp;&nbsp;**MinerBot is centered around having fun, and entertaining his users, within Discord.** Whether you're waiting for a friend to ready up, or simply want to pass time, he's got you covered! [Invite MinerBot here.](#invite-minerbot) is another bot, who will replace Jakey, in the future.

@@ -1,12 +1,11 @@
 const fs = require('fs');
-const Discord = require('discord.js');
+const path = require('node:path');
+const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { prefix, token } = require('.//config.json');
-// const ytdl = require('ytdl-core');
-// const ytdldiscord = require('ytdl-core-discord');
+const ytdl = require('ytdl-core-discord');
 
-
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+client.commands = new Collection();
 
 // const timestampForStatus = client.readyTimestamp;
 // const uptime = client.uptime;
@@ -29,14 +28,14 @@ fs.readFile('./Miner-Bot.github.io/MinerBot/numbers.json', (err, data) => {
 // 	connection.play(await ytdldiscord(url), { type: 'opus' });
 // }
 
-client.on('message', async message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+client.on(Events.InteractionCreate, interaction => {
+	if (!interaction.isChatInputCommand()) return;
+
 	// getting the command name, to run that command:
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 	// Command Aliases Checker
-	const command = client.commands.get(commandName)
-		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+	const command = interaction.client.commands.get(interaction.commandName);
 
 	if (!command) return;
 	// Guild-only-command checking line:
@@ -76,8 +75,8 @@ client.on('message', async message => {
 	}
 	if (message.content === '=join') {
 		if (message.member.voice.channel) {
-			const connection2 = await message.member.voice.channel.join();
-			const dispatcher = connection2.play('C:/Users/mjsey/OneDrive/MinerBot/StartupSound.mp3');
+			const connection2 = /*await*/ message.member.voice.channel.join();
+			const dispatcher = connection2.play('C:/Users/mjsey/MinerBot/MinerBot/StartupSound.mp3');
 			message.member.voice.channel.join().then(channel => {
 				client.voiceChannelIDs.set(channel.id, 'current channel');
 			});
@@ -91,8 +90,7 @@ client.on('message', async message => {
 
 			// Always remember to handle errors appropriately!
 			dispatcher.on('error', console.error);
-		}
-		else if (!message.member.voice.channel) {
+		} else if (!message.member.voice.channel) {
 			const user = message.author.id;
 			message.channel.send(`You have to join a voice channel first, <@${user}>!`);
 		}
@@ -101,52 +99,66 @@ client.on('message', async message => {
 		if (message.guild.voiceStates) {
 			const connection = message.guild.voice.connection;
 			connection.disconnect();
-		}
-		else if (!message.guild.voiceStates) {
+		} else if (!message.guild.voiceStates) {
 			const user = message.author.id;
 			message.channel.send(`I'm not in a voice channel, <@${user}>! If you want me to join your voice channel, use \`=join\`, first.`);
 		}
 	}
-	// if (message.content === '=play') {
-	// 	if (!message.guild.voiceStates) {
-	// 		const url = args[0];
-	// 		message.member.voice.channel.join().then(connection => {
-	// 			const stream = ytdl(`${args[0]}`, { filter: 'audioonly' });
-	// 			const dispatcher = connection.play(stream);
-	// 			dispatcher.on('finish', () => message.channel.send('`QUEUE FINISHED` \n ` TIP `: To add another song to the queue, use `=play [the YouTube URL`'));
-	// 		play(connection, url);
-	// 		});
-	// 	}
-	// 	else if (message.guild.voiceStates) {
-	// 		message.guild.voice.connection.then(connection => {
-	// 			const stream = ytdl(`${args[0]}`, { filter: 'audioonly' });
-	// 			const dispatcher = connection.play(stream);
-	// 			dispatcher.on('finish', () => message.channel.send('`QUEUE FINISHED` \n ` TIP `: To add another song to the queue, use `=play [the YouTube URL]`'));
-	// 		});
-	// 		message.channel.send(`Playing ${args[0]}`);
-	// 	}
-	// }
-	// Execute Command line:
-	try {
-		command.execute(message, args, client, UsersNumbers);
+	async function play(connection, url) {
+		connection.play(await ytdl(url), { type: 'opus' });
 	}
-	// Error catcher:
-	catch (error) {
+	if (message.content === '=play') {
+
+		if (!message.guild.voiceStates) {
+			const url = args[0];
+			message.member.voice.channel.join().then(connection => {
+				const stream = ytdl(`${args[0]}`, { filter: 'audioonly' });
+				const dispatcher = connection.play(stream);
+				dispatcher.on('finish', () => message.channel.send('`QUEUE FINISHED` \n ` TIP `: To add another song to the queue, use `=play [the YouTube URL`'));
+				play(connection, url);
+			});
+		} else if (message.guild.voiceStates) {
+			const url = args[0];
+			connection => {
+				const stream = ytdl(url, { filter: 'audioonly' });
+				const dispatcher = connection.play(stream);
+				dispatcher.on('start', () => console.log(`started playing ${args[0]}, at ${Date.now}`));
+				dispatcher.on('finish', () => message.channel.send('`QUEUE FINISHED` \n ` TIP `: To add another song to the queue, use `=play [the YouTube URL]`'));
+				play(connection, url);
+			};
+			message.guild.voiceStates.connection;
+			message.channel.send(`Playing ${args[0]}`);
+		}
+	}
+	try {														// Execute Command line:
+		command.execute(message, args, client, UsersNumbers);
+	} catch (error) {											// Error Catcher:
 		console.error(error);
 		message.reply('There was an error trying to execute that command!');
 	}
 });
-const commandFiles = fs.readdirSync('C:/Users/mjsey/OneDrive/MinerBot/commands').filter(file => file.endsWith('.js'));
+const foldersPath = path.join(__dirname, 'commands');
+const commandFolders = fs.readdirSync(foldersPath);
 
-for (const file of commandFiles) {
-	const command = require(`C:/Users/mjsey/OneDrive/MinerBot/commands/${file}`);
-	client.commands.set(command.name, command);
+for (const folder of commandFolders) {
+	const commandsPath = path.join(foldersPath, folder);
+	const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+	for (const file of commandFiles) {
+		const filePath = path.join(commandsPath, file);
+		const command = require(filePath);
+		// Set a new item in the Collection with the key as the command name and the value as the exported module
+		if ('data' in command && 'execute' in command) {
+			client.commands.set(command.data.name, command);
+		} else {
+			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+		}
+	}
 }
 
 // send message when he joins the server
 client.on('guildCreate', guild => {
 	const channel = guild.channels.cache.find(channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'));
-	channel.send('Thanks for invite me');
+	channel.send('Thanks for inviting me!');
 });
 
 // client.on('message', message => {
@@ -158,25 +170,72 @@ client.on('guildCreate', guild => {
 //	}
 // });
 // const status = JSON.parse(fs.readFileSync('./Miner-Bot.github.io/MinerBot/status.json', 'utf8'));
+let latest;
 client.once('ready', () => {
-	console.log('Ready!');
-	console.log(client.uptime);
+	console.time('uptime');
+	console.log('Ready!', client.readyAt);
 	client.user.setActivity('my new games!');
 	fs.writeFile('./Miner-Bot.github.io/MinerBot/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
 		if(err) console.log(err);
 	});
+	const timestampData = client.readyAt;
+	/* new data */
+	latest = { 'timestamp': timestampData, 'uptime': '' };
 	fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
 		if (err) throw err;
-		let obj = JSON.parse(data);
-		obj = [obj, statusjson];
-		const jsonEdited = JSON.stringify(obj);
+		/* Make the `data`, that is read, into a javascript object. */
+		let jsonEdited;
+		if (data.length > 0) {
+			if (data[0].timestamp === timestampData) {
+				const old = JSON.parse(data);
+				/* set the new json text */
+				const newlogs = [ old ];
+				/* turn the json combination above, into json text/elements */
+				jsonEdited = JSON.stringify(newlogs);
+			} else if (data[0].timestamp != timestampData) {
+				const old = JSON.parse(data);
+				/* set the new json text */
+				const newlogs = [ latest, old ];
+				/* turn the json combination above, into json text/elements */
+				jsonEdited = JSON.stringify(newlogs);
+			}
+		} else if (data.length <= 0) {
+			const newlogs = [ latest ];
+			jsonEdited = JSON.stringify(newlogs);
+		}
+		/* write the new json logs to the file */
 		fs.writeFile('./Miner-Bot.github.io/MinerBot/status.json', jsonEdited, '', err => {
 			if(err) console.log(err);
 		});
+		// fs.readFile('./Miner-Bot.github.io/MinerBot/chats/dev.json', (err, data2) => {
+		// 	if (err) throw err;
+		// 	const user = client.users.cache.get('444767734409068545');
+		// 	const direction = 'out';
+		// 	let index = -1;
+		// 	let found = data2.find(function(item, i) {
+		// 		if(item.name === direction) {
+		// 			index = i;
+		// 			return i;
+		// 		}
+		// 	});
+		// 	if (index === 0) {
+		// 		found = data2[index];
+		// 	}
+		// 	else {
+		// 		// eslint-disable-next-line no-self-assign
+		// 		found = found;
+		// 	}
+		// 	user.send(found.msg);
+		// });
 	});
-	const timestampData = client.readyAt;
-	const statusjson = { 'timestamp': timestampData, 'status': client.user.presence.status };
 });
-
+process.on('exit', function() {
+	process.stdout.resume();
+	console.timeLog('uptime');
+	latest = { 'timestamp': client.readyAt, 'uptime': client.uptime() };
+	fs.writeFile('C:/Users/mjsey/MinerBot/MinerBot/uptime.json', JSON.stringify(latest), '', err => {
+		if (err) console.log(err);
+	});
+});
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));
 client.login(token);

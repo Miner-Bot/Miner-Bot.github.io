@@ -6,6 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="IcicleSavage" />
         <title>Customize MinerBot</title>
+        <title>Customize MinerBot</title>
         <!-- Favicon
         <link rel="icon" type="image/x-icon" href="assets/img/tabpic.ico" />-->
 	    <!-- Improved Favicon-->
@@ -38,6 +39,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
         <!-- Third party plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -45,9 +52,13 @@
     </head>
     <body id="page-top" onload="eeee()">
 	    <!--onload="setData()"-->
+    <body id="page-top" onload="eeee()">
+	    <!--onload="setData()"-->
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
+                <button class="btn btn-toggle" id="ToggleNightMode2" title="Toggle Night Mode"><i class="fa fa-moon"></i></button>
 		<a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
                 <button class="btn btn-toggle" id="ToggleNightMode2" title="Toggle Night Mode"><i class="fa fa-moon"></i></button>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -57,7 +68,9 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#invite">Invite</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#commands">Commands</a></li>
 			<li class="nav-item"><a class="btn nav-link js-scroll-trigger" title="Customize MinerBot" href="/customization#p"><i class="fas fa-wrench"></i></a></li>                    </ul>
+			<li class="nav-item"><a class="btn nav-link js-scroll-trigger" title="Customize MinerBot" href="/customization#p"><i class="fas fa-wrench"></i></a></li>                    </ul>
                 </div>
+		</div>
 		</div>
         </nav>
         <!-- About-->
@@ -74,7 +87,9 @@
 			    </svg>
                         <hr class="divider light my-4" />
                         <p class="text-white-50 mb-4">Get your mINE-FONE number [Works only with MinerBot, and in Discord<a class="js-scroll-trigger" href="#footer">*</a>]</p>
+                        <p class="text-white-50 mb-4">Get your mINE-FONE number [Works only with MinerBot, and in Discord<a class="js-scroll-trigger" href="#footer">*</a>]</p>
                         <a class="btn btn-light btn-xl" href="#phone">See Numbers</a>
+			</div>
 			</div>
                 </div>
             </div>
@@ -130,7 +145,41 @@
 			    </div>
 			    <input type="text" name="dateSubmitted" id="dateSubmitted" hidden>
 			    <input class="btn btn-success" type="submit" value="Submit" id="submit">
+                    <form onsubmit="saveNumber()" action="/SelectedNumber.html" method="GET" id="nform">
+			    <select class="form-control" name="selected" id="selected">
+				    <option>[None Selected]</option>
+			    </select>
+			    <div class="input-group mb-3">
+				    <div class="input-group-prepend">
+					    <span class="input-group-text">@</span>
+				    </div>
+				    <input type="text" class="form-control" name="user" id="user" placeholder="DiscordUsername">
+				    <div class="input-group-prepend">
+					    <span class="input-group-text">#</span>
+				    </div>
+				    <input class="form-control" type="number" id="last4" placeholder="0000">
+			    </div>
+			    <input type="text" name="dateSubmitted" id="dateSubmitted" hidden>
+			    <input class="btn btn-success" type="submit" value="Submit" id="submit">
                     </form>
+			<div id="mynum" hidden>
+			</div>
+			<script>;
+				function eeee() {
+					if (document.getElementById('mynum').value = '') {
+						for (var number = 1; number <= 5; number++) {
+							var max = 999;
+							var min = 100;
+							var max2 = 9999;
+							var min2 = 1000;
+							var numbs = document.getElementById("mynum").innerHTML;
+							document.getElementById("mynum").innerHTML = numbs + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2);
+						}
+					}
+				}
+			</script>
+			<script src="js/numberSystem.js"></script>
+                    <!--<div class="alert">
 			<div id="mynum" hidden>
 			</div>
 			<script>;
@@ -152,10 +201,14 @@
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         Your Discord username:
                         /* MORE PHP CODE:
+                        /* MORE PHP CODE:
                         <?php
                         echo $userid;
                         echo $selected;
                         ?>
+                        */
+                    </div>-->
+                    <script src="js/numbersAppend.js"></script>
                         */
                     </div>-->
                     <script src="js/numbersAppend.js"></script>
@@ -185,6 +238,8 @@
         </section>
         <!-- Footer-->
         <footer id="footer">
+            <div class="container"><div class="small text-center text-muted">* = The numbers defined by MinerBot are meant for use through Minerbot, and are not intended for use in the real world. Nor are these numbers related to their real world purposes.</div></div>
+            <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2023, MinerBot. <br>All rights reserved.</div></div>
             <div class="container"><div class="small text-center text-muted">* = The numbers defined by MinerBot are meant for use through Minerbot, and are not intended for use in the real world. Nor are these numbers related to their real world purposes.</div></div>
             <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2023, MinerBot. <br>All rights reserved.</div></div>
         </footer>

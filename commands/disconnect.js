@@ -1,9 +1,10 @@
+const { SlashCommandBuilder } = require('discord.js');
+
 module.exports = {
-	name: 'disconnect',
-	description: 'Find out what my ping is at.',
-	aliases: ['leave'],
-	cooldown: 5,
-	execute(message, args, client) {
+	data: new SlashCommandBuilder()
+		.setName('disconnect')
+		.setDescription('Find out what my ping is at.'),
+	async execute(interaction, args, client) {
 		client.emit(message);
 		if (!client.voiceConnection) {
 			message.channel.send('Ok! Done.');

@@ -1,9 +1,10 @@
+const core = require('@actions/core');
+const github = require('@actions/github');
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token } = require('.//config.json');
+const { prefix, token } = require('D:/a/MinerBot/MinerBot/config.json');
 // const ytdl = require('ytdl-core');
 // const ytdldiscord = require('ytdl-core-discord');
-
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -16,15 +17,15 @@ const cooldowns = new Discord.Collection();
 client.voiceChannelIDs = new Map();
 //
 
-let phnum;
-let UsersNumbers = new Map();
-fs.readFile('./Miner-Bot.github.io/MinerBot/numbers.json', (err, data) => {
+// let phnum;
+// let UsersNumbers = new Map();
+/* fs.readFile('./numbers.json', (err, data) => {
 	if (err) throw err;
 	phnum = JSON.parse(data);
 	// console.log(phnum);
 	UsersNumbers = phnum;
 });
-
+*/
 // async function play(connection, url) {
 // 	connection.play(await ytdldiscord(url), { type: 'opus' });
 // }
@@ -128,18 +129,19 @@ client.on('message', async message => {
 	// }
 	// Execute Command line:
 	try {
-		command.execute(message, args, client, UsersNumbers);
+		command.execute(message, args, client);
 	}
 	// Error catcher:
 	catch (error) {
 		console.error(error);
+		core.setFailed(`Action failed with error ${error}`);
 		message.reply('There was an error trying to execute that command!');
 	}
 });
-const commandFiles = fs.readdirSync('C:/Users/mjsey/OneDrive/MinerBot/commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-	const command = require(`C:/Users/mjsey/OneDrive/MinerBot/commands/${file}`);
+	const command = require(`D:/a/MinerBot/MinerBot/commands/${file}`);
 	client.commands.set(command.name, command);
 }
 
@@ -162,20 +164,22 @@ client.once('ready', () => {
 	console.log('Ready!');
 	console.log(client.uptime);
 	client.user.setActivity('my new games!');
-	fs.writeFile('./Miner-Bot.github.io/MinerBot/commands.json', JSON.stringify(client.commands, null, 4), '', err => {
+	core.saveState("Up", 1);
+	fs.writeFile('commands.json', JSON.stringify(client.commands, null, 4), '', err => {
 		if(err) console.log(err);
-	});
-	fs.readFile('./Miner-Bot.github.io/MinerBot/status.json', (err, data) => {
-		if (err) throw err;
-		let obj = JSON.parse(data);
-		obj = [obj, statusjson];
-		const jsonEdited = JSON.stringify(obj);
-		fs.writeFile('./Miner-Bot.github.io/MinerBot/status.json', jsonEdited, '', err => {
-			if(err) console.log(err);
-		});
 	});
 	const timestampData = client.readyAt;
 	const statusjson = { 'timestamp': timestampData, 'status': client.user.presence.status };
+	fs.readFile('status.json', (err, data) => {
+		if (err) throw err;
+		let obj = JSON.parse(data);
+		obj = obj + statusjson;
+		const jsonEdited = JSON.stringify(obj);
+		fs.writeFile('status.json', jsonEdited, '', err => {
+			if(err) console.log(err);
+		});
+	});
+
 });
 
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error));

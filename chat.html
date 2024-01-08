@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <title>Chat with the developer - MinerBot the Discord Bot</title>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+<body>
+	<div id="info-bar-top" class="info-bar-top"></div>
+	<div id="ex"></div>
+	<!--<div class="container" style="{width:80%;right:0px;}">--><chatbubble><msg class="out" id="outmsg"></msg></chatbubble>
+	<div id="msgs"></div>
+
+    <input type="text" id="txt" onkeydown="keydown(event)">
+<script>
+	fetch('chats/dev.json')
+                        .then(function (response) {
+                        return response.json();
+                    })
+                        .then(function (data) {
+                        appendData(data);
+                    })
+                        .catch(function (err) {
+                        console.log(err);
+		document.getElementById('ex').innerHTML = err;
+                    });
+			
+	function appendData(data) {
+		var main = document.getElementById('msgs');
+		var bub = document.createElement('chatbubble');
+		var msg = document.createElement('msg');
+		var br = document.createElement('br');
+		var att = document.createAttribute('class');
+		var att2 = document.createAttribute('id');
+		for (var o = 0; o < data.length; o++) {
+			var sqr = document.getElementsByTagName("msg");
+			var val = window.getComputedStyle(msg);
+			var orig = val.getPropertyValue('top');
+			msg.style.top = (45 * o) + "px";
+			// r.style.setProperty('--orig', ((orig + 45) + 'px'));
+			if (data[o].direction === 'in') {
+				main.appendChild(bub);
+				att.value = 'in';
+				att2.value = 'inmsg';
+				bub.appendChild(msg);
+				msg.setAttributeNode(att);
+				msg.setAttributeNode(att2);
+				msg.innerHTML = data[o].msg; // data[o].msg;
+				main.appendChild(br);
+			} else if (data[o].direction === 'out') {
+				main.appendChild(bub);
+				att.value = 'out';
+				att2.value = 'outmsg';
+				bub.appendChild(msg);
+				msg.setAttributeNode(att);
+				msg.setAttributeNode(att2);
+				msg.innerHTML = data[o].msg; // data[o].msg;
+				main.appendChild(br);
+			}
+		}
+	}
+
+function keydown(event) {
+    if (event.key === "Enter") {
+    	var text = document.getElementById('txt').value;
+	    var main = document.getElementById('msgs');
+	    var bub = document.createElement('chatbubble');
+	    var message = document.createElement('msg');
+		var br = document.createElement('br');
+	    var att = document.createAttribute('class');
+	    var att2 = document.createAttribute('id');
+		main.appendChild(bub);
+			att.value = 'out';
+			att2.value = 'outmsg';
+		bub.appendChild(message);
+			message.setAttributeNode(att);
+			message.setAttributeNode(att2);
+	    message.innerHTML = text;
+		main.appendChild(br);
+// if (text === 'hi') {
+// 	document.getElementById('inmsg').innerHTML = 'hey!';
+// }
+    text = "";
+    }
+      };
+      </script>
+  </body>
+</html>

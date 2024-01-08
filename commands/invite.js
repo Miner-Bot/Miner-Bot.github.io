@@ -1,8 +1,11 @@
+const { SlashCommandBuilder } = require('discord.js');
 const Discord = require('discord.js');
+
 module.exports = {
-	name: 'invite',
-	description: 'Invite me to one of your servers',
-	execute(message) {
+	data: new SlashCommandBuilder()
+		.setName('invite')
+		.setDescription('Invite me to one of your servers'),
+	async execute(interaction) {
 		const user = message.author.id;
 		const inviteInfo = new Discord.MessageEmbed()
 			.setColor('#36a3d9')

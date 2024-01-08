@@ -10,4 +10,4 @@
 - If you have any questions, or feedback... or even contributions, email us at minersfeedback@gmail.com *[Direct mail link here.](mailto:minersfeedback@gmail.com)*
 
 ### Wanna check out some of the latest features, that aren't accessible, yet?
-Head over to [the website](https://minerbot.xyz/) and fix the URL to be `minerbot.xyz/[name of the file]`.
+Head over to [the website](https://miner-bot.github.io/) and fix the URL to be `https://miner-bot.github.io/[name of the file]`.

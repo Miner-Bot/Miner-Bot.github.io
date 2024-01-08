@@ -1,8 +1,11 @@
+const { SlashCommandBuilder } = require('discord.js');
 const Discord = require('discord.js');
+
 module.exports = {
-	name: 'drive',
-	description: 'Drive around',
-	execute(message) {
+	data: new SlashCommandBuilder()
+		.setName('drive')
+		.setDescription('Drive around'),
+	async execute(interaction) {
 		const street = new Discord.MessageEmbed()
 			.setColor('#b0b0b0')
 			.setTitle('\u200b')

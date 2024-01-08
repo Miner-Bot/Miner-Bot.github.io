@@ -4,19 +4,16 @@
         "description": "Used when I need to announce something!"
     },
     {
+        "name": "crazy8",
+        "description": "Play Crazy 8 with 3-8 other members"
+    },
+    {
         "name": "credits",
-        "description": "You might be wondering, \"Who made this...?\" Well, here's your answer.",
-        "aliases": [
-            "about"
-        ]
+        "description": "You might be wondering, \"Who made this...?\" Well, here\\'s your answer."
     },
     {
         "name": "disconnect",
-        "description": "Ask me, nicely, to leave your voice channel.",
-        "aliases": [
-            "leave"
-        ],
-        "cooldown": 5
+        "description": "Find out what my ping is at."
     },
     {
         "name": "downtime",
@@ -27,61 +24,36 @@
         "description": "Drive around"
     },
     {
+        "name": "game",
+        "description": "Fun game!"
+    },
+    {
         "name": "help",
-        "description": "**[This command]** ; List of all the avaiable commands, or get more info about a specific command.",
-        "aliases": [
-            "commands"
-        ],
-        "usage": "[command name]",
-        "cooldown": 5
+        "description": "**[This command]** ; List of all the avaiable commands, or get more info about a specific command."
     },
     {
         "name": "invite",
         "description": "Invite me to one of your servers"
     },
     {
-        "name": "join",
-        "description": "Ask me to join your voice channel (that you are currently in).",
-        "cooldown": 5
-    },
-    {
-        "name": "move",
-        "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND||",
-        "args": true
-    },
-    {
-        "name": "number",
-        "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A"
-    },
-    {
-        "name": "play",
-        "description": "I'll join the voice channel, that you are currently in.",
-        "cooldown": 120,
-        "args": true
+        "name": "msgs",
+        "description": "Pushes messages (from website) to dev."
     },
     {
         "name": "ping",
         "description": "Find out what my ping is at."
     },
     {
-        "name": "radio",
-        "description": "Get your own, private, music / radio channel. \"turn off your radio\" by using `=radio disable`",
-        "usage": "[disable](OPTIONAL; ONLY WORKS IF YOU ALREADY HAVE ONE)"
-    },
-    {
-        "name": "ready",
-        "aliases": [
-            "Start"
-        ],
-        "description": "Tell me that your ready (only applicable after you have used the `~game` command ; also this is only used for the `~game` command)"
+        "name": "puzzle",
+        "description": "solve a puzzle"
     },
     {
         "name": "reload",
-        "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| Reloads a command"
+        "description": "Reloads a command."
     },
     {
-        "name": "restart",
-        "description": "||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A"
+        "name": "server",
+        "description": "Provides information about the server."
     },
     {
         "name": "setactivity",
@@ -92,23 +64,7 @@
         "description": "Get the stats."
     },
     {
-        "name": "testing",
-        "description": "TESTING 123"
-    },
-    {
-        "name": "usage",
-        "description": "**[This command]** ; List of all the avaiable commands, or get more info about a specific command.",
-        "args": true,
-        "usage": "[command name]",
-        "cooldown": 5
-    },
-    {
-        "name": "welcome",
-        "description": "Let's introduce ourselves! Also, this is how you can learn my commands.",
-        "aliases": [
-            "hi",
-            "hey"
-        ],
-        "usage": "My name is[Your preffered name]"
+        "name": "user",
+        "description": "Provides information about the user."
     }
 ]

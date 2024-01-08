@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="IcicleSavage" />
-        <title>Customizing MinerBot</title>
+        <title>Customize MinerBot</title>
         <!-- Favicon
         <link rel="icon" type="image/x-icon" href="assets/img/tabpic.ico" />-->
 	    <!-- Improved Favicon-->
@@ -32,54 +32,50 @@
         <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
         <!-- Third party plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    <body id="page-top" onload="eeee()">
+	    <!--onload="setData()"-->
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
-                <button class="btn btn-toggle" onclick="nightnight"><i class="fa fa-moon"></i></button>
+		<a class="navbar-brand js-scroll-trigger" href="/#page-top">MinerBot</a>
+                <button class="btn btn-toggle" id="ToggleNightMode2" title="Toggle Night Mode"><i class="fa fa-moon"></i></button>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="btn btn-primary btn-block nav-link js-scroll-trigger" href="/#get-to-know-minerbot">About MinerBot</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#invite">Invite</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#commands">Commands</a></li>
-                        <li class="nav-item"><a class="btn btn-primary nav-link-customization js-scroll-trigger" href="#p">Customization</a></li>
-                    </ul>
+			<li class="nav-item"><a class="btn nav-link js-scroll-trigger" title="Customize MinerBot" href="/customization#p"><i class="fas fa-wrench"></i></a></li>                    </ul>
                 </div>
-                <script>
-// Listen for a click on the button
-function nightnight() {
-  document.documentURI = 'customization.html'
-    var element = document.getElementById("SearchQuery");
-   element.classList.toggle("dark-theme");
-   var element2 = document.getElementById("MainNav");
-   var footer = document.getElementById("footer");
-   footer.classList.toggle('dark-theme');
-
-  // Then toggle (add/remove) the .dark-theme class to the body
-  document.body.classList.toggle('dark-theme');
-  element2.classList.toggle("dark-nav-theme");
-
-}
-                </script>
-            </div>
+		</div>
         </nav>
         <!-- About-->
         <section class="page-section bg-primary" id="p">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">Signup for MinerBot's calling system!</h2>
+                        <h2 class="text-white mt-0">Register for your mINE-FONE today!</h2>
+			    <svg height="50" width="50" style="position:fixed;right:5px;bottom:5px;">
+				    <a xlink:href="https://miner-bot.github.io/chat" target="_top">
+					    <circle cx="25" cy="25" r="25" fill="#f4623a" />
+					    <text x="11" y="50" fill="White" style='font-family: "Balsamiq Sans", cursive;font-size: 41px;'>M</text>
+				    </a>
+			    </svg>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Get your phone number [Works only with MinerBot, and in Discord<a class="js-scroll-trigger" href="#footer">*</a>]</p>
+                        <p class="text-white-50 mb-4">Get your mINE-FONE number [Works only with MinerBot, and in Discord<a class="js-scroll-trigger" href="#footer">*</a>]</p>
                         <a class="btn btn-light btn-xl" href="#phone">See Numbers</a>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#more-information">More Info</a>                    </div>
+			</div>
                 </div>
             </div>
         </section>
@@ -118,49 +114,51 @@ function nightnight() {
                     ?>
                     -->
                     <!-- form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>'> -->
-                    <form method="post">
-                        <select name="selected" id="selected">
-                        </select>
-                        <br>Discord User ID: <input type="text" name="userid"><span class="error">* <?php echo $usernameErr;?></span><br>
-I will attempt to DM you, with your new number. (This requires you to be in a server which I am, also, in.)
-                        <input type="submit" name="submit" value="Submit">
+                    <form onsubmit="saveNumber()" action="/SelectedNumber.html" method="GET" id="nform">
+			    <select class="form-control" name="selected" id="selected">
+				    <option>[None Selected]</option>
+			    </select>
+			    <div class="input-group mb-3">
+				    <div class="input-group-prepend">
+					    <span class="input-group-text">@</span>
+				    </div>
+				    <input type="text" class="form-control" name="user" id="user" placeholder="DiscordUsername">
+				    <div class="input-group-prepend">
+					    <span class="input-group-text">#</span>
+				    </div>
+				    <input class="form-control" type="number" id="last4" placeholder="0000">
+			    </div>
+			    <input type="text" name="dateSubmitted" id="dateSubmitted" hidden>
+			    <input class="btn btn-success" type="submit" value="Submit" id="submit">
                     </form>
-                    <div class="alert">
+			<div id="mynum" hidden>
+			</div>
+			<script>;
+				function eeee() {
+					if (document.getElementById('mynum').value = '') {
+						for (var number = 1; number <= 5; number++) {
+							var max = 999;
+							var min = 100;
+							var max2 = 9999;
+							var min2 = 1000;
+							var numbs = document.getElementById("mynum").innerHTML;
+							document.getElementById("mynum").innerHTML = numbs + '<br>' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max - min + 1) ) + min) + '-' + (Math.floor(Math.random() * (max2 - min2 + 1) ) + min2);
+						}
+					}
+				}
+			</script>
+			<script src="js/numberSystem.js"></script>
+                    <!--<div class="alert">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         Your Discord username:
-                        <!-- MORE PHP CODE:
+                        /* MORE PHP CODE:
                         <?php
                         echo $userid;
                         echo $selected;
                         ?>
-                        -->
-                    </div>
-                    <script>
-                        fetch('numbers.json')
-                            .then(function (response) {
-                            return response.json();
-                        })
-                            .then(function (data) {
-                            appendData(data);
-                        })
-                            .catch(function (err) {
-                            console.log(err);
-                        });
-                        function appendData(data) {
-                            var mainContainer = document.getElementById("selected");
-                            for (var i = 0; i < data.length; i++) {
-                                var option = document.createElement("option");
-                                var att = document.createAttribute("value");
-                                var att2 = document.createAttribute("label");
-                                option.innerHTML = data[i].number;
-                                att.value = data[i].number;
-                                att2.value = 'Selected Number\'s ID: ' + data[i].id;
-                                mainContainer.appendChild(option);
-                                option.setAttributeNode(att);
-                                option.setAttributeNode(att2);
-                            }
-                        }
-                    </script>
+                        */
+                    </div>-->
+                    <script src="js/numbersAppend.js"></script>
                     <!-- Script, of number generation here: https://www.w3schools.com/code/tryit.asp?filename=GMSZ7FWC4WJH -->
                     <!-- 1( 
                     <script src="https://randojs.com/1.0.0.js"></script>
@@ -185,16 +183,10 @@ I will attempt to DM you, with your new number. (This requires you to be in a se
                 </div>
             </div>
         </section>
-        <!-- Try It Out-->
-        <section class="page-section" id="Test-his-features">
-            <div class="container">
-                <iframe src="https://discord.com/widget?id=751570387979993110&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-            </div>
-        </section>
         <!-- Footer-->
         <footer id="footer">
-            <div class="container"><div class="small text-center text-muted">* = The numbers defined by MinerBot are meant, solely, for use in Discord (only through MinerBot, to be more specific). The owner of the bot is not liable for any incidents that happen in result of any calls made to any of the numbers, provided by MinerBot.</div></div>
-            <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2021, MinerBot. <br>All rights reserved.</div></div>
+            <div class="container"><div class="small text-center text-muted">* = The numbers defined by MinerBot are meant for use through Minerbot, and are not intended for use in the real world. Nor are these numbers related to their real world purposes.</div></div>
+            <div class="container"><div class="small text-center text-muted">MinerBot, a Discord bot, who's main purpose is to entertain. <br>Copyright © 2023, MinerBot. <br>All rights reserved.</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -1,7 +1,10 @@
+const { SlashCommandBuilder } = require('discord.js');
+
 module.exports = {
-	name: 'downtime',
-	description: '||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A',
-	execute(message) {
+	data: new SlashCommandBuilder()
+		.setName('downtime')
+		.setDescription('||NOT FOR PUBLIC USE; CREATOR ONLY COMMAND|| N/A'),
+	async execute(interaction) {
 		const nowUTC = new Date().toLocaleString('en-US', { timeZone: 'UTC', timeZoneName: 'short' });
 		if (message.author.id === '444767734409068545') {
 			const channel = message.guild.channels.cache.find(ch => ch.id === '785987873240383519');

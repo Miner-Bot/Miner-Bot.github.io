@@ -1,0 +1,25 @@
+[{
+    "direction":"in",
+    "msg":"Hello!"
+},
+ {
+     "direction":"out",
+     "msg":"wsp"
+ },
+ {
+     "direction":"in",
+     "msg":"What can I help you with?"
+ },
+ {
+     "direction":"out",
+     "msg":"ur bot is dumb."
+ },
+ {
+     "direction":"in",
+     "msg":"Well, that's not very nice. I worked very hard on him. What happened? Did he error, or not execute a command correctly?"
+ },
+ {
+     "direction":"out",
+     "msg":"no i jus think he dumb."
+ }
+]

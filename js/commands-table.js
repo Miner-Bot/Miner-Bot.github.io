@@ -4,7 +4,7 @@ function titleCase(str) {
 		.map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
 		.join(' ');
 }
-fetch('./commands.json')
+fetch('commands.json')
 	.then(function(response) {
 		return response.json();
 	})

@@ -4,7 +4,7 @@ function titleCase(str) {
 		.map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
 		.join(' ');
 }
-fetch('commands.json')
+fetch('./commands.json')
 	.then(function(response) {
 		return response.json();
 	})
@@ -17,19 +17,10 @@ fetch('commands.json')
 	});
 
 function appendData(data) {
-	const prefix = '=';
 	var l = data.length
 	for (var o = 0; o < l; o++) {
 		var str;
-		if (data[o].usage && data[o].aliases) {
-			str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
-		} else if (data[o].usage && !data[o].aliases) {
-			str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + ' ' + data[o].usage;
-		} else if (!data[o].usage && data[o].aliases) {
-			str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name + '<br>' + 'Aliases:' + ' ' + prefix + data[o].aliases;
-		} else if (!data[o].usage && !data[o].aliases) {
-			str = 'Description:' + ' ' + data[o].description + '<br>' + 'Usage:' + ' ' + prefix + data[o].name;
-		}
+		str = 'Description:' + ' ' + data[o].description;
 		var table = document.getElementById("commands-info");
 		var tr = document.createElement("tr");
 		var td = document.createElement("td");

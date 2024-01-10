@@ -20,7 +20,7 @@ function appendData(data) {
 	var l = data.length
 	for (var o = 0; o < l; o++) {
 		var str;
-		str = 'Description:' + ' ' + data[o].description;
+		str = data[o].description;
 		var table = document.getElementById("commands-info");
 		var tr = document.createElement("tr");
 		var td = document.createElement("td");

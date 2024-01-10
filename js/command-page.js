@@ -16,7 +16,6 @@ fetch('commands.json')
 	});
 
 function appendData(data) {
-	const prefix = '=';
 	for (let o = 0; o < data.length; o++) {
 		var str;
 

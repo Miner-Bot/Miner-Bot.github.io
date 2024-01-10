@@ -1961,7 +1961,7 @@ table#commands-info .dark {
   border-bottom: 1px solid #ddd;
 }
 #commands-info p {
-  text-align: left !important;
+  text-align: center;
 }
 #SearchQuery {
   width: 100%;

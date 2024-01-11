@@ -185,14 +185,15 @@ msg.in {
     float: unset;
     width: fit-content;
     max-width: 70%;
+    height: fit-content;
     align-content: center;
     margin: 0 auto;
     margin-top: .78in;
     text-align: left;
     cursor: help;
     position: -webkit-sticky;
-    position: sticky;
-    top: 37px;
+    position: relative;
+    top: 20px;
     left: auto;
     padding: .05in;
     padding-left: .5rem;
@@ -10390,6 +10391,11 @@ hr.light {
 #mainNav .nav-link-customization:active, .nav-link-customization.active {
   color: #fff;
 }
+
+#mainNav .dark-text {
+  color: #000 !important;
+}
+
 @media (min-width: 992px) {
   #mainNav {
     box-shadow: none;

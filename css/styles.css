@@ -6413,6 +6413,10 @@ a.close.disabled {
   vertical-align: text-top !important;
 }
 
+.bg-tertiary {
+  background-color: #dcdcdc !important;
+}
+
 .bg-primary {
   background-color: #f4623a !important;
 }

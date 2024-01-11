@@ -9,10 +9,7 @@
 	    <script>
 		    // document.title = location.hash;
 	    </script>
-	    <script>
-		    // document.title = location.hash;
-	    </script>
-        <!-- Favicon
+	    <!-- Favicon
         <link rel="icon" type="image/x-icon" href="assets/img/tabpic.ico" />-->
 	    <!-- Improved Favicon-->
 	    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=lkvGE4968d">
@@ -43,26 +40,20 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
 	    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DG2FJ05YPK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DG2FJ05YPK');
-</script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-DG2FJ05YPK"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'G-DG2FJ05YPK');
+		</script>
     </head>
     <body>
 	    <style>
-#mainNav .nav-link, #mainNav .navbar-brand {
-color: #000 !important;
-}
-	    </style>
-    <body>
-	    <style>
-#mainNav .nav-link, #mainNav .navbar-brand {
-color: #000 !important;
-}
+			#mainNav .nav-link, #mainNav .navbar-brand {
+				color: #000 !important;
+			}
 	    </style>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
@@ -84,29 +75,29 @@ color: #000 !important;
                     </ul>
                 </div>
             </div>
-		<script>
-			function back() {
-				window.history.back();
-				//window.location.replace('https://miner-bot.github.io/#commands');
-			}
-		</script>
+			<script>
+				function back() {
+					window.history.back();
+					//window.location.replace('https://miner-bot.github.io/#commands');
+				}
+			</script>
         </nav>
         <!-- Commands -->
         <section class="page-section" id="command">
-		<a onclick="back()" class="btn btn-light" title="Go Back" style="position:fixed;left:10%;top:102px;"><i class="fa fa-angle-left"></i>Go Back</a>
-		<div class="container-fluid p-0">
-			<div id="err"></div>
-			<div class="container" id="commands-in-here">
-				<h2 class="text-center h2">Commands</h2>
+			<a onclick="back()" class="btn btn-light" title="Go Back" style="position:fixed;left:10%;top:102px;"><i class="fa fa-angle-left"></i>Go Back</a>
+			<div class="container-fluid p-0">
+				<div id="err"></div>
+				<div class="container" id="commands-in-here">
+					<h2 class="text-center h2">Commands</h2>
+				</div>
+				<div id="testurlreturn">
+				</div>
+				<div class="container-fluid card" style="width:80%;">
+					<h1 class="card-header" id="title">[Command.name]</h1>
+					<div class="card-body" id="info"></div>
+				</div>
+				<script src="js/command-info-page.js"></script>
 			</div>
-			<div id="testurlreturn">
-			</div>
-			<div class="container-fluid card" style="width:80%;">
-				<h1 class="card-header" id="title">[Command.name]</h1>
-				<div class="card-body" id="info"></div>
-			</div>
-			<script src="js/command-info-page.js"></script>
-		</div>
 	    </section>
 	    <!-- Footer-->
 	    <footer id="footer">

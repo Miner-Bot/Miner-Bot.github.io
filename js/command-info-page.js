@@ -51,6 +51,7 @@ function appendData(data) {
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
 	att.value = found.name;
+	str = found.description;
 	div.setAttributeNode(att);
 	div.innerHTML = str;
 	att3.value = 'text-box bungee-small-body-text';

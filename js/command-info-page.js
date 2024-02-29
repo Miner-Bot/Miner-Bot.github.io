@@ -21,7 +21,6 @@
 				  document.getElementById('err').innerHTML = err;
 			  });
 function appendData(data) {
-const prefix = '=';
 	var cmd = window.location.hash.slice(1);
 	const array1 = data;
 	var index = -1;

@@ -39,7 +39,7 @@ function appendData(data) {
 	console.info(`filtered element: ${found.name}, index: ${index}`);
 	var description = found.description;
 	console.debug(`description = ${description};`);
-	var str;
+	// X--var str;--X
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
 
 	console.debug(`str = ${str}`);
@@ -51,12 +51,11 @@ function appendData(data) {
 	var div1 = document.createElement("p");
 	var att3 = document.createAttribute("class");
 	att.value = found.name;
-	str = found.description;
 	div.setAttributeNode(att);
-	div.innerHTML = str;
+	div.innerHTML = description;
 	att3.value = 'text-box bungee-small-body-text';
 	div1.setAttributeNode(att3);
-	div1.innerHTML = str;
+	div1.innerHTML = description;
 	header.appendChild(div1);
 	header.innerHTML = titleCase(found.name);
 	console.debug(`div.innerHTML = ${div.innerHTML}`);

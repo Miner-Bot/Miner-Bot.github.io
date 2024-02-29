@@ -39,7 +39,7 @@ const prefix = '=';
 	}
 	console.info(`filtered element: ${found.name}, index: ${index}`);
 	var description = found.description;
-	console.debug(`description = ${description}; usage = ${usage}; aliases = ${aliases}`);
+	console.debug(`description = ${description};`);
 	var str;
 	// var data = data.findIndex(d => d.name === location.hash.slice(1));
 

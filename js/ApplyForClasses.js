@@ -2,7 +2,11 @@ function timedExecution() {
     var targetDate = new Date('March-20-2024 07:30:00');
     var nowDate = new Date();
     var timeremaining = (targetDate.valueOf()) - (nowDate.valueOf());
-    setTimeout(validate(), timeremaining);
+    if (-(timeremaining) != Math.abs(timeremaining)) {
+        setTimeout(validate, timeremaining);
+    } else {
+        validate();
+    }
 }
 // check for correct path:
 var cPath = "/terms/Daytona-Prescott%202024%20Fall/cart";
@@ -22,7 +26,7 @@ function validate() {
     if (!validationResultsElement || !validationResultsElement.getAttributeNode("aria-hidden")) {
         spanElements[index].click();
     }
-    setTimeout(clearValidationResults(), 6000);
+    setTimeout(clearValidationResults, 6000);
 }
 function clearValidationResults() {
     var validationResultsElement = document.getElementsByName('__RequestVerificationToken')[0];
@@ -32,7 +36,7 @@ function clearValidationResults() {
             button.click();
         }
     }
-    setTimeout(clickRegisterButton(),1000);
+    setTimeout(clickRegisterButton,7000);
 }
 
 function clickRegisterButton() {

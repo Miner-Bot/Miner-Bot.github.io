@@ -38,6 +38,12 @@ function clickRegisterButton() {
     if (registerButton.nodeType == '1') {
         registerButton.click();
     }
+    var div = document.getElementsByClassName("modal-content");
+    var childDiv = div.lastElementChild;
+    var button_continue = childDiv.lastElementChild;
+    if (div && childDiv && button_continue) {
+        button_continue.click();
+    }
 }
 
 validate();

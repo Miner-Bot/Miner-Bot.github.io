@@ -29,6 +29,7 @@ function clearValidationResults() {
             button.click();
         }
     }
+    setTimeout(clickRegisterButton(),1000);
 }
 
 function clickRegisterButton() {
@@ -37,3 +38,5 @@ function clickRegisterButton() {
         registerButton.click();
     }
 }
+
+validate();

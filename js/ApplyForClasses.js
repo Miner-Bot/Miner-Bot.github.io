@@ -3,7 +3,7 @@ function reload() {
 }
 
 // check for correct path:
-const cPath = "/terms/Daytona-Prescott%202024%20Fall/cart";
+var cPath = "/terms/Daytona-Prescott%202024%20Fall/cart";
 if (window.location.pathname === "/terms/Daytona-Prescott%202024%20Fall/options") {
     window.location.pathname = cPath;
 }

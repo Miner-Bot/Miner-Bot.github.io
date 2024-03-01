@@ -23,6 +23,7 @@ function validate() {
     setTimeout(clearValidationResults(validationResultsElement), 6000);
 }
 function clearValidationResults(validationResultsElement) {
+    const validationResultsElement = document.getElementsByName('__RequestVerificationToken')[0];
     if (validationResultsElement.getAttributeNode("aria-hidden")) {
         var button = document.getElementsByClassName(' css-6pmogs-hoverStyles-hoverStyles-defaultStyle-wideStyle')[1];
         if (button.nodeType == '1') {

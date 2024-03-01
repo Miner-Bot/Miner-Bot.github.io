@@ -26,7 +26,7 @@ function clearValidationResults() {
     var validationResultsElement = document.getElementsByName('__RequestVerificationToken')[0];
     if (validationResultsElement.getAttributeNode("aria-hidden")) {
         var button = document.getElementsByClassName(' css-6pmogs-hoverStyles-hoverStyles-defaultStyle-wideStyle')[1];
-        if (button.nodeType == '1') {
+        if (button.nodeType === 1) {
             button.click();
         }
     }
@@ -38,7 +38,7 @@ function clickRegisterButton() {
     if (registerButton.nodeType == '1') {
         registerButton.click();
     }
-    var div = document.getElementsByClassName("modal-content");
+    var div = document.getElementsByClassName("modal-content")[0];
     var childDiv = div.lastElementChild;
     var button_continue = childDiv.lastElementChild;
     if (div && childDiv && button_continue) {

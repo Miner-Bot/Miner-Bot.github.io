@@ -26,7 +26,7 @@ function clearValidationResults() {
     var validationResultsElement = document.getElementsByName('__RequestVerificationToken')[0];
     if (validationResultsElement.getAttributeNode("aria-hidden")) {
         var button = document.getElementsByClassName(' css-6pmogs-hoverStyles-hoverStyles-defaultStyle-wideStyle')[1];
-        if (button.nodeType === 1) {
+        if (button) {
             button.click();
         }
     }

@@ -3,20 +3,20 @@ function reload() {
 }
 
 // check for correct path:
-var cartPath = "/terms/Daytona-Prescott%202024%20Fall/cart";
+const cPath = "/terms/Daytona-Prescott%202024%20Fall/cart";
 if (window.location.pathname === "/terms/Daytona-Prescott%202024%20Fall/options") {
-    window.location.pathname = cartPath;
+    window.location.pathname = cPath;
 }
 //
 
 function validate() {
-    var spanElements = document.getElementsByTagName('span');
+    const spanElements = document.getElementsByTagName('span');
     for (var i = 0; i < spanElements.length;i++) {
         if (spanElements[i].innerHTML == "Validate") {
             index = i;
         }
     }
-    var validationResultsElement = document.getElementsByName('__RequestVerificationToken')[0];
+    const validationResultsElement = document.getElementsByName('__RequestVerificationToken')[0];
     if (!validationResultsElement || !validationResultsElement.getAttributeNode("aria-hidden")) {
         spanElements[index].click();
     }

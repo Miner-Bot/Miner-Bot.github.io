@@ -1,7 +1,9 @@
-function reload() {
-    window.location.reload;
+function timedExecution() {
+    var targetDate = new Date('March-20-2024 07:30:00');
+    var nowDate = new Date();
+    var timeremaining = (targetDate.valueOf()) - (nowDate.valueOf());
+    setTimeout(validate(), timeremaining);
 }
-
 // check for correct path:
 var cPath = "/terms/Daytona-Prescott%202024%20Fall/cart";
 if (window.location.pathname === "/terms/Daytona-Prescott%202024%20Fall/options") {
@@ -46,4 +48,4 @@ function clickRegisterButton() {
     }
 }
 
-validate();
+timedExecution();

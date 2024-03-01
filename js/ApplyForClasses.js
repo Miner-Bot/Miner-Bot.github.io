@@ -20,9 +20,9 @@ function validate() {
     if (!validationResultsElement || !validationResultsElement.getAttributeNode("aria-hidden")) {
         spanElements[index].click();
     }
-    setTimeout(clearValidationResults, 5000);
+    setTimeout(clearValidationResults(validationResultsElement), 5000);
 }
-function clearValidationResults() {
+function clearValidationResults(validationResultsElement) {
     if (validationResultsElement.getAttributeNode("aria-hidden")) {
         var button = document.getElementsByClassName(' css-6pmogs-hoverStyles-hoverStyles-defaultStyle-wideStyle')[1];
         if (button.nodeType == '1') {

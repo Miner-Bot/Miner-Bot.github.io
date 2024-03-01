@@ -20,7 +20,7 @@ function validate() {
     if (!validationResultsElement || !validationResultsElement.getAttributeNode("aria-hidden")) {
         spanElements[index].click();
     }
-    setTimeout(clearValidationResults(validationResultsElement), 5000);
+    setTimeout(clearValidationResults(validationResultsElement), 6000);
 }
 function clearValidationResults(validationResultsElement) {
     if (validationResultsElement.getAttributeNode("aria-hidden")) {

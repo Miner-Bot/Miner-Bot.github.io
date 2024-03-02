@@ -103,6 +103,29 @@
 		    	        </div>
 		    	    </div>
 		        </div>
+                <div id="uptime">
+                    Bot online as of:<br>
+                    <script>
+                        var element = document.getElementById("uptime");
+                        fetch('uptime.json')
+                            .then(function (response) {
+                                return response.json();
+                            })
+                            .then(function (data) {
+                                return Uptime(data);
+                            })
+                            .catch(function (err) {
+                                console.log(err);
+                                document.getElementById('err').innerHTML = err;
+                            });
+                        function Uptime(data) {
+                            const Now = new Date().valueOf();
+                            const lastUptime = new Date(data[data.length]);
+                            if (data.last <= Now) {}
+                        }
+                        element.innerHTML += lastUptime;
+                    </script>
+                </div>
 		        <div class="row justify-content-center d-flex">
 		    	    <a class="btn btn-light btn-xl" href="https://discord.com/oauth2/authorize?client_id=767055142544605194&scope=bot%20identify%20connections%20guilds%20activities.read&permissions=2146959184&response_type=code" target="_blank">Invite</a>
 		        </div>

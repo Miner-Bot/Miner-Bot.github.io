@@ -104,7 +104,7 @@
 		    	    </div>
 		        </div>
                 <div>
-                    Bot online as of:<br>
+                    Bot last online on:<br>
                     <p id="uptime"></p>
                     <script>
                         var element = document.getElementById("uptime");
@@ -120,19 +120,24 @@
                                 document.getElementById('err').innerHTML = err;
                             });
                         function Uptime(data) {
+                            element = document.getElementById("uptime");
                             const Now = new Date();
-                            
-                            const uptimeDates = Object.keys(data);
-                            const lastUptimeDate = uptimeDates[uptimeDates.length - 1];
-                            const lastUptimes = data[lastUptimeDate];
-                            const lastUptime = lastUptimes[lastUptimes.length - 1];
-                            const lastUp = Date.parse(lastUptime + lastUptimeDate);
-
-                            if (Now.valueOf() - lastUp.valueOf() <= Now.valueOf()) {
+                            const Time = (data,Now) => {
+                                const uptimeDates = Object.keys(data);
+                                const lastUptimeDate = uptimeDates[uptimeDates.length - 1];
+                                const lastUptimes = data[lastUptimeDate];
+                                const lastUptime = lastUptimes[lastUptimes.length - 1];
+                                const lastUp = Date.parse(lastUptime + lastUptimeDate);
+                                
+                                var timeSinceLastOnline = new Date(new Date(Now.valueOf() - lastUp.valueOf()).getTime()).toTimeString().slice(0,8);
+                                
+                                element.innerHTML = timeSinceLastOnline;
+                                setTimeout(Time,1000);
+                            }
+/*                            if (Now.valueOf() - lastUp.valueOf() <= Now.valueOf()) {
                                 var timeSinceLastOnline = new Date(new Date(Now.valueOf() - lastUp.valueOf()).getTime()).toTimeString().slice(0,8);
                             }
-                            element.innerHTML = timeSinceLastOnline;
-                            setTimeout(Uptime(data),10000);
+                            element.innerHTML = timeSinceLastOnline;*/
                         }
                     </script>
                 </div>

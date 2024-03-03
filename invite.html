@@ -122,7 +122,7 @@
                         function Uptime(data) {
                             element = document.getElementById("uptime");
                             const Now = new Date();
-                            const Time = (data,Now) => {
+                            /*const Time = (data, Now) => {*/
                                 const uptimeDates = Object.keys(data);
                                 const lastUptimeDate = uptimeDates[uptimeDates.length - 1];
                                 const lastUptimes = data[lastUptimeDate];
@@ -132,8 +132,8 @@
                                 var timeSinceLastOnline = new Date(new Date(Now.valueOf() - lastUp.valueOf()).getTime()).toTimeString().slice(0,8);
                                 
                                 element.innerHTML = timeSinceLastOnline;
-                                setTimeout(Time,1000);
-                            }
+                                setTimeout(Uptime(data), 1000);
+//                            Time(data, Now);
 /*                            if (Now.valueOf() - lastUp.valueOf() <= Now.valueOf()) {
                                 var timeSinceLastOnline = new Date(new Date(Now.valueOf() - lastUp.valueOf()).getTime()).toTimeString().slice(0,8);
                             }

@@ -103,8 +103,9 @@
 		    	        </div>
 		    	    </div>
 		        </div>
-                <div id="uptime">
+                <div>
                     Bot online as of:<br>
+                    <p id="uptime"></p>
                     <script>
                         var element = document.getElementById("uptime");
                         fetch('uptime.json')
@@ -119,11 +120,20 @@
                                 document.getElementById('err').innerHTML = err;
                             });
                         function Uptime(data) {
-                            const Now = new Date().valueOf();
-                            const lastUptime = new Date(data[data.length]);
-                            if (data.last <= Now) {}
+                            const Now = new Date();
+                            
+                            const uptimeDates = Object.keys(data);
+                            const lastUptimeDate = uptimeDates[uptimeDates.length - 1];
+                            const lastUptimes = data[lastUptimeDate];
+                            const lastUptime = lastUptimes[lastUptimes.length - 1];
+                            const lastUp = Date.parse(lastUptime + lastUptimeDate);
+
+                            if (Now.valueOf() - lastUp.valueOf() <= Now.valueOf()) {
+                                var timeSinceLastOnline = new Date(new Date(Now.valueOf() - lastUp.valueOf()).getTime()).toTimeString().slice(0,8);
+                            }
+                            element.innerHTML = timeSinceLastOnline;
+                            setTimeout(Uptime(data),10000);
                         }
-                        element.innerHTML += lastUptime;
                     </script>
                 </div>
 		        <div class="row justify-content-center d-flex">
